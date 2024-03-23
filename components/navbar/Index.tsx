@@ -8,12 +8,12 @@ function Navbar() {
   const [navbar, setNavbar] = useState(false);
   return (
     <div className=''>
-      <nav className="w-full lg:bg-[#ffd700] md:bg-purple-700/50 bg-purple-700/95 top-0 left-0 right-0 fixed z-50">
+      <nav className="w-full lg:bg-[#ffd700] md:bg-[#ffd700] bg-[#ffd700] top-0 left-0 right-0 fixed z-50">
       <div className='max-w-screen-xl flex flex-wrap  items-center justify-center mx-auto p-0.5 backdrop-blur-md'>
-        <div className='md:text-right text-center font-semibold w-full border-b border-violet-500 py-1'>
-          <Link href='/certificate' className='hover:underline mr-4 text-white hover:text-white'>Verificar certificado</Link>
+        <div className='md:text-right text-center font-extrabold w-full border-b border-violet-500 py-1'>
+          <Link href='/' className='hover:underline mr-4 text-[#6D0083] hover:text-black'>Verificar certificado</Link>
           <Link href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=0959465f-37c3-4032-803b-bbfc499af7a3"
-            className='hover:underline mr-3 text-white hover:text-white'>Aula Virtual</Link>
+            className='hover:underline mr-3 text-[#6D0083] hover:text-black'>Aula Virtual</Link>
         </div>
       </div>
         <div className="justify-between px-2 py-1 lg:px-0 mx-auto lg:max-w-7xl md:items-center md:flex backdrop-blur-md">
@@ -22,11 +22,11 @@ function Navbar() {
               {/* LOGO */}
               <Link href="/">
                 <Image
-                  src="/logo/LOGO-NAVBAR.png"
+                  src="/logo/logo-navbar.png"
                   width={800}
                   height={800}
                   alt="promas-logo"
-                  className='w-40 h-auto'
+                  className='w-40 h-auto mb-2'
                   priority={true}
                 />
               </Link>
@@ -58,34 +58,34 @@ function Navbar() {
                 navbar ? 'p-12 md:p-0 block' : 'hidden'
               }`}
             >
-              <ul className="h-screen md:h-12 lg:text-sm md:text-sm text-xl items-center justify-center md:flex">
-                <li className="font-bold text-gray-100 hover:text-white lg:mb-0 md:mb-0 mb-6 py-1 px-6 text-center md:border-b-0 hover:bg-violet-800 rounded transition-transform transform hover:scale-125">
+              <ul className="h-screen md:h-12 md:text-[15px] text-xl items-center justify-center md:flex">
+                <li className="font-extrabold text-[#6D0083] hover:text-white lg:mb-0 md:mb-0 mb-6 py-1 px-6 text-center md:border-b-0 hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125">
                   <Link href="/" onClick={() => setNavbar(!navbar)}>
                     Inicio
                   </Link>
                 </li>
-                <li className="font-bold text-gray-100 hover:text-white lg:mb-0 md:mb-0 mb-6 py-1 px-6 text-center md:border-b-0 hover:bg-violet-800 rounded transition-transform transform hover:scale-125">
-                  <Link href="/certificate" onClick={() => setNavbar(!navbar)}>
+                <li className="font-extrabold text-[#6D0083] hover:text-white lg:mb-0 md:mb-0 mb-6 py-1 px-6 text-center md:border-b-0 hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125">
+                  <Link href="/" onClick={() => setNavbar(!navbar)}>
                     Certificado
                   </Link>
                 </li>
-                <li className="font-bold text-gray-100 hover:text-white lg:mb-0 md:mb-0 mb-6 py-1 px-6 text-center md:border-b-0 hover:bg-violet-800 rounded transition-transform transform hover:scale-125">
-                  <Link href="/graduate" onClick={() => setNavbar(!navbar)}>
+                <li className="font-extrabold text-[#6D0083] hover:text-white lg:mb-0 md:mb-0 mb-6 py-1 px-6 text-center md:border-b-0 hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125">
+                  <Link href="/" onClick={() => setNavbar(!navbar)}>
                     Diplomados
                   </Link>
                 </li>
-                <li className="font-bold text-gray-100 hover:text-white lg:mb-0 md:mb-0 mb-6 py-1 px-6 text-center md:border-b-0 hover:bg-violet-800 rounded transition-transform transform hover:scale-125">
-                  <Link href="/about" onClick={() => setNavbar(!navbar)}>
+                <li className="font-extrabold text-[#6D0083] hover:text-white lg:mb-0 md:mb-0 mb-6 py-1 px-6 text-center md:border-b-0 hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125">
+                  <Link href="/" onClick={() => setNavbar(!navbar)}>
                     Nosotros
                   </Link>
                 </li>
-                <li className="font-bold text-gray-100 hover:text-white lg:mb-0 md:mb-0 mb-4 py-1 px-6 text-center md:border-b-0 hover:bg-violet-800 rounded transition-transform transform hover:scale-125">
+                <li className="font-extrabold text-[#6D0083] hover:text-white lg:mb-0 md:mb-0 mb-4 py-1 px-6 text-center md:border-b-0 hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125">
                   <Link href="/" onClick={() => setNavbar(!navbar)}>
                     ¡Inscribete!
                   </Link>
                 </li>
-                <li className="lg:pl-40 flex  justify-center items-center hover:text-pink-600 md:mt-0 mt-20">
-                  <Link href="/login" className="bg-pink-600 py-1 px-4 rounded-xl text-white hover:bg-gray-100 hover:text-pink-600 hover:scale-125 duration-300">
+                <li className="lg:pl-40 flex  justify-center items-center hover:text-[#6D0083] md:mt-0 mt-20">
+                  <Link href="/" className="bg-[#6D0083] py-1 px-4 rounded-xl text-white hover:bg-gray-100 hover:text-[#6D0083] hover:scale-125 duration-300">
                     <FaUserCog className='md:text-xl text-4xl'/>
                   </Link>
                 </li>
