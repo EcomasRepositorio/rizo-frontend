@@ -25,7 +25,7 @@ function Navbar() {
                   src="/logo/logo-navbar.png"
                   width={800}
                   height={800}
-                  alt="promas-logo"
+                  alt="rizo-logo"
                   className='w-40 h-auto mb-2'
                   priority={true}
                 />

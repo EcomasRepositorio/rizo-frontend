@@ -2,7 +2,7 @@ import React from 'react'
 
 const Maintenance = () => {
   return (
-    <div className="relative pt-20 lg:pt-96 pb-28 lg:pb-96">
+    <div className="relative pt-96 lg:pt-96 pb-60 lg:pb-96">
     <div
       className="absolute top-0 w-full h-full bg-center bg-cover"
       style={{ backgroundImage: 'url("/fondo.jpeg")' }}
