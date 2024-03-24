@@ -22,7 +22,7 @@ function Navbar() {
               {/* LOGO */}
               <Link href="/">
                 <Image
-                  src="/logo/logo-navbar.png"
+                  src="/logo/LOGO-NAVBAR.png"
                   width={800}
                   height={800}
                   alt="rizo-logo"
