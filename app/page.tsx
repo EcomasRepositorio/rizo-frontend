@@ -1,11 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Maintenance from "@/components/maintenance/Index";
+import Home from "@/components/home/Index";
 
-export default function Home() {
+export default function Main() {
   return (
     <main>
-      <Maintenance />
+      <Home />
     </main>
   );
 }
