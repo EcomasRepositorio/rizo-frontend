@@ -58,7 +58,7 @@ const UserUpdate: React.FC<UpdateUserModal> = ({ onCloseModal, onUpdateSuccess, 
       }
     };
     fetchData();
-  }, [setValue, userId]);
+  }, [setValue, userId, validToken]);
 
   const onSubmit: SubmitHandler<UserUpdateData> = async (data) => {
     try {

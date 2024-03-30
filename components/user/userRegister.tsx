@@ -57,7 +57,6 @@ const UserRegister: React.FC<CreateUserModal> = ({ onCloseModal, onCreateSuccess
       if (data && data.role) {
       const url = `${URL()}/user/register`;
       const response = await axios.post(url, data, tokenConfig(validToken));
-      console.log(response)
       const createdUserId = response.data.id;
       onCreateSuccess(createdUserId);
       setDataLoaded(true);

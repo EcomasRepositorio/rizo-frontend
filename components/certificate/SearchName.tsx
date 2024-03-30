@@ -179,7 +179,7 @@ const SearchName:React.FC<SearchNameProps> = ({ onSearchName }) => {
                       {tableRows.map((row, index) => (
                         <div key={index} className="mb-4">
                         <div className="flex items-center text-gray-100 text-sm p-1 lg:ml-5 ml-0 lg:w-80 w-full rounded-lg bg-slate-600 font-semibold">
-                          {row.imgSrc && <img src={row.imgSrc} alt={row.label} className="flex lg:w-5 lg:h-5 w-5 h-5 object-contain ml-1" />}
+                          {row.imgSrc && <Image src={row.imgSrc} alt={row.label} className="flex lg:w-5 lg:h-5 w-5 h-5 object-contain ml-1" width={800} height={800}/>}
                           <div className='flex-1 text-center'>
                           {row.label}
                           </div>
