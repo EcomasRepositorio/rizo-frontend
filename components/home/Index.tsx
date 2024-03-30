@@ -7,8 +7,8 @@ import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import "./Style.css"
 
 const texts = [
-  "Tu puerta abierta al conocimiento en vivo, desde donde estes...",
-  "Con nuestros Cursos y Diplomados de especialización...",
+  "Diplomados y cursos para profesionales que se dedican al campo de la ingeniería",
+  "La mejor opción para tu desarrollo profesional",
   "Bienvenidos a Corporacion Rizo",
 ];
 

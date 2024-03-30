@@ -10,10 +10,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      customPurple800: '#1C004C',
-      customPurple300: '#6D0083',
-      customOrange: '#FF9D00',
-      customYellow: '#FFD700',
+      colors: {
+        customPurple800: '#1C004C',
+        customPurple300: '#6D0083',
+        customOrange: '#FF9D00',
+        customYellow: '#FFD700',
+      },
     },
   },
   plugins: [],
