@@ -28,10 +28,10 @@ function Navbar() {
               {/* LOGO */}
               <Link href="/">
                 <Image
-                  src="/logo/logo-navbar.png"
+                  src="/logo/logo-navbar2.png"
                   width={800}
                   height={800}
-                  alt="promas-logo"
+                  alt="rizo-logo"
                   className='w-36 h-10'
                   priority={true}
                 />
