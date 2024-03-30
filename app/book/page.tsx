@@ -56,20 +56,20 @@ const Book = () => {
   };
 
   return (
-    <section className='mt-28'>
+    <section className='mt-'>
       <div className='max-w-screen-lg mx-auto'>
         <Image
-          src="/logos/logo_book.png"
-          alt='logo_promas'
+          src="/logo/logo-navbar.png"
+          alt='logo_rizo'
           width={800}
           height={800}
-          className='flex justify-center mx-auto mb-10 mt-32 p-2'
+          className='flex justify-center mx-auto mb-10 pt-28 p-2'
           priority={true}/>
 
       <div className='p-2'>
-        <h1 className='uppercase text-violet-700 text-center md:text-3xl text-2xl font-extrabold'>Hoja de Reclamación</h1>
-        <p className='text-center mb-2 text-pink-600 font-semibold'>Corporación Promás</p>
-        <h2 className='bg-pink-600 p-3 text-lg font-semibold text-gray-50 rounded-xl'>Identificación del consumidor</h2>
+        <h1 className='uppercase text-customPurple300 text-center md:text-3xl text-2xl font-extrabold'>Hoja de Reclamación</h1>
+        <p className='text-center mb-2 text-customOrange font-semibold'>Corporación Rizo</p>
+        <h2 className='bg-customOrange p-3 text-lg font-semibold text-gray-50 rounded-xl'>Identificación del consumidor</h2>
       </div>
     <form ref={refForm} onSubmit={handleSubmit(onSubmit)} className='grid grid-cols-1 md:grid-cols-2 gap-4 p-2'>
         <div className='text-gray-500 md:mt-4'>
@@ -295,7 +295,7 @@ const Book = () => {
         </div>
 
       <div className='md:col-span-2'>
-        <h2 className='bg-pink-600 p-3 text-lg font-semibold text-gray-50 rounded-xl'>Detalle de la reclamación y pedido del consumidor</h2>
+        <h2 className='bg-customOrange p-3 text-lg font-semibold text-gray-50 rounded-xl'>Detalle de la reclamación y pedido del consumidor</h2>
 
         <div className='grid grid-cols-2 gap-4 mt-8 mb-6 p-3'>
         <div className="flex items-center me-4">
@@ -350,7 +350,7 @@ const Book = () => {
         </textarea>
       </div>
       </div>
-        <input type="submit" value={sending ? 'Enviando...' : 'Enviar'} className='border-2 p-2 mb-6 rounded-xl bg-pink-600 text-gray-200 text-xl font-bold cursor-pointer'/>
+        <input type="submit" value={sending ? 'Enviando...' : 'Enviar'} className='border-2 p-2 mb-6 rounded-xl bg-customOrange text-gray-200 text-xl font-bold cursor-pointer'/>
       </form>
       </div>
     </section>

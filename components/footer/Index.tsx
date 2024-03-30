@@ -9,7 +9,7 @@ const Footer = () => {
     <div className=''>
     <footer
       className="bg-transparent bg-clip bg-gradient-to-b from-customPurple800 to-customPurple300 text-center text-gray-100 lg:text-left">
-      <div className="border-b-2 border-violet-500 p-4">
+      {/* <div className="border-b-2 border-violet-500 p-4">
         <div className="container mx-auto px-10">
           <div className="flex items-center justify-center lg:justify-between">
             <div className="mr-12 hidden lg:block">
@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="container mx-auto px-4">
         <div className="mx-6 py-10 text-center md:text-left">
@@ -182,7 +182,7 @@ const Footer = () => {
         <Link
           className="font-semibold text-neutral-300"
           href="/"
-          > Corporacion Promas</Link>
+          > Corporacion Rizo</Link>
       </div>
 
     </footer>

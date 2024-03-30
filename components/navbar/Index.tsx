@@ -13,8 +13,7 @@ function Navbar() {
     variants={navVariants}
     initial="hidden"
     animate="show"
-    className= 'fixed z-50 left-0 right-0 backdrop-blur'
-  >
+    className= 'fixed z-50 left-0 right-0 backdrop-blur'>
       <nav className="w-full ">
       <div className='max-w-screen-xl flex flex-wrap  items-center justify-center mx-auto p-0.5'>
         <div className='md:text-right text-center font-semibold w-full border-b border-violet-500 py-1'>
