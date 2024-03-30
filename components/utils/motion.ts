@@ -195,3 +195,17 @@ export function slideInFromLeft(delay: number) {
     hidden: { opacity: 0, x: -200 },
     visible: { opacity: 1, x: 0, transition: { duration: 1.5 } }
   };
+
+  export const zoomInFrom = {
+    hidden: {
+      scale: 0.8,
+      opacity: 0
+    },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 2
+      }
+    }
+  }

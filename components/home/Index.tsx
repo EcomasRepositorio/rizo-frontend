@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { motion, Variants } from "framer-motion";
 import { slideInFromLeft, fadeInFrom, textVariants } from '@/components/utils/motion';
 import Image from 'next/image';
-import { BsChevronLeft } from "react-icons/bs";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import "./Style.css"
 
 const texts = [
   "Tu puerta abierta al conocimiento en vivo, desde donde estes...",
   "Con nuestros Cursos y Diplomados de especialización...",
-  "Hola Rizo",
+  "Bienvenidos a Corporacion Rizo",
 ];
 
 const Home = () => {
@@ -96,25 +96,24 @@ const Home = () => {
               variants={slideInFromLeft(1)}
               className="relative mx-auto text-right max-w-screen-xl p-2 text-white">
               <motion.h1
-  initial="hidden"
-  animate={i === index ? "visible" : "hidden"}
-  exit="hidden"
-  variants={textVariants}
-  className="font-extrabold text-4xl lg:text-4xl mt-80 mb-20"
->
-{text.split(' ').map((word, j, array) => (
-      <React.Fragment key={j}>
-        {j > 0 && j % 5 === 0 && <br />} {/* Inserta un salto de línea cada 5 palabras */}
-        {word}{' '}
-      </React.Fragment>
-      ))}
-</motion.h1>
+                initial="hidden"
+                animate={i === index ? "visible" : "hidden"}
+                exit="hidden"
+                variants={textVariants}
+                className="font-extrabold text-4xl lg:text-4xl mt-80 mb-20">
+                {text.split(' ').map((word, j, array) => (
+                  <React.Fragment key={j}>
+                    {j > 0 && j % 4 === 0 && <br />} {/* Inserta un salto de línea cada 5 palabras */}
+                    {word}{' '}
+                  </React.Fragment>
+                  ))}
+              </motion.h1>
             </motion.div>
           </motion.div>
         ))}
-        <div className="navigation">
-          <BsChevronLeft className="prev-btn text-gray-800"/>
-          <i className="fas fa-chevron-right next-btn"></i>
+        <div className="navigation md:text-2xl font-extrabold">
+          <BsChevronLeft className="prev-btn"/>
+          <BsChevronRight className="next-btn"/>
         </div>
       </div>
     </section>
