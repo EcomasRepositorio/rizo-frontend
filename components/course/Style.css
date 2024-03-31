@@ -1,0 +1,25 @@
+
+.card{
+    height: 500px;
+    margin: 20px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+}
+
+.intro{
+    height: 70px;
+    width: 380px;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0px;
+    background: rgba(215, 198, 9, 0.5);
+    color: rgb(11, 9, 9);
+    transition: .5s;
+}
+
+.card:hover .intro{
+    height: 280px;
+    bottom: 0px;
+    background: rgb(245, 178, 42);
+}

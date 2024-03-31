@@ -15,14 +15,16 @@ interface TiltCardProps {
   icon: React.ReactNode;
   text: string;
   imageSrc: string;
+  href: string;
+  index: number;
 }
 
 const Cards3D = () => {
 
   const [isInView, setIsInView] = useState(false);
   const { ref, inView } = useInView({
-    triggerOnce: true, // Solo activar una vez
-    threshold: 0.5, // Activar cuando el 50% del componente está en pantalla
+    triggerOnce: true,
+    threshold: 0.5,
   });
 
   useEffect(() => {
@@ -45,19 +47,22 @@ const Cards3D = () => {
       </div>
       <div className="flex justify-center min-h-screen bg-gradient-to-br from-indigo-500 to-violet-500 py-10">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 p-2">
-        <TiltCard icon={<FiMousePointer />} text="Ingeniería vial" imageSrc="/logo/logo-certificate.png" />
-        <TiltCard icon={<FiMousePointer />} text="Estudio de impacto ambiental" imageSrc="/logo/logo-certificate.png"/>
-        <TiltCard icon={<FiMousePointer />} text="Riego y fertirriego" imageSrc="/logo/logo-certificate.png"/>
-        <TiltCard icon={<FiMousePointer />} text="Asistente técnico en obras" imageSrc="/logo/logo-certificate.png"/>
-        <TiltCard icon={<FiMousePointer />} text="Ingeniería de puentes" imageSrc="/logo/logo-certificate.png"/>
-        <TiltCard icon={<FiMousePointer />} text="SSOMA" imageSrc="/logo/logo-certificate.png"/>
+        <TiltCard icon={<FiMousePointer />} text="Ingeniería vial" imageSrc="/logo/logo-certificate.png" href="/logo" index={0}/>
+        <TiltCard icon={<FiMousePointer />} text="Estudio de impacto ambiental" imageSrc="/logo/logo-certificate.png" href="/logo" index={1}/>
+        <TiltCard icon={<FiMousePointer />} text="Riego y fertirriego" imageSrc="/logo/logo-certificate.png" href="/logo" index={2}/>
+        <TiltCard icon={<FiMousePointer />} text="Asistente técnico en obras" imageSrc="/logo/logo-certificate.png"href="/logo" index={3}/>
+        <TiltCard icon={<FiMousePointer />} text="Ingeniería de puentes" imageSrc="/logo/logo-certificate.png" href="/logo" index={4}/>
+        <TiltCard icon={<FiMousePointer />} text="SSOMA" imageSrc="/logo/logo-certificate.png" href="/logo" index={5}/>
         </div>
       </div>
     </section>
   );
 };
 
-const TiltCard = ({ icon, text, imageSrc }: TiltCardProps) => {
+const ROTATION_RANGE = 92.5;
+const HALF_ROTATION_RANGE = 92.5 ;
+
+const TiltCard = ({ icon, text, imageSrc, href, index }: TiltCardProps) => {
   const reff = React.useRef<HTMLDivElement | null>(null);
 
   const x = useMotionValue(0);
@@ -89,11 +94,11 @@ const TiltCard = ({ icon, text, imageSrc }: TiltCardProps) => {
     const width = rect.width;
     const height = rect.height;
 
-    const mouseX = (e.clientX - rect.left) / width - 0;
-    const mouseY = (e.clientY - rect.top) / height - 0;
+    const mouseX = (e.clientX - rect.left) * ROTATION_RANGE;
+    const mouseY = (e.clientY - rect.top) * ROTATION_RANGE;
 
-    const rX = mouseX * 0.1;
-    const rY = mouseX * 0.1;
+    const rX = (mouseY / height - HALF_ROTATION_RANGE) * 6;
+    const rY = mouseX / width - HALF_ROTATION_RANGE;
 
     x.set(rX);
     y.set(rY);
@@ -110,14 +115,13 @@ const TiltCard = ({ icon, text, imageSrc }: TiltCardProps) => {
   };
 
   return (
+    <CustomLink href={href}>
     <motion.div
-      ref={(node) => {
-        reff.current = node;
-        inViewRef(node);
-      }}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-      variants={variants}
+      ref={(node) => { reff.current = node;
+        inViewRef(node) }}
+      initial={{ opacity: 0, translateX: index % 2 === 0 ? -50 : 50, translateY: -50 }}
+      animate={inView ? { opacity: 1, translateX: 0, translateY: 0 } : {}}
+      transition={{ duration: 0.8, delay: index * 0.5 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -125,14 +129,12 @@ const TiltCard = ({ icon, text, imageSrc }: TiltCardProps) => {
         transformOrigin: "center",
         transform,
       }}
-      className="flex-none w-[400px] h-[500px]"
-    >
+      className="flex-none md:w-[400px] w-[400px] h-[500px] cursor-pointer max-w-screen-xl">
       <div style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }}
-        className="relative w-[400px] h-[500px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300">
+        className="relative md:w-[400px] w-[350px] h-[500px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300">
         <div
           className="absolute inset-4 grid place-content-center rounded-xl shadow-lg text-white"
-          style={{ transform: "translateZ(75px)" }}
-        >
+          style={{ transform: "translateZ(75px)" }}>
           {icon}
           <p className="text-center text-white text-2xl font-bold mt-10">{text}</p>
         </div>
@@ -141,12 +143,19 @@ const TiltCard = ({ icon, text, imageSrc }: TiltCardProps) => {
           alt=""
           className="absolute inset-0 object-cover w-full h-full rounded-xl"
           width={800}
-          height={800}
-        />
+          height={800}/>
       </div>
     </motion.div>
+    </CustomLink>
   );
 };
 
+const CustomLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+  return (
+    <a href={href} className="block">
+      {children}
+    </a>
+  );
+};
 
 export default Cards3D;

@@ -42,7 +42,7 @@ const Card = ({ title, subtitle, Icon, index }: { title: string, subtitle: strin
           ref={ref}
           initial={{ opacity: 0, translateX: index % 2 === 0 ? -50 : 50, translateY: -50 }}
           animate={inView ? { opacity: 1, translateX: 0, translateY: 0 } : {}}
-          transition={{ duration: 0.8, delay: index * 0.2 }}
+          transition={{ duration: 1, delay: index * 0.2 }}
           className="w-full p-4 rounded border-[1px] border-slate-300 relative overflow-hidden group bg-white"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-indigo-600 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300" />
