@@ -9,7 +9,6 @@ import "./Style.css"
 const texts = [
   "Diplomados y cursos para profesionales que se dedican al campo de la ingeniería",
   "La mejor opción para tu desarrollo profesional",
-  "Bienvenidos a Corporacion Rizo",
 ];
 
 const Home = () => {
@@ -66,7 +65,7 @@ const Home = () => {
         }
 
         setIndex(slideNumber);
-      }, 10000);
+      }, 5000);
     }
     repeat();
 
@@ -88,7 +87,7 @@ const Home = () => {
           <motion.div
             key={i}
             className={`slide ${i === index ? 'active' : ''}`}>
-            <Image src={`/banner${i + 1}.png`} alt="banner" width={1200} height={1200} className=''/>
+            <Image src={`/banner${i + 1}.png`} alt="rizo" width={1200} height={1200} className=''/>
             <motion.div
               initial="hidden"
               animate="visible"

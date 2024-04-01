@@ -13,10 +13,10 @@ function Navbar() {
     variants={navVariants}
     initial="hidden"
     animate="show"
-    className= 'fixed z-50 left-0 right-0 backdrop-blur'>
+    className= 'fixed z-50 bg-customPurple300 left-0 right-0 backdrop-blur'>
       <nav className="w-full ">
-      <div className='max-w-screen-xl flex flex-wrap  items-center justify-center mx-auto p-0.5'>
-        <div className='md:text-right text-center font-semibold w-full border-b border-violet-500 py-1'>
+      <div className='max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-0.5'>
+        <div className='md:text-right text-center font-semibold w-full border-b border-customYellow py-1'>
           <Link href='/certificate' className='hover:underline mr-4 text-white hover:text-white'>Verificar certificado</Link>
           <Link href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=0959465f-37c3-4032-803b-bbfc499af7a3"
             className='hover:underline mr-3 text-white hover:text-white'>Aula Virtual</Link>
