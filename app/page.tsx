@@ -4,6 +4,7 @@ import Home from "@/components/home/Index";
 import HoverDevCards from "@/components/cards/Index";
 import Cards3D from "@/components/cards3D/Index";
 import Course from "@/components/course/Index";
+import Contact from "@/components/contact/Index";
 
 export default function Main() {
   return (
@@ -12,6 +13,7 @@ export default function Main() {
       <Cards3D />
       <HoverDevCards />
       <Course />
+      <Contact />
     </main>
   );
 }
