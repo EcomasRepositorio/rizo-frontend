@@ -15,6 +15,10 @@ module.exports = {
         customPurple300: '#6D0083',
         customOrange: '#FF9D00',
         customYellow: '#FFD700',
+        customGradient: {
+          start: '#FFD700',
+          end: '#FF9D00',
+        },
       },
     },
   },

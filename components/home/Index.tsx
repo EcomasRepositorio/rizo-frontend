@@ -6,10 +6,21 @@ import Image from 'next/image';
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import "./Style.css"
 
-const texts = [
-  "Diplomados y cursos para profesionales que se dedican al campo de la ingeniería",
+const titles = [
+  "Diplomados y cursos para profesionales ",
   "La mejor opción para tu desarrollo profesional",
 ];
+
+const slides = [
+  {
+    title:"Diplomados y cursos para profesionales",
+    subtitle: "La mejor opción para tu desarrollo profesional"
+  },
+  {
+    title: "Descubre el aprendizaje digital con Corporación Rizo",
+    subtitle: "Cumple tu reto personal con nuestros diplomados y cursos virtuales"
+  }
+]
 
 const Home = () => {
   const [index, setIndex] = useState(0);
@@ -83,30 +94,41 @@ const Home = () => {
   return (
     <section className="">
       <div className='slider'>
-        {texts.map((text, i) => (
+        {slides.map((slide, i) => (
           <motion.div
             key={i}
             className={`slide ${i === index ? 'active' : ''}`}>
             <Image src={`/banner${i + 1}.png`} alt="rizo" width={1200} height={1200} className=''/>
             <motion.div
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={slideInFromLeft(1)}
-              className="relative mx-auto text-right max-w-screen-xl p-2 text-white">
+              className="relative mx-auto text-right max-w-screen-xl p-2">
               <motion.h1
                 initial="hidden"
                 animate={i === index ? "visible" : "hidden"}
                 exit="hidden"
                 variants={textVariants}
-                className="font-extrabold text-4xl lg:text-4xl mt-80 mb-20">
-                {text.split(' ').map((word, j, array) => (
+                className="font-extrabold text-4xl lg:text-7xl lg:mt-96 mt-40 mb-4 relative">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-customGradient-start to-customGradient-end">
+                {slide.title.split(' ').map((word, j, array) => (
                   <React.Fragment key={j}>
-                    {j > 0 && j % 4 === 0 && <br />} {/* Inserta un salto de línea cada 5 palabras */}
+                    {j > 0 && j % 2 === 0 && <br />}
                     {word}{' '}
                   </React.Fragment>
                   ))}
+                  </span>
               </motion.h1>
+              <motion.h2
+                initial="hidden"
+                animate={i === index ? 'visible' : 'hidden'}
+                exit="hidden"
+                variants={textVariants}
+                className='font-extrabold text-xl lg:text-2xl text-black'>
+                {slide.subtitle.split(' ').map((word, j, array) => (
+                  <React.Fragment key={j}>
+                    {j > 0 && j % 7 === 0 && <br />}
+                    {word}{' '}
+                  </React.Fragment>
+                  ))}
+              </motion.h2>
             </motion.div>
           </motion.div>
         ))}

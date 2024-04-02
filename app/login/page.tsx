@@ -3,11 +3,11 @@ import React from 'react'
 const Login = () => {
   return (
     <div className="flex items-center justify-center h-screen">
-    <div className="relative flex flex-col text-gray-700 bg-white shadow-md shadow-customOrange w-96 rounded-xl bg-clip-border">
+    <div className="relative flex flex-col text-gray-700 bg-white shadow-xl shadow-customOrange w-96 rounded-xl bg-clip-border">
   <div
     className="relative grid mx-4 mb-4 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl bg-gradient-to-tr from-customPurple300 to-gray-800 bg-clip-border shadow-customPurple800/50">
     <h3 className="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
-      Sign In
+      Iniciar sesión
     </h3>
   </div>
   <div className="flex flex-col gap-4 p-6">
@@ -55,7 +55,7 @@ const Login = () => {
     <button
       className="block w-full select-none rounded-lg bg-gradient-to-tr from-customPurple300 to-customPurple800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-customOrange/50 transition-all hover:shadow-lg hover:shadow-customPurple300/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       type="button">
-      Sign In
+      Login
     </button>
     <p className="flex justify-center mt-6 font-sans text-sm antialiased font-light leading-normal text-inherit">
       Dont have an account?

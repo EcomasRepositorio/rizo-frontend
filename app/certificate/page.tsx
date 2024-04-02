@@ -26,7 +26,7 @@ const Certificate: React.FC = () => {
   return (
   <section id='/certificate'  className='relative pt-48 pb-20 p-2 items-center justify-center'>
     <div className="absolute inset-0 bg-cover bg-no-repeat bg-center opacity-80 bg-gray-100" style={{ backgroundImage: "url('/banner3.png')" }}></div>
-    <div className="max-w-screen-lg mx-auto border border-transparent  bg-gray-500/30 rounded-3xl shadow-2xl shadow-gray-100 text-center lg:mb-20 p-4 relative blur-background">
+    <div className="max-w-screen-lg mx-auto border border-transparent rounded-3xl shadow-2xl shadow-gray-100 text-center lg:mb-20 p-4 relative blur-background bg-gradient-to-r from-customPurple300 to-purple-950">
       <div className="mb-4 lg:mt-0 justify-center text-5xl font-extrabold tracking-tight text-gray-500">
       <div className='flex justify-center mb-4 lg:gap-32 gap-8'>
         <Image src={'/logo/logo-certificate.png'} className="lg:w-44 lg:h-48 w-32 h-32 object-contain lg:mt-8 mt-7" width={800} height={700} alt='logo_promas'  priority={true}/>
@@ -46,19 +46,19 @@ const Certificate: React.FC = () => {
           <div className='lg:flex flex-wrap justify-center items-center text-center lg:ml-40 lg:mr-40'>
             <button
             onClick={() => handleButton('documentNumber')}
-            className={`lg:mb-20 mb-4 font-bold border rounded-lg text-md px-7 py-3 text-white text-center inline-block hover:text-violet-700 hover:bg-gray-200 hover:scale-110 duration-300
+            className={`lg:mb-20 mb-4 font-bold border border-customOrange rounded-lg text-md px-7 py-3 text-white text-center inline-block hover:text-customPurple800 hover:bg-customYellow hover:scale-110 duration-300
               ${searchType === 'documentNumber' && ''}`}>
               <BsPersonVcard className='text-xl inline-block align-text-top mr-2 hover:text-violet-700' />Buscar por DNI
             </button>
             <button
             onClick={() => handleButton('name')}
-            className={`lg:mb-20 mb-4 ml-6 mr-6 border font-bold rounded-lg text-md px-3 py-3 text-white text-center hover:text-violet-700 hover:bg-gray-200 hover:scale-110 duration-300
+            className={`lg:mb-20 mb-4 ml-6 mr-6 border border-customOrange font-bold rounded-lg text-md px-3 py-3 text-white text-center hover:text-customPurple800 hover:bg-customYellow hover:scale-110 duration-300
               ${searchType === 'name' && ''}`}>
               <BsPersonSquare className='text-lg inline-block align-text-top mr-2' />Buscar por nombre
             </button>
             <button
             onClick={() => handleButton('code')}
-            className={`lg:mb-20 mb-5 font-bold border rounded-lg text-white text-md px-4 py-3 text-center inline-block hover:text-violet-700 hover:bg-gray-200 hover:scale-110 duration-300
+            className={`lg:mb-20 mb-5 font-bold border border-customOrange rounded-lg text-white text-md px-4 py-3 text-center inline-block hover:text-customPurple800 hover:bg-customYellow hover:scale-110 duration-300
             ${searchType === 'code' && ''}`}>
               <BsQrCodeScan className='text-lg inline-block align-text-top mr-2' /> Buscar por código
             </button>

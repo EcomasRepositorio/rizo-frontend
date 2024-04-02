@@ -35,24 +35,26 @@ const Cards3D = () => {
 
   return (
     <section>
-      <div className="text-center text-5xl font-extrabold text-white bg-indigo-500 pt-12">
+      <div className="text-center text-5xl font-extrabold bg-gradient-to-r from-customPurple300 to-purple-950 pt-12">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
           variants={slideFromLeft}
           className="inline-block">
-          NUESTROS DIPLOMADOS
+          <h1 className="bg-gradient-to-r from-customOrange to-customYellow text-transparent bg-clip-text">
+            NUESTROS DIPLOMADOS
+          </h1>
         </motion.div>
       </div>
-      <div className="flex justify-center min-h-screen bg-gradient-to-br from-indigo-500 to-violet-500 py-10">
+      <div className="flex justify-center min-h-screen bg-gradient-to-br from-customPurple300 to-customPurple800 py-10">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 p-2">
-        <TiltCard icon={<FiMousePointer />} text="Ingeniería vial" imageSrc="/logo/logo-certificate.png" href="/logo" index={0}/>
-        <TiltCard icon={<FiMousePointer />} text="Estudio de impacto ambiental" imageSrc="/logo/logo-certificate.png" href="/logo" index={1}/>
-        <TiltCard icon={<FiMousePointer />} text="Riego y fertirriego" imageSrc="/logo/logo-certificate.png" href="/logo" index={2}/>
-        <TiltCard icon={<FiMousePointer />} text="Asistente técnico en obras" imageSrc="/logo/logo-certificate.png"href="/logo" index={3}/>
-        <TiltCard icon={<FiMousePointer />} text="Ingeniería de puentes" imageSrc="/logo/logo-certificate.png" href="/logo" index={4}/>
-        <TiltCard icon={<FiMousePointer />} text="SSOMA" imageSrc="/logo/logo-certificate.png" href="/logo" index={5}/>
+          <TiltCard icon={<FiMousePointer />} text="Ingeniería vial" imageSrc="/graduate/ingenieria-vial.png" href="/logo" index={0}/>
+          <TiltCard icon={<FiMousePointer />} text="Estudio de impacto ambiental" imageSrc="/graduate/estudio-ambiental.png" href="/logo" index={1}/>
+          <TiltCard icon={<FiMousePointer />} text="Riego y fertirriego" imageSrc="/graduate/riego-fertirriego.png" href="/logo" index={2}/>
+          <TiltCard icon={<FiMousePointer />} text="Asistente técnico en obras" imageSrc="/graduate/asistente-obras.png"href="/logo" index={3}/>
+          <TiltCard icon={<FiMousePointer />} text="Ingeniería de puentes" imageSrc="/graduate/ingenieria-puentes.png" href="/logo" index={4}/>
+          <TiltCard icon={<FiMousePointer />} text="SSOMA" imageSrc="/graduate/ssoma.png" href="/logo" index={5}/>
         </div>
       </div>
     </section>
@@ -133,10 +135,10 @@ const TiltCard = ({ icon, text, imageSrc, href, index }: TiltCardProps) => {
       <div style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }}
         className="relative md:w-[400px] w-[350px] h-[500px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300">
         <div
-          className="absolute inset-4 grid place-content-center rounded-xl shadow-lg text-white"
+          className="absolute inset-4 grid place-content-center rounded-xl shadow-2xl shadow-black text-white"
           style={{ transform: "translateZ(75px)" }}>
           {icon}
-          <p className="text-center text-white text-2xl font-bold mt-10">{text}</p>
+          <p className="uppercase text-center text-white text-2xl font-extrabold mt-96">{text}</p>
         </div>
         <Image
           src={imageSrc}
