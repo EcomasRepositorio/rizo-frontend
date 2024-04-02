@@ -20,8 +20,15 @@ module.exports = {
           end: '#FF9D00',
         },
       },
+      screens: {
+        '3xl': '1600px', // Define el breakpoint 3xl si aún no lo has hecho
+      },
+      padding: {
+        '0': '0',
+      },
     },
   },
+  variants: [],
   plugins: [],
 }
 
