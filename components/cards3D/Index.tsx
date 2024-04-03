@@ -35,7 +35,7 @@ const Cards3D = () => {
 
   return (
     <section>
-      <div className="text-center text-5xl font-extrabold bg-gradient-to-r from-customPurple300 to-purple-950 pt-12">
+      <div className="text-center text-5xl font-extrabold  pt-12">
         <motion.div
           ref={ref}
           initial="hidden"
@@ -47,7 +47,7 @@ const Cards3D = () => {
           </h1>
         </motion.div>
       </div>
-      <div className="flex justify-center min-h-screen bg-gradient-to-br from-customPurple300 to-customPurple800 py-10">
+      <div className="flex justify-center min-h-screen  py-10">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 p-2">
           <TiltCard icon={<FiMousePointer />} text="Ingeniería vial" imageSrc="/graduate/ingenieria-vial.png" href="/logo" index={0}/>
           <TiltCard icon={<FiMousePointer />} text="Estudio de impacto ambiental" imageSrc="/graduate/estudio-ambiental.png" href="/logo" index={1}/>
@@ -135,7 +135,7 @@ const TiltCard = ({ icon, text, imageSrc, href, index }: TiltCardProps) => {
       <div style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }}
         className="relative md:w-[400px] w-[350px] h-[500px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300">
         <div
-          className="absolute inset-4 grid place-content-center rounded-xl shadow-2xl shadow-black text-white"
+          className="absolute inset-4 grid place-content-center rounded-xl shadow-xl shadow-slate-950 text-white"
           style={{ transform: "translateZ(75px)" }}>
           {icon}
           <p className="uppercase text-center text-white text-2xl font-extrabold mt-96">{text}</p>

@@ -2,7 +2,7 @@
 .card{
     height: 500px;
     margin: 20px;
-    box-shadow: 5px 5px 20px black;
+    box-shadow: 5px 5px 20px rgb(20, 19, 19);
     overflow: hidden;
 }
 
@@ -13,7 +13,7 @@
     box-sizing: border-box;
     position: absolute;
     bottom: 0px;
-    background: rgba(215, 198, 9, 0.5);
+    background: rgb(130, 5, 130);
     color: rgb(11, 9, 9);
     transition: .5s;
 }
@@ -21,5 +21,5 @@
 .card:hover .intro{
     height: 280px;
     bottom: 0px;
-    background: rgb(245, 178, 42);
+    background: linear-gradient(rgb(153, 8, 179), rgb(47, 3, 75));
 }

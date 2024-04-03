@@ -42,8 +42,8 @@
   }
 
 .capitalize{
-text-transform: capitalize;
-}
+  text-transform: capitalize;
+  }
 
 .bg-feature-bg{
     background-image: url('/feature-bg.png');
@@ -61,3 +61,4 @@ background-position: center;
   --tw-bg-opacity: 1;
   background-color: rgb(48 175 91 / var(--tw-bg-opacity));
 }
+

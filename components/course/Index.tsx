@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { slideFromLeft } from '../utils/motion';
 import { Fertirrigacion } from './modules';
 import { FaWhatsapp } from "react-icons/fa6";
+import { RiWhatsappFill } from "react-icons/ri";
 import { InView } from "react-intersection-observer";
 import Image from 'next/image';
 import './Style.css'
@@ -26,8 +27,8 @@ const Course = () => {
   }, [inView]);
 
   return (
-  <section>
-    <div className="text-center text-5xl font-extrabold text-white bg-indigo-500 pt-12">
+  <section className='bg-customPurple800'>
+    <div className="text-center text-5xl font-extrabold text-white mb-10 pt-12">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -56,15 +57,17 @@ const Course = () => {
           <div className="p-2">
             {Fertirrigacion.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customPurple800'/>
-                <span className='pl-2 items-center text-gray-700 font-bold'>{module.module}</span>
+                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
+                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
               </p>
             ))}
+            <div className='flex justify-center'>
             <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego' target='_blank'
-              className='inline-flex font-extrabold bg-customPurple300 text-gray-200 mt-5 p-2 rounded-xl hover:scale-110 duration-300'>
-              Más información
-              <FaWhatsapp className='pl-2 text-3xl text-green-600'/>
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+                Más información
+                <RiWhatsappFill className='pl-2 text-4xl text-green-700'/>
             </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -79,15 +82,17 @@ const Course = () => {
           <div className="p-2">
             {Fertirrigacion.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customPurple800'/>
-                <span className='pl-2 items-center text-gray-700 font-bold'>{module.module}</span>
+                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
+                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
               </p>
             ))}
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego' target='_blank'
-              className='inline-flex font-extrabold bg-customPurple300 text-gray-200 mt-5 p-2 rounded-xl hover:scale-110 duration-300'>
-              Más información
-              <FaWhatsapp className='pl-2 text-3xl text-green-600'/>
+            <div className='flex justify-center'>
+            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Costos y presupuestos con S10' target='_blank'
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+                Más información
+                <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
             </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -102,15 +107,17 @@ const Course = () => {
           <div className="p-2">
             {Fertirrigacion.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customPurple800'/>
-                <span className='pl-2 items-center text-gray-700 font-bold'>{module.module}</span>
+                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
+                <span className='pl-2 items-center text-white font-bold'>{module.module}</span>
               </p>
             ))}
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego' target='_blank'
-              className='inline-flex font-extrabold bg-customPurple300 text-gray-200 mt-5 p-2 rounded-xl hover:scale-110 duration-300'>
-              Más información
-              <FaWhatsapp className='pl-2 text-3xl text-green-600'/>
+            <div className='flex justify-center'>
+            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Informe de obras' target='_blank'
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+                Más información
+                <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
             </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -125,15 +132,17 @@ const Course = () => {
           <div className="p-2">
             {Fertirrigacion.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customPurple800'/>
-                <span className='pl-2 items-center text-gray-700 font-bold'>{module.module}</span>
+                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
+                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
               </p>
             ))}
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego' target='_blank'
-              className='inline-flex font-extrabold bg-customPurple300 text-gray-200 mt-5 p-2 rounded-xl hover:scale-110 duration-300'>
+            <div className='flex justify-center'>
+            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Mantenimiento en carreteras y puentes' target='_blank'
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
               Más información
-              <FaWhatsapp className='pl-2 text-3xl text-green-600'/>
+              <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
             </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -148,15 +157,17 @@ const Course = () => {
           <div className="p-2">
             {Fertirrigacion.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customPurple800'/>
-                <span className='pl-2 items-center text-gray-700 font-bold'>{module.module}</span>
+                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
+                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
               </p>
             ))}
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego' target='_blank'
-              className='inline-flex font-extrabold bg-customPurple300 text-gray-200 mt-5 p-2 rounded-xl hover:scale-110 duration-300'>
-              Más información
-              <FaWhatsapp className='pl-2 text-3xl text-green-600'/>
-            </Link>
+            <div className='flex justify-center'>
+              <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Metrados, costos y presupuesto' target='_blank'
+                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+                  Más información
+                <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -171,15 +182,17 @@ const Course = () => {
           <div className="p-2">
             {Fertirrigacion.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customPurple800'/>
-                <span className='pl-2 items-center text-gray-700 font-bold'>{module.module}</span>
+                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
+                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
               </p>
             ))}
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego' target='_blank'
-              className='inline-flex font-extrabold bg-customPurple300 text-gray-200 mt-5 p-2 rounded-xl hover:scale-110 duration-300'>
-              Más información
-              <FaWhatsapp className='pl-2 text-3xl text-green-600'/>
-            </Link>
+            <div className='flex justify-center'>
+              <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Inspección y muestreo de alimentos' target='_blank'
+                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+                Más información
+                <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -194,15 +207,17 @@ const Course = () => {
           <div className="p-2">
             {Fertirrigacion.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customPurple800'/>
-                <span className='pl-2 items-center text-gray-700 font-bold'>{module.module}</span>
+                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
+                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
               </p>
             ))}
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego' target='_blank'
-              className='inline-flex font-extrabold bg-customPurple300 text-gray-200 mt-5 p-2 rounded-xl hover:scale-110 duration-300'>
+            <div className='flex justify-center'>
+            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego de cultivos y monitoreo' target='_blank'
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
               Más información
-              <FaWhatsapp className='pl-2 text-3xl text-green-600'/>
+              <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
             </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -217,15 +232,19 @@ const Course = () => {
           <div className="p-2">
             {Fertirrigacion.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customPurple800'/>
-                <span className='pl-2 items-center text-gray-700 font-bold'>{module.module}</span>
+                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
+                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
               </p>
             ))}
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego' target='_blank'
-              className='inline-flex font-extrabold bg-customPurple300 text-gray-200 mt-5 p-2 rounded-xl hover:scale-110 duration-300'>
-              Más información
-              <FaWhatsapp className='pl-2 text-3xl text-green-600'/>
+            <div>
+              <div className='flex justify-center'>
+            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Monitoreo de la calidad del agua' target='_blank'
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+                Más información
+                <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
             </Link>
+            </div>
+            </div>
           </div>
         </div>
       </div>
@@ -240,15 +259,17 @@ const Course = () => {
           <div className="p-2">
             {Fertirrigacion.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customPurple800'/>
-                <span className='pl-2 items-center text-gray-700 font-bold'>{module.module}</span>
+                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
+                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
               </p>
             ))}
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego' target='_blank'
-              className='inline-flex font-extrabold bg-customPurple300 text-gray-200 mt-5 p-2 rounded-xl hover:scale-110 duration-300'>
+            <div className='flex justify-center'>
+            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Esquema con fssc-22000' target='_blank'
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
               Más información
-              <FaWhatsapp className='pl-2 text-3xl text-green-600'/>
+              <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
             </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -110,7 +110,7 @@ const Home = () => {
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-customGradient-start to-customGradient-end">
                 {slide.title.split(' ').map((word, j, array) => (
                   <React.Fragment key={j}>
-                    {j > 0 && j % 2 === 0 && <br />}
+                    {j > 0 && j % 3 === 0 && <br />}
                     {word}{' '}
                   </React.Fragment>
                   ))}
