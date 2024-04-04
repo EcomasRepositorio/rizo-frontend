@@ -1,10 +1,12 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion, Variants } from "framer-motion";
-import { slideInFromLeft, fadeInFrom, textVariants } from '@/components/utils/motion';
+import { slideInFromLeft, fadeInFrom, textVariants, slideInFromTop, slideFromRight } from '@/components/utils/motion';
+import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import Image from 'next/image';
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import "./Style.css"
+import Link from 'next/link';
 
 const titles = [
   "Diplomados y cursos para profesionales ",
@@ -13,15 +15,21 @@ const titles = [
 
 const slides = [
   {
-    title:"Diplomados y cursos para profesionales",
+    title:"Diplomados y cursos",
     subtitle: "La mejor opción para tu desarrollo profesional"
   },
   {
-    title: "Descubre el aprendizaje digital con Corporación Rizo",
+    title: "Aprendizaje digital",
     subtitle: "Cumple tu reto personal con nuestros diplomados y cursos virtuales"
   }
 ]
 
+const icons = [
+  {img1: <FaFacebookF />, img2: <FaInstagram />, img3: <FaTiktok />, img4: <FaWhatsapp />, img5: <FaYoutube />},
+  {img1: <FaFacebookF />, img2: <FaInstagram />, img3: <FaTiktok />, img4: <FaWhatsapp />, img5: <FaYoutube />},
+  /* {img1: <FaFacebookF />, img2: <FaInstagram />, img3: <FaTiktok />, img4: <FaWhatsapp />, img5: <FaYoutube />}, */
+
+]
 const Home = () => {
   const [index, setIndex] = useState(0);
 
@@ -96,21 +104,21 @@ const Home = () => {
       <div className='slider'>
         {slides.map((slide, i) => (
           <motion.div
-            key={i}
-            className={`slide ${i === index ? 'active' : ''}`}>
+          key={i}
+          className={`slide ${i === index ? 'active' : ''}`}>
             <Image src={`/banner${i + 1}.png`} alt="rizo" width={1200} height={1200} className=''/>
-            <motion.div
+            <div
               className="relative mx-auto text-right max-w-screen-xl p-2">
               <motion.h1
                 initial="hidden"
                 animate={i === index ? "visible" : "hidden"}
                 exit="hidden"
                 variants={textVariants}
-                className="font-extrabold text-4xl lg:text-7xl lg:mt-96 mt-40 mb-4 relative">
+                className="font-extrabold text-4xl md:text-9xl lg:mt-[550px] md:mt-60 mt-40 mb-4 relative">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-customGradient-start to-customGradient-end">
                 {slide.title.split(' ').map((word, j, array) => (
                   <React.Fragment key={j}>
-                    {j > 0 && j % 3 === 0 && <br />}
+                    {j > 0 && j % 2 === 0 && <br />}
                     {word}{' '}
                   </React.Fragment>
                   ))}
@@ -120,7 +128,7 @@ const Home = () => {
                 initial="hidden"
                 animate={i === index ? 'visible' : 'hidden'}
                 exit="hidden"
-                variants={textVariants}
+                variants={slideFromRight}
                 className='font-extrabold text-xl lg:text-2xl text-black'>
                 {slide.subtitle.split(' ').map((word, j, array) => (
                   <React.Fragment key={j}>
@@ -129,8 +137,41 @@ const Home = () => {
                   </React.Fragment>
                   ))}
               </motion.h2>
-            </motion.div>
-          </motion.div>
+              {icons.map((icon, i) => (
+          i === index && (
+        <motion.div
+          key={i}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          variants={slideInFromTop}
+          className="py-1 px-1 opacity-[0.9]">
+          <h1 className="text-gray-100 lg:text-2xl text-2xl gap-3">
+            <Link key={`link-${i}`} href='https://www.facebook.com/people/Corporaci%C3%B3n-Prom%C3%A1s/61552473052389/' target="_blank"
+              className="">
+              {icon.img1}
+            </Link>
+            <Link key={`link-${i+1}`} href='https://www.instagram.com/corporacion.promas/' target="_blank"
+              className="border border-[#7042f88b] p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl shadow-[#7042f88b]">
+              {icon.img2}
+            </Link>
+            <Link key={`link-${i+2}`} href='https://www.tiktok.com/@promas.corp' target="_blank"
+              className="border border-[#7042f88b] p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl shadow-[#7042f88b]">
+              {icon.img3}
+            </Link>
+            <Link key={`link-${i+3}`} href='https://wa.me/51984040264?text=Hola,%20deseo%20más%20información%20sobre%20los%20diplomados' target="_blank"
+              className="border border-[#7042f88b] p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl shadow-[#7042f88b]">
+              {icon.img4}
+            </Link>
+            <Link key={`link-${i+4}`} href='' target="_blank" className="border border-[#7042f88b] p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl shadow-[#7042f88b]">
+              {icon.img5}
+            </Link>
+          </h1>
+        </motion.div>
+        )
+        ))}
+        </div>
+        </motion.div>
         ))}
         <div className="navigation md:text-2xl font-extrabold">
           <BsChevronLeft className="prev-btn"/>
