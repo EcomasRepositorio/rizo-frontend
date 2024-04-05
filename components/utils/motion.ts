@@ -172,7 +172,7 @@ export function slideInFromLeft(delay: number) {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
+        duration: 1.2,
         delay: 0.5,
         ease: "easeInOut",
       },
