@@ -34,11 +34,11 @@ const About = () => {
       <div className="max-container padding-container relative w-full flex justify-end">
         <div className="flex flex-1 lg:min-h-[900px]">
           <Image
-            src="/phone.png"
+            src="/about.png"
             alt="phone"
-            width={440}
-            height={1000}
-            className="feature-phone"
+            width={800}
+            height={800}
+            className="feature-phone w-auto h-[1000px]"
           />
         </div>
 
@@ -80,10 +80,10 @@ type FeatureItem = {
 const FeatureItem = ({ title, icon, description }: FeatureItem) => {
   return (
     <li className="flex w-full flex-1 flex-col items-start">
-      <div className="rounded-full p-4 lg:p-7 bg-green-50">
-        <Image src={icon} alt="map" width={28} height={28} />
+      <div className="rounded-full p-4 lg:p-7 bg-customOrange">
+        <Image src={icon} alt="map" width={28} height={28} className='' />
       </div>
-      <h2 className="bold-20 lg:bold-32 mt-5 capitalize">
+      <h2 className="bold-20 lg:bold-32 mt-5 capitalize text-customPurple800">
         {title}
       </h2>
       <p className="regular-16 mt-5 bg-white/80 text-gray-30 lg:mt-[30px] lg:bg-none">

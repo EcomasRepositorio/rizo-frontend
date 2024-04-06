@@ -17,7 +17,7 @@
   }
 
   .feature-phone {
-    @apply absolute top-[13%] z-10 hidden max-w-[1500px] rotate-[15deg] md:-left-16 lg:flex  3xl:left-20;
+    @apply absolute top-[-10%] z-10 hidden max-w-[1500px] rotate-[deg] md:-left-16 lg:flex  3xl:left-20;
   }
 
   .regular-18 {
@@ -59,6 +59,6 @@ background-position: center;
 
 .bg-green-50{
   --tw-bg-opacity: 1;
-  background-color: rgb(48 175 91 / var(--tw-bg-opacity));
+  background-color: rgb(255 165 0 / var(--tw-bg-opacity));
 }
 
