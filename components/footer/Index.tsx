@@ -15,13 +15,12 @@ const Footer = () => {
             <div className="">
               <h6
                 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
-                 <Image
-                 src="/logo/logo-footer.png"
-                 alt="logo_promas"
-                 width={800}
-                 height={800}
-                 priority={true}/>
-
+                <Image
+                  src="/logo/logo-footer.png"
+                  alt="logo_promas"
+                  width={800}
+                  height={800}
+                  priority={true}/>
               </h6>
               <p>
                 Proporcionamos cursos y diplomados con aval de la EPG-UNP
@@ -112,7 +111,7 @@ const Footer = () => {
                   <path
                     d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                 </svg>
-                capacitaciones@promas.edu.pe
+                capacitaciones@rizo.edu.pe
               </p>
               <p className="mb-4 flex items-center justify-center md:justify-start">
                 <svg
@@ -133,7 +132,7 @@ const Footer = () => {
       </div>
 
       <div className="p-6 text-center">
-        <span>© 2023 Copyright:</span>
+        <span>© 2024 Copyright:</span>
         <Link
           className="font-semibold text-neutral-300"
           href="/"
