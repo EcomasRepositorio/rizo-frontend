@@ -5,7 +5,7 @@ interface ModalGraduateProps {
   open: boolean;
   onClose: () => void;
   //content: ReactNode;
-  children?: ReactNode;
+  children?: React.ReactNode;
 }
 
 const ModalGraduate: React.FC<ModalGraduateProps> = ({ open, onClose, children }) => {
