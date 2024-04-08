@@ -2,13 +2,21 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
-import { useMediaQuery } from '@react-hook/media-query';
+//import { useMediaQuery } from '@react-hook/media-query';
 import Image from 'next/image';
+import Modal from '@/components/share/Modal';
+import ModalGraduate from '@/components/share/ModalGraduate';
+import Content1 from '@/components/graduate/Content1';
 
 const Graduate = () => {
 
   const [activeQuestion, setActiveQuestion] = useState<number | null>(null);
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(true);
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+
+  const handleAnswerClick = (answer: string) => {
+    setSelectedAnswer(answer);
+  };
 
   useEffect(() => {
     setIsLargeScreen(window.innerWidth >= 1024);
@@ -22,20 +30,32 @@ const Graduate = () => {
   const questions = [
     {
       id: 1,
-      question: "how long do you want to",
-      answer: "Shipping order business",
+      question: "Ingenieria civil",
+      answers: ["queeeeeeee", "dhola rizo", "tttttttt", "yyyyyyyyy", "rrrrrrrrr", "hhhhhhhh"],
       image: "/contact.jpg"
     },
     {
       id: 2,
-      question: "What do you want to",
-      answer: "Shipping order business",
+      question: "Ingenieria ambiental",
+      answers: ["dasdasdasdasdasd", "dhola rizo", "ggggggg"],
       image: "/phone.png"
     },
     {
       id: 3,
-      question: "Who long do you want to",
-      answer: "Shipping order business",
+      question: "Ingenieria agronoma",
+      answers: ["peeruuuuuu", "dhola rizo"],
+      image: "/contact.jpg"
+    },
+    {
+      id: 4,
+      question: "Ingenieria agricola",
+      answers: ["peeruuuuuu", "dhola rizo"],
+      image: "/contact.jpg"
+    },
+    {
+      id: 5,
+      question: "Ingenieria de industrias alimentarias",
+      answers: ["peeruuuuuu", "dhola rizo"],
       image: "/contact.jpg"
     },
   ]
@@ -67,11 +87,11 @@ const Graduate = () => {
 
       <div className=''>
         <div className='w-screen h-screen bg-black flex justify-center items-center'>
-          <div className='w-[89%] m-auto max-w-[1400px] bg-gray-300 p-8 rounded-lg shadow-md grid grid-cols-2'>
+          <div className='w-[89%] m-auto max-w-[1400px] bg-gray-300 p-8 rounded-lg shadow-md grid md:grid-cols-2'>
             <div className='gap-4'>
-            <h2 className='text-2xl mb-6 font-semibold'>
+            {/* <h2 className='text-2xl mb-6 font-semibold'>
               Diplomados
-            </h2>
+            </h2> */}
               {questions.map((q) => (
                 <div key={q.id} className='mb-4 last:mb-0'>
                   <button
@@ -89,6 +109,14 @@ const Graduate = () => {
                           exit={{ opacity: 0, y: -20 }}
                           transition={{ type: "tween", duration: 0, ease: "easeInOut" }}
                           className='mt-2 text-gray-600'>
+                            <div className="md:hidden grid grid-cols-1 gap-8">
+                              {q.answers.map((answer, ansIndex) => (
+                                <p key={ansIndex} className='border border-gray-700 p-8'
+                                  onClick={() => handleAnswerClick(answer)}>
+                                  {answer}
+                                </p>
+                              ))}
+                            </div>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -96,7 +124,7 @@ const Graduate = () => {
               ))}
               </div>
               {isLargeScreen && (
-              <div className="lg:col-start-2 lg:ml-10 col-start-1">
+              <div className="md:col-start-2 md:ml-10 col-start-1">
                 {questions.map((q) => (
                   <AnimatePresence key={q.id}>
                     {activeQuestion === q.id && (
@@ -105,8 +133,15 @@ const Graduate = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0, ease: "easeInOut" }}>
-                        <p>{q.answer}</p>
-                        <Image src={q.image} alt={`imagen ${q.id}`} className='mt-4' width={800} height={800}/>
+                          <div className="grid grid-cols-2 gap-8">
+                              {q.answers.map((answer, ansIndex) => (
+                                <p key={ansIndex} className='border border-gray-700 p-8'
+                                  onClick={() => handleAnswerClick(answer)}>
+                                  {answer}
+                                  </p>
+                              ))}
+                            </div>
+                            {/* <Image src={q.image} alt={`imagen ${q.id}`} className='' width={800} height={800}/> */}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -116,6 +151,9 @@ const Graduate = () => {
           </div>
         </div>
       </div>
+      <ModalGraduate open={selectedAnswer !== null} onClose={() => setSelectedAnswer(null)}>
+        <Content1/>
+      </ModalGraduate>
     </section>
   )
 }
