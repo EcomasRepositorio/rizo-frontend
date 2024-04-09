@@ -1,65 +1,140 @@
-import React from 'react'
-import Image from 'next/image';
-import { FaArrowRight } from 'react-icons/fa';
+import React, { useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { modulesTechnicalIrrigation } from "@/components/utils/courses/course";
 import { PiCalendarFill } from "react-icons/pi";
-import { HiVideoCamera } from "react-icons/hi2";
+import { MdOutlineBookOnline } from "react-icons/md";
 import { MdCalendarMonth } from "react-icons/md";
 import { MdAlarmOn } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaRegFilePdf } from "react-icons/fa6";
-import { FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
+import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
+import Link from "next/link";
 
 const Content2 = () => {
+  const [isAccordionOpen1, setIsAccordionOpen1] = useState(false);
+  const [openWindow, setOpenWindow] = useState<Window | null>(null);
+
+  const toggleAccordion1 = () => {
+    setIsAccordionOpen1(!isAccordionOpen1);
+  };
+
+  const handleClick = () => {
+    const newWindow = window.open("/BROCHURE/SISTEMAS_RIEGO_TECNIFICADO.pdf");
+    setOpenWindow(newWindow);
+
+    // Descargar el archivo PDF
+    const link = document.createElement("a");
+    link.href = "/BROCHURE/SISTEMAS_RIEGO_TECNIFICADO.pdf";
+    link.download = "SISTEMAS_RIEGO_TECNIFICADO.pdf";
+    link.click();
+  };
+
   return (
     <div className="">
-      <h2 className=" flex justify-center text-5xl font-extrabold mb-10 bg-gradient-to-r from-customPurple300 to-customOrange text-transparent bg-clip-text p-2">Ingeniería de puentes</h2>
-    <div className='grid md:grid-cols-2 grid-cols-1'>
-    <div className="flex justify-center mb-4 md:mb-0">
-      <Image src="/phone.png" alt="Descripción de la imagen 1" width={400} height={300} className='h-96 w-auto'/>
-    </div>
+      <h2 className="flex justify-center text-center text-5xl font-extrabold mb-5 bg-gradient-to-r from-customPurple300 to-customOrange text-transparent bg-clip-text p-2">
+        Ingeniería de vial
+      </h2>
+      <div className="grid md:grid-cols-2 grid-cols-1">
+        <div className="flex justify-center mb-4 md:mb-0">
+          <Image
+            src="/phone.png"
+            alt="Descripción de la imagen 1"
+            width={400}
+            height={300}
+            className="h-96 w-auto"/>
+        </div>
 
-    <div className="">
-      <div className='flex items-center mb-5'>
-        <PiCalendarFill className='text-5xl text-customOrange mr-2'/>
-        <p className="text-2xl font-bold text-customPurple300">Inicio 18 de abril</p>
-      </div>
-      <div className='flex items-center mb-5'>
-        <HiVideoCamera className='text-5xl border rounded-full p-2 bg-blue-500 text-white mr-2'/>
-        <p className="text-2xl font-bold text-customPurple300">Modalidad Online via Zoom</p>
-      </div>
-      <div className='flex items-center mb-5'>
-        <MdCalendarMonth className='text-5xl text-customOrange mr-2'/>
-        <p className="text-2xl font-bold text-customPurple300">Duración 4 meses </p>
-      </div>
-      <div className='flex items-center mb-5'>
-        <MdAlarmOn className='text-5xl text-customOrange mr-2 flex-shrink-0'/>
-        <p className="text-2xl font-bold text-customPurple300">420 horas académicas (26 créditos)</p>
-      </div>
-    <div className='grid justify-between gap-4 md:grid-cols-2 grid-cols-1'>
-      <button className="bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:bg-gradient-to-bl hover:scale-110 duration-300 text-white w-full font-bold py-4 px-4 rounded-xl mt-4 flex items-center">
-        Más información
-        <BsWhatsapp className='ml-4 text-2xl text-green-500'/>
-      </button>
-      <button className="bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:bg-gradient-to-bl hover:scale-110 duration-300 text-white w-full font-bold py-4 px-4 rounded-xl mt-4 flex items-center">
-        Plan de estudios
-        <FaRegFilePdf className='ml-4 text-2xl text-red-500'/>
-      </button>
-    </div>
-    <div className='flex justify-between'>
-      <button className="flex justify-between bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:bg-gradient-to-bl hover:scale-110 duration-300 text-white w-full font-bold py-4 px-4 rounded-xl mt-4 flex items-center">
-        Lista de módulos
-        <FaPlusCircle className='text-2xl'/>
-      </button>
-    </div>
-      <div className="flex items-center mt-4">
-        <span className="mr-2">Más información</span>
-        <FaArrowRight />
-      </div>
-    </div>
+        <div className="">
+          <div className="flex items-center md:mb-3 mb-2">
+            <PiCalendarFill className="md:text-5xl text-4xl text-customOrange mr-2" />
+            <p className="md:text-2xl font-bold text-customPurple300">
+              Inicio 18 de abril
+            </p>
+          </div>
+          <div className="flex items-center md:mb-3 mb-2">
+            <MdOutlineBookOnline className="md:text-5xl text-4xl text-customOrange mr-2 flex-shrink-0" />
+            <p className="md:text-2xl font-bold text-customPurple300">
+              Modalidad Online via Zoom
+            </p>
+          </div>
+          <div className="flex items-center md:mb-3 mb-2">
+            <MdCalendarMonth className="md:text-5xl text-4xl text-customOrange mr-2" />
+            <p className="md:text-2xl font-bold text-customPurple300">
+              Duración 4 meses{" "}
+            </p>
+          </div>
+          <div className="flex items-center mb-3">
+            <MdAlarmOn className="md:text-5xl text-4xl text-customOrange mr-2 flex-shrink-0" />
+            <p className="md:text-2xl font-bold text-customPurple300">
+              420 horas académicas (26 créditos)
+            </p>
+          </div>
+          <div className="grid justify-between gap-4 md:grid-cols-2 grid-cols-1">
+            <Link
+              className="bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:bg-gradient-to-bl hover:scale-110 duration-300 text-white w-full font-bold py-4 px-4 rounded-xl mt-4 flex justify-between items-center"
+              href="https://wa.me/51984040264?text=Hola,%20deseo%20más%20información%20sobre%20el%20diplomado%20de%20Sistema%20de%20Riego%20Tecnificado"
+              target="_blank">
+                Más información
+              <BsWhatsapp className="ml-4 text-2xl text-green-500" />
+            </Link>
 
+            <button
+              onClick={handleClick}
+              className="bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:bg-gradient-to-bl hover:scale-110 duration-300 text-white w-full font-bold py-4 px-4 rounded-xl md:mt-4 flex justify-between items-center"
+              rel="noopener noreferrer">
+                Plan de estudios
+              <FaRegFilePdf className="ml-4 text-2xl text-red-500" />
+            </button>
+          </div>
+          <div className="flex justify-between">
+            <button
+              onClick={toggleAccordion1}
+              className="flex justify-between bg-gradient-to-tr mb-4 from-customPurple800 to-customPurple300 hover:bg-gradient-to-bl hover:scale-110 duration-300 text-white w-full font-bold py-4 px-4 rounded-xl mt-4 items-center">
+                Lista de módulos
+              {isAccordionOpen1 ? (
+                <FaMinusCircle className="z-0 text-3xl hover:scale-150 duration-300" />
+              ) : (
+                <FaPlusCircle className="z-0 text-3xl hover:scale-150 duration-300" />
+              )}
+            </button>
+          </div>
+          {isAccordionOpen1 && (
+            <motion.div
+              className="bg-white rounded-lg"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 0.1 } }}>
+              <div className="text-sm font-sans font-semibold">
+                <ul className="">
+                  {modulesTechnicalIrrigation.map((item, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: 1,
+                        transition: { duration: 1, delay: index * 0.2 },
+                      }}
+                      className="lg:p-2 p-2 mb-3 border rounded-md bg-slate-50 hover:bg-violet-600 hover:text-gray-100 border-violet-500 hover:scale-110 duration-300 cursor-pointer"
+                      style={{ display: "block", width: "100%" }}
+                      onClick={() =>
+                        window.open(
+                          `https://wa.me/51984040264/?text=${encodeURIComponent(item.text)}`, "_blank"
+                        )
+                      }>
+                      <div className="flex items-center">
+                        <BsWhatsapp className="mr-2 text-green-600 text-lg flex-shrink-0" />
+                        {item.name}
+                      </div>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          )}
+        </div>
+      </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
 export default Content2;

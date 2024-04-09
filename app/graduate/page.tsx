@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
-//import { useMediaQuery } from '@react-hook/media-query';
+import { BsBoxArrowInUpRight } from "react-icons/bs";
 import Image from 'next/image';
 import Modal from '@/components/share/Modal';
 import ModalGraduate from '@/components/share/ModalGraduate';
@@ -99,9 +99,15 @@ const Graduate = () => {
         </div>
       </div>
 
-      <div className=''>
-        <div className='w-screen h-screen bg-black flex justify-center items-center'>
-          <div className='w-[89%] m-auto max-w-[1400px] bg-gray-300 p-8 rounded-lg shadow-md grid md:grid-cols-2'>
+      <div className='relative'>
+        <div className='absolute w-full h-full opacity-80 z-0 blur'>
+          <video autoPlay muted loop className='w-full h-full object-cover'>
+            <source src='/video.webm' type='video/mp4' />
+            {/* Si tu video está en otro formato, agrega las etiquetas <source> adecuadas aquí */}
+          </video>
+        </div>
+        <div className='relative w-screen h-screen bg-customPurple800/60 flex justify-center items-center p-2'>
+          <div className='w-auto m-auto max-w-auto bg-gray-300/30 md:p-8 p-4 rounded-lg shadow-md grid md:grid-cols-2'>
             <div className='gap-4'>
             {/* <h2 className='text-2xl mb-6 font-semibold'>
               Diplomados
@@ -109,7 +115,7 @@ const Graduate = () => {
               {questions.map((q) => (
                 <div key={q.id} className='mb-4 last:mb-0'>
                   <button
-                    className='uppercase font-extrabold w-full text-left text-xl focus:outline-none p-4 bg-gray-100 rounded-xl shadow-md flex justify-between items-center hover:scale-105 duration-300'
+                    className='uppercase text-white/80 font-extrabold w-full text-left md:text-2xl text-sm focus:outline-none p-4 bg-customPurple300/50 rounded-xl shadow-md flex justify-between items-center hover:scale-105 duration-300'
                     onClick={() => setActiveQuestion(activeQuestion === q.id ? null : q.id)}>
                       {q.question}
                       {activeQuestion === q.id ?
@@ -123,7 +129,7 @@ const Graduate = () => {
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.2 }}
                           className='mt-2 text-gray-600'>
-                            <div className="md:hidden grid grid-cols-1 gap-8">
+                            <div className="md:hidden grid grid-cols-1 gap-2">
                               {q.answers.map((answer, ansIndex) => (
                                 <motion.p
                                   key={ansIndex}
@@ -134,7 +140,7 @@ const Graduate = () => {
                                   initial={{ opacity: 0 }}
                                   animate={{ opacity: 1, transition: { duration: 3, delay: ansIndex * 0.4 } }}
                                   style={{ display: 'block', width: '100%' }}
-                                  className='p-5 text-white font-extrabold text-2xl rounded-2xl bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:cursor-pointer hover:bg-gradient-to-bl hover:scale-110 duration-300'
+                                  className='p-4 text-customYellow font-bold text-sm rounded-2xl bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:cursor-pointer hover:bg-gradient-to-bl hover:scale-110 duration-300'
                                   onClick={() => {
                                     if (typeof answer === 'string') {
                                       handleAnswerClick(answer);
@@ -142,7 +148,10 @@ const Graduate = () => {
                                       handleAnswerClick(answer.title);
                                     }
                                   }}>
+                                  <div className="flex justify-between items-center">
                                   {typeof answer === 'string' ? answer : answer.title}
+                                    <BsBoxArrowInUpRight className='text-customYellow flex-shrink-0 text-xl'/>
+                                  </div>
                                 </motion.p>
                               ))}
                             </div>
@@ -173,7 +182,7 @@ const Graduate = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1, transition: { duration: 3, delay: ansIndex * 0.4 } }}
                                 style={{ display: 'block', width: '100%' }}
-                                className='p-5 text-white font-extrabold text-2xl rounded-2xl bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:cursor-pointer hover:bg-gradient-to-bl hover:scale-110 duration-300'
+                                className='p-5 text-customYellow font-semibold md:text-2xl rounded-2xl bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:cursor-pointer hover:bg-gradient-to-bl hover:scale-110 duration-300'
                                 onClick={() => {
                                   if (typeof answer === 'string') {
                                     handleAnswerClick(answer);
@@ -181,10 +190,13 @@ const Graduate = () => {
                                     handleAnswerClick(answer.title);
                                   }
                                 }}>
-                                {typeof answer === 'string' ? answer : answer.title}
+                                <div className="flex justify-between items-center">
+                                  {typeof answer === 'string' ? answer : answer.title}
+                                  <BsBoxArrowInUpRight className='text-customYellow flex-shrink-0'/>
+                                </div>
                               </motion.p>
-                              ))}
-                            </div>
+                            ))}
+                          </div>
                             {/* <Image src={q.image} alt={`imagen ${q.id}`} className='' width={800} height={800}/> */}
                       </motion.div>
                     )}
