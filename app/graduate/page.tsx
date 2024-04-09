@@ -113,20 +113,27 @@ const Graduate = () => {
                     onClick={() => setActiveQuestion(activeQuestion === q.id ? null : q.id)}>
                       {q.question}
                       {activeQuestion === q.id ?
-                        <FaMinusCircle className='text-3xl text-customOrange'/> : <FaPlusCircle className='text-3xl text-customOrange'/>}
+                        <FaMinusCircle className='text-3xl text-customOrange flex-shrink-0'/> : <FaPlusCircle className='text-3xl text-customOrange flex-shrink-0'/>}
                   </button>
                     <AnimatePresence>
                       {activeQuestion === q.id && (
                         <motion.div
-                          initial={{ opacity: 0, y: -20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -20 }}
-                          transition={{ type: "tween", duration: 0, ease: "easeInOut" }}
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.2 }}
                           className='mt-2 text-gray-600'>
                             <div className="md:hidden grid grid-cols-1 gap-8">
                               {q.answers.map((answer, ansIndex) => (
-                                <p
+                                <motion.p
                                   key={ansIndex}
+                                  /* initial={{ opacity: 0, y: -20 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  exit={{ opacity: 0, y: -20 }}
+                                  transition={{ duration: 1 }} */
+                                  initial={{ opacity: 0 }}
+                                  animate={{ opacity: 1, transition: { duration: 3, delay: ansIndex * 0.4 } }}
+                                  style={{ display: 'block', width: '100%' }}
                                   className='p-5 text-white font-extrabold text-2xl rounded-2xl bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:cursor-pointer hover:bg-gradient-to-bl hover:scale-110 duration-300'
                                   onClick={() => {
                                     if (typeof answer === 'string') {
@@ -136,7 +143,7 @@ const Graduate = () => {
                                     }
                                   }}>
                                   {typeof answer === 'string' ? answer : answer.title}
-                                </p>
+                                </motion.p>
                               ))}
                             </div>
                         </motion.div>
@@ -151,14 +158,21 @@ const Graduate = () => {
                   <AnimatePresence key={q.id}>
                     {activeQuestion === q.id && (
                       <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0, ease: "easeInOut" }}>
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}>
                           <div className="grid grid-cols-1 gap-4">
                               {q.answers.map((answer, ansIndex) => (
-                                <p
+                                <motion.p
                                 key={ansIndex}
+                                /* initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 1 }} */
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1, transition: { duration: 3, delay: ansIndex * 0.4 } }}
+                                style={{ display: 'block', width: '100%' }}
                                 className='p-5 text-white font-extrabold text-2xl rounded-2xl bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:cursor-pointer hover:bg-gradient-to-bl hover:scale-110 duration-300'
                                 onClick={() => {
                                   if (typeof answer === 'string') {
@@ -168,7 +182,7 @@ const Graduate = () => {
                                   }
                                 }}>
                                 {typeof answer === 'string' ? answer : answer.title}
-                              </p>
+                              </motion.p>
                               ))}
                             </div>
                             {/* <Image src={q.image} alt={`imagen ${q.id}`} className='' width={800} height={800}/> */}
