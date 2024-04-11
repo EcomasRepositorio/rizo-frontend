@@ -1,5 +1,17 @@
-import Content1 from "@/components/graduate/Content1";
-import Content2 from "@/components/graduate/Content2";
+import IngVial from "@/components/graduate/IngCivil/IngVial";
+import AsistenteTecnico from "@/components/graduate/IngCivil/AsistenteTecnico";
+import IngPuentes from "@/components/graduate/IngCivil/IngPuentes";
+import IngEstructural from "@/components/graduate/IngCivil/IngEstructural";
+import ResidenciaObras from "@/components/graduate/IngCivil/ResidenciaObras";
+import ModelamientoBIM from "@/components/graduate/IngCivil/ModelamientoBIM";
+import GestionResiduosSolidos from "@/components/graduate/IngAmbiental/GestionResiduosSolidos";
+import MonitoreoAmbiental from "@/components/graduate/IngAmbiental/MonitoreoAmbiental";
+import EstudioAmbiental from "@/components/graduate/IngAmbiental/EstudioAmbiental";
+import GestionMunicipal from "@/components/graduate/IngAmbiental/GestionMunicipal";
+import Ssoma from "@/components/graduate/IngAmbiental/Ssoma";
+import Riego from "@/components/graduate/IngAgronoma/Riego";
+import SistemaRiego from "@/components/graduate/IngAgronoma/SistemaRiego";
+import GestionAlimentaria from "@/components/graduate/IngAlimentaria/GestionAlimentaria";
 
 export const FEATURES = [
     {
@@ -37,42 +49,38 @@ export const questions = [
       id: 1,
       question: "Ingeniería civil",
       answers: [
-        { title: "Asistente técnico en obras", contentComponent: <Content1 /> },
-        { title: "Ingeniería vial", contentComponent: <Content2 /> },
-        { title: "Ingeniería de puentes", contentComponent: <Content1 /> },
-        { title: "Ingeniería estructural", contentComponent: <Content2 /> },
-        { title: "Residencia y supervición de obras", contentComponent: <Content1 /> },
-        { title: "Modelamiento BIM", contentComponent: <Content2 /> },
+        { title: "Asistente técnico en obras", contentComponent: <AsistenteTecnico />, image: "/contact.jpg" },
+        { title: "Ingeniería vial", contentComponent: <IngVial />, image: "/contact.jpg"  },
+        { title: "Ingeniería de puentes", contentComponent: <IngPuentes />, image: "/contact.jpg"  },
+        { title: "Ingeniería estructural", contentComponent: <IngEstructural />, image: "/contact.jpg"  },
+        { title: "Residencia y supervición de obras", contentComponent: <ResidenciaObras />, image: "/contact.jpg"  },
+        { title: "Modelamiento BIM", contentComponent: <ModelamientoBIM />, image: "/contact.jpg"  },
       ],
-      image: "/contact.jpg",
     },
     {
       id: 2,
       question: "Ingeniería ambiental",
       answers: [
-        "Gestión y manejo integral de residuos sólidos",
-        "Monitoreo y evaluación de la calidad ambiental",
-        "Estudio de impacto ambiental",
-        "Gestión ambiental municipal y regional",
-        "SSOMA (Seguridad y Salud Ocupacional y Medio Ambiente",
+        { title: "Gestión y manejo integral de residuos sólidos", contentComponent: <GestionResiduosSolidos />, image: "/contact.jpg" },
+        { title: "Monitoreo y evaluación de la calidad ambiental", contentComponent: <MonitoreoAmbiental />, image: "/contact.jpg"  },
+        { title: "Estudio de impacto ambiental", contentComponent: <EstudioAmbiental />, image: "/contact.jpg" },
+        { title: "Gestión ambiental municipal y regional",contentComponent: <GestionMunicipal />, image: "/contact.jpg" },
+        { title: "SSOMA (Seguridad y Salud Ocupacional y Medio Ambiente", contentComponent: <Ssoma />, image: "/contact.jpg" },
       ],
-      image: "/phone.png",
     },
     {
       id: 3,
       question: "Ingeniería agrónoma",
       answers: [
-        "Riego y fertirriego",
-        "Sistema de riego técnificado",
+        { title: "Riego y fertirriego", contentComponent: <Riego />, image: "/contact.jpg" },
+        { title: "Sistema de riego técnificado", contentComponent: <SistemaRiego/>, image: "/contact.jpg" },
       ],
-      image: "/contact.jpg"
     },
     {
       id: 4,
       question: "Ingeniería de industrias alimentarias",
       answers: [
-        "Gestión de cálidad e inocuidad alimentaria",
+        { title: "Gestión de cálidad e inocuidad alimentaria", contentComponent: <GestionAlimentaria />, image: "/contact.jpg" },
       ],
-      image: "/contact.jpg"
     },
   ]

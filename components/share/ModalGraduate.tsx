@@ -12,7 +12,7 @@ interface ModalGraduateProps {
 
   return (
     <div
-      className={`fixed inset-0 p-4  pt-32 flex justify-center items-center transition-colors ${overlayClass}`}
+      className={`fixed inset-0 p-4 pt-32 flex justify-center items-center transition-colors ${overlayClass}`}
       onClick={onClose}>
       <div
         className={`bg-white rounded-2xl shadow p-5 transition-all w-full md:max-w-4xl mx-auto max-h-full overflow-y-auto ${modalClass}`}

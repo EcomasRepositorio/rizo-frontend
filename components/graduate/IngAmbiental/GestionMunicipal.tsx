@@ -1,17 +1,16 @@
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { modulesTechnicalIrrigation } from "@/components/utils/courses/course";
+import { MdOutlineBookOnline, MdCalendarMonth, MdAlarmOn } from "react-icons/md";
 import { PiCalendarFill } from "react-icons/pi";
-import { MdOutlineBookOnline } from "react-icons/md";
-import { MdCalendarMonth } from "react-icons/md";
-import { MdAlarmOn } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaRegFilePdf } from "react-icons/fa6";
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 import Link from "next/link";
 
-const Content2 = () => {
+const GestionMunicipal = () => {
   const [isAccordionOpen1, setIsAccordionOpen1] = useState(false);
   const [openWindow, setOpenWindow] = useState<Window | null>(null);
 
@@ -32,8 +31,8 @@ const Content2 = () => {
 
   return (
     <div className="">
-      <h2 className="flex justify-center text-center text-5xl font-extrabold mb-5 bg-gradient-to-r from-customPurple300 to-customOrange text-transparent bg-clip-text p-2">
-        Ingeniería de vial
+      <h2 className="uppercase flex justify-center text-center md:text-4xl text-2xl font-extrabold mb-5 bg-gradient-to-r from-customPurple300 to-customOrange text-transparent bg-clip-text p-2">
+        Gestión ambiental municipal y regional
       </h2>
       <div className="grid md:grid-cols-2 grid-cols-1">
         <div className="flex justify-center mb-4 md:mb-0">
@@ -47,7 +46,7 @@ const Content2 = () => {
 
         <div className="">
           <div className="flex items-center md:mb-3 mb-2">
-            <PiCalendarFill className="md:text-5xl text-4xl text-customOrange mr-2" />
+            <PiCalendarFill className="md:text-5xl text-4xl text-customOrange mr-2 flex-shrink-0" />
             <p className="md:text-2xl font-bold text-customPurple300">
               Inicio 18 de abril
             </p>
@@ -59,9 +58,9 @@ const Content2 = () => {
             </p>
           </div>
           <div className="flex items-center md:mb-3 mb-2">
-            <MdCalendarMonth className="md:text-5xl text-4xl text-customOrange mr-2" />
+            <MdCalendarMonth className="md:text-5xl text-4xl text-customOrange mr-2 flex-shrink-0" />
             <p className="md:text-2xl font-bold text-customPurple300">
-              Duración 4 meses{" "}
+              Duración 4 meses
             </p>
           </div>
           <div className="flex items-center mb-3">
@@ -114,14 +113,14 @@ const Content2 = () => {
                         opacity: 1,
                         transition: { duration: 1, delay: index * 0.2 },
                       }}
-                      className="lg:p-2 p-2 mb-3 border rounded-md bg-slate-50 hover:bg-violet-600 hover:text-gray-100 border-violet-500 hover:scale-110 duration-300 cursor-pointer"
+                      className="lg:p-2 p-2 mb-3 border rounded-md bg-slate-50 hover:bg-customYellow border-customOrange hover:scale-110 duration-300 cursor-pointer"
                       style={{ display: "block", width: "100%" }}
                       onClick={() =>
                         window.open(
                           `https://wa.me/51984040264/?text=${encodeURIComponent(item.text)}`, "_blank"
                         )
                       }>
-                      <div className="flex items-center">
+                      <div className="flex items-center text-customPurple800">
                         <BsWhatsapp className="mr-2 text-green-600 text-lg flex-shrink-0" />
                         {item.name}
                       </div>
@@ -137,4 +136,4 @@ const Content2 = () => {
   );
 };
 
-export default Content2;
+export default GestionMunicipal;

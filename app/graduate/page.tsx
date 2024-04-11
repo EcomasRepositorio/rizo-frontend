@@ -3,18 +3,43 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
 import { BsBoxArrowInUpRight } from "react-icons/bs";
-import Image from 'next/image';
-import Modal from '@/components/share/Modal';
 import ModalGraduate from '@/components/share/ModalGraduate';
-import Content1 from '@/components/graduate/Content1';
-import Content2 from '@/components/graduate/Content2';
-import { title } from 'process';
+import { questions } from '@/constants';
+import Image from 'next/image';
 
 const Graduate = () => {
 
   const [activeQuestion, setActiveQuestion] = useState<number | null>(null);
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(true);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+  const [texts, setTexts] = useState([
+    { id: 1, mainText: 'Certificación', isHovered: false, image: "/contact.jpg", hoverText: 'Tu certificación puede ser física y/o virtual según prefieras, te asignaremos un código QR para que valides tu certificado.' },
+    { id: 2, mainText: 'Clases en vivo', isHovered: false, image: "/contact.jpg", hoverText: 'Aprende desde donde te encuentres en tiempo real.' },
+    { id: 3, mainText: 'Docentes altamente capacitados', isHovered: false, image: "/contact.jpg", hoverText: 'Nuestra plana docente esta conformada por profesionales altamente capacitados.' },
+    { id: 4, mainText: 'Actualización', isHovered: false, image: "/contact.jpg", hoverText: 'Actualizamos nuestro contenido constantemente, según la normativa, para brindarte la mejor calidad educativa.' }
+  ]);
+
+  const handleMouseEnter = (id: number) => {
+    setTexts((prevCards) => {
+      return prevCards.map((card) => {
+        if (card.id === id) {
+          return { ...card, isHovered: true };
+        }
+        return card;
+      });
+    });
+  };
+
+  const handleMouseLeave = (id: number) => {
+    setTexts((prevCards) => {
+      return prevCards.map((card) => {
+        if (card.id === id) {
+          return { ...card, isHovered: false };
+        }
+        return card;
+      });
+    });
+  };
 
   const handleAnswerClick = (answer: string) => {
     setSelectedAnswer(answer);
@@ -28,51 +53,6 @@ const Graduate = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  const questions = [
-    {
-      id: 1,
-      question: "Ingeniería civil",
-      answers: [
-        { title: "Asistente técnico en obras", contentComponent: <Content1 /> },
-        { title: "Ingeniería vial", contentComponent: <Content2 /> },
-        { title: "Ingeniería de puentes", contentComponent: <Content1 /> },
-        { title: "Ingeniería estructural", contentComponent: <Content2 /> },
-        { title: "Residencia y supervición de obras", contentComponent: <Content1 /> },
-        { title: "Modelamiento BIM", contentComponent: <Content2 /> },
-      ],
-      image: "/contact.jpg",
-    },
-    {
-      id: 2,
-      question: "Ingeniería ambiental",
-      answers: [
-        "Gestión y manejo integral de residuos sólidos",
-        "Monitoreo y evaluación de la calidad ambiental",
-        "Estudio de impacto ambiental",
-        "Gestión ambiental municipal y regional",
-        "SSOMA (Seguridad y Salud Ocupacional y Medio Ambiente",
-      ],
-      image: "/phone.png",
-    },
-    {
-      id: 3,
-      question: "Ingeniería agrónoma",
-      answers: [
-        "Riego y fertirriego",
-        "Sistema de riego técnificado",
-      ],
-      image: "/contact.jpg"
-    },
-    {
-      id: 4,
-      question: "Ingeniería de industrias alimentarias",
-      answers: [
-        "Gestión de cálidad e inocuidad alimentaria",
-      ],
-      image: "/contact.jpg"
-    },
-  ]
 
   return (
     <section>
@@ -100,14 +80,21 @@ const Graduate = () => {
       </div>
 
       <div className='relative'>
-        <div className='absolute w-full h-full opacity-80 z-0 blur'>
+        <div className='absolute w-full h-full opacity-90 z-0 blur-sm'>
           <video autoPlay muted loop className='w-full h-full object-cover'>
             <source src='/video.webm' type='video/mp4' />
-            {/* Si tu video está en otro formato, agrega las etiquetas <source> adecuadas aquí */}
           </video>
         </div>
-        <div className='relative w-screen h-screen bg-customPurple800/60 flex justify-center items-center p-2'>
-          <div className='w-auto m-auto max-w-auto bg-gray-300/30 md:p-8 p-4 rounded-lg shadow-md grid md:grid-cols-2'>
+        <div className='relative w-screen bg-customPurple800/60 justify-center p-2'>
+          <div className='bg-customPurple800/50 p-10 mt-10 mb-10'>
+            <h1 className='flex justify-center text-center md:text-7xl text-3xl font-extrabold'>
+              <p className='text-white'>Conoce nuestros
+              <br/>
+              <span className='text-customOrange md:text-8xl'> diplomados</span></p>
+            </h1>
+          </div>
+         <div className='max-w-screen-xl mx-auto'>
+          <div className='w-auto m-auto max-w-auto bg-white/10 md:p-8 p-4 rounded-lg shadow-md grid md:grid-cols-2'>
             <div className='gap-4'>
             {/* <h2 className='text-2xl mb-6 font-semibold'>
               Diplomados
@@ -119,7 +106,7 @@ const Graduate = () => {
                     onClick={() => setActiveQuestion(activeQuestion === q.id ? null : q.id)}>
                       {q.question}
                       {activeQuestion === q.id ?
-                        <FaMinusCircle className='text-3xl text-customOrange flex-shrink-0'/> : <FaPlusCircle className='text-3xl text-customOrange flex-shrink-0'/>}
+                        <FaMinusCircle className='text-3xl text-customYellow flex-shrink-0'/> : <FaPlusCircle className='text-3xl text-customYellow flex-shrink-0'/>}
                   </button>
                     <AnimatePresence>
                       {activeQuestion === q.id && (
@@ -129,7 +116,7 @@ const Graduate = () => {
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.2 }}
                           className='mt-2 text-gray-600'>
-                            <div className="md:hidden grid grid-cols-1 gap-2">
+                            <div className="lg:hidden grid grid-cols-1 gap-2">
                               {q.answers.map((answer, ansIndex) => (
                                 <motion.p
                                   key={ansIndex}
@@ -182,7 +169,7 @@ const Graduate = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1, transition: { duration: 3, delay: ansIndex * 0.4 } }}
                                 style={{ display: 'block', width: '100%' }}
-                                className='p-5 text-customYellow font-semibold md:text-2xl rounded-2xl bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:cursor-pointer hover:bg-gradient-to-bl hover:scale-110 duration-300'
+                                className='pl-4 text-customYellow font-semibold md:text-2xl rounded-xl bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:cursor-pointer hover:bg-gradient-to-bl hover:scale-110 duration-300'
                                 onClick={() => {
                                   if (typeof answer === 'string') {
                                     handleAnswerClick(answer);
@@ -192,18 +179,49 @@ const Graduate = () => {
                                 }}>
                                 <div className="flex justify-between items-center">
                                   {typeof answer === 'string' ? answer : answer.title}
-                                  <BsBoxArrowInUpRight className='text-customYellow flex-shrink-0'/>
+                                  {answer.image && (
+                                    <div className='flex justify-items-center h-20 w-20 rounded-xl flex-shrink-0'>
+                                      <Image src={answer.image} alt={`imagen ${q.id}`} className='rounded-xl' width={800} height={800}/>
+                                    </div>
+                                  )}
                                 </div>
                               </motion.p>
                             ))}
                           </div>
-                            {/* <Image src={q.image} alt={`imagen ${q.id}`} className='' width={800} height={800}/> */}
                       </motion.div>
                     )}
                   </AnimatePresence>
                 ))}
               </div>
             )}
+          </div>
+
+
+          </div>
+            <div className='text-center font-extrabold md:mt-20 mt-10 mb-10'>
+              <div className='bg-customPurple800/50 w-full p-10'>
+                <h1 className='text-white md:text-7xl text-[27px]'>Por qué estudiar en
+                  <br />
+                  <span className='text-customOrange md:text-8xl text-4xl'> Corporación Rizo</span>
+                </h1>
+              </div>
+            <div className='max-w-screen-xl mx-auto'>
+              <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 md:mt-20 mt-10 md:mb-20 lg:p-0 p-2">
+                {texts.map((card) => (
+                  <div
+                    key={card.id}
+                    className="relative flex justify-center items-center h-[500px] rounded-3xl duration-300"
+                    onMouseEnter={() => handleMouseEnter(card.id)}
+                    onMouseLeave={() => handleMouseLeave(card.id)}
+                    style={{ backgroundColor: card.isHovered ? 'rgba(255, 165, 0, 0.5)' : 'transparent' }}>
+                    <div className="absolute inset-0 bg-cover bg-center rounded-3xl opacity-50" style={{ backgroundImage: `url("${card.image}")` }} />
+                    <p className="text-white z-10 cursor-pointer transition duration-500 p-2 text-xl">
+                      {card.isHovered ? card.hoverText : card.mainText}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
