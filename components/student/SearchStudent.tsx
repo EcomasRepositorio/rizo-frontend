@@ -8,7 +8,7 @@ import { FaRegEdit } from 'react-icons/fa';
 import StudentForm from './StudentForm';
 import StudentDelete from './StudentDelete';
 import ModalTable from '../share/modalTable';
-import SearchDNI from '@/components/certificate/SearchDNI';
+import SearchDNI from '@/components/certs/SearchDNI';
 import Link from 'next/link';
 
 const SearchName:React.FC<SearchStudentDNIProps> = ({ onSearchDNI }) => {

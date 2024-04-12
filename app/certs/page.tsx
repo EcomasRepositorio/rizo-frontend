@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from 'react';
-import SearchCode from '@/components/certificate/SearchCode';
-import SearchDNI from '@/components/certificate/SearchDNI';
-import SearchName from '@/components/certificate/SearchName';
+import SearchCode from '@/components/certs/SearchCode';
+import SearchDNI from '@/components/certs/SearchDNI';
+import SearchName from '@/components/certs/SearchName';
 import { BsQrCodeScan } from "react-icons/bs";
 import { BsPersonVcard, BsPersonSquare } from "react-icons/bs";
 import Image from 'next/image';

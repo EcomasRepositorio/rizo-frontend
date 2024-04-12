@@ -21,7 +21,6 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${inter.className} overflow-y-scroll overflow-x-hidden`}>
         <Sidebar />
-        <Navbar />
           {children}
         <Footer />
       </body>
