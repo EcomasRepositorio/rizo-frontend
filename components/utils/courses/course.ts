@@ -1,5 +1,5 @@
 //Ingenieria Ambiental
-export const modulesAmbientaly = [
+export const moduleEstudioAmbiental = [
     {name: "Elaboración de mapas temáticos con ArcGIS", text:"Hola, deseo más información sobre el curso de Elaboración de mapas temáticos con ArcGIS"},
     {name: "Participación ciudadana", text:"Hola, deseo más información sobre el curso de Participación ciudadana"},
     {name: "Supervisión, Fiscalización y auditoría ambiental", text:"Hola, deseo más información sobre el curso de Supervisión, Fiscalización y auditoría ambiental"},
@@ -12,6 +12,20 @@ export const modulesAmbientaly = [
     {name: "Estrategias de manejo ambiental", text:"Hola, deseo más información sobre el curso de Estrategias de manejo ambiental"},
     {name: "Plan de cierre y post cierre de proyectos", text:"Hola, deseo más información sobre el curso de Plan de cierre y post cierre de proyectos"},
     {name: "Calidad ambiental, evaluación de riesgos y técnicas de remediación ambiental", text:"Hola, deseo más información sobre el curso de Calidad ambiental, evaluación de riesgos y técnicas de remediación ambiental"},
+    {name: "Herramientas de sistemas de información geográfica en el Estudio de Impacto Ambiental", text:"Hola, deseo más información sobre el curso de Herramientas de sistemas de información geográfica en el Estudio de Impacto Ambiental"},
+];
+export const moduleGestionMunicipal = [
+    {name: "Gestión y manejo de residuos sólidos municipales", text:"Hola, deseo más información sobre el curso de Gestión y manejo de residuos sólidos municipales"},
+    {name: "Estudio de caracterización de residuos sólidos municipales", text:"Hola, deseo más información sobre el curso de Estudio de caracterización de residuos sólidos municipales"},
+    {name: "Gestión de área técnica municipal (ATM)", text:"Hola, deseo más información sobre el curso de Gestión de área técnica municipal (ATM)"},
+    {name: "Saneamiento ambiental, JASS y Diseño de UBS", text:"Hola, deseo más información sobre el curso de Saneamiento ambiental, JASS y Diseño de UBS"},
+    {name: "Tratamiento de aguas residuales", text:"Hola, deseo más información sobre el curso de Tratamiento de aguas residuales"},
+    {name: "Certificación ambiental para proyectos", text:"Hola, deseo más información sobre el curso de Certificación ambiental para proyectos"},
+    {name: "Fiscalización ambiental ", text:"Hola, deseo más información sobre el curso de Fiscalización ambiental"},
+    {name: "Diseño, construcción, operación y cierre de rellenos sanitarios", text:"Hola, deseo más información sobre el curso de Diseño, construcción, operación y cierre de rellenos sanitarios"},
+    {name: "Ecoeficiencia municipal y regional", text:"Hola, deseo más información sobre el curso de Ecoeficiencia municipal y regional"},
+    {name: "Gestión ambiental municipal, gobernanza ambiental y participación ciudadana", text:"Hola, deseo más información sobre el curso de Gestión ambiental municipal, gobernanza ambiental y participación ciudadana"},
+    {name: "Gestión del cambio climático", text:"Hola, deseo más información sobre el curso de Gestión del cambio climático"},
 ];
 export const modulesSolidWaste = [
     {name: "Gestión y manejo de residuos sólidos en minería", text:"Hola, deseo más información sobre el curso de Gestión y manejo de residuos sólidos en minería"},
@@ -77,7 +91,7 @@ export const modulesTechnicalIrrigation = [
 ];
 
 //Ingenieria Civil
-export const modulesTechnicalAssistant = [
+export const moduleAsistenteTecnicoObras = [
     {name: "Planificación y programación de obras", text:"Hola, deseo más información sobre el curso de Planificación y programación de obras"},
     {name: "Control de obras", text:"Hola, deseo más información sobre el curso de Control de obras"},
     {name: "Metrados en edificaciones", text:"Hola, deseo más información sobre el curso de Metrados en edificaciones"},
@@ -91,20 +105,33 @@ export const modulesTechnicalAssistant = [
     {name: "Expediente técnico en obras", text:"Hola, deseo más información sobre el curso de Expediente técnico en obras"},
     {name: "Régimen laboral en construcción civil", text:"Hola, deseo más información sobre el curso de Régimen laboral en construcción civil"},
 ];
-export const modulesIngVial = [
+export const moduleIngEstructural = [
+    {name: "Diseño de Sistemas de Concreto para Contención de Tierra y Líquidos", text:"Hola, deseo más información sobre el curso de Diseño de Sistemas de Concreto para Contención de Tierra y Líquidos"},
+    {name: "Diseño y Aspectos Constructivos de Edificios de Concreto Armado", text:"Hola, deseo más información sobre el curso de Diseño y Aspectos Constructivos de Edificios de Concreto Armado"},
+    {name: "Diseño de Edificios Industriales", text:"Hola, deseo más información sobre el curso de Diseño de Edificios Industriales"},
+    {name: "Diseño de Estructuras de Acero", text:"Hola, deseo más información sobre el curso de Diseño de Estructuras de Acero"},
+    {name: "Diseño de Puentes", text:"Hola, deseo más información sobre el curso de Diseño de Puentes"},
+    {name: "Reparación y Refuerzo de Estructuras Existentes", text:"Hola, deseo más información sobre el curso de Reparación y Refuerzo de Estructuras Existentes"},
+    {name: "Tópicos Especiales en Proyectos Estructurales", text:"Hola, deseo más información sobre el curso de Tópicos Especiales en Proyectos Estructurales"},
+    {name: "Diseño Sismorresistente en edificio de concreto armado", text:"Hola, deseo más información sobre el curso de Diseño Sismorresistente en edificio de concreto armado"},
+    {name: "Diseño de Elementos en Concreto Postensado", text:"Hola, deseo más información sobre el curso de Diseño de Elementos en Concreto Postensado"}
+];
+
+export const moduleIngVial = [
     {name: "Geología – Geotecnia en obras viales", text:"Hola, deseo más información sobre el curso de Geología – Geotecnia en obras viales"},
     {name: "Suelos y pavimentos", text:"Hola, deseo más información sobre el curso de Suelos y pavimentos"},
     {name: "Hidrología e hidráulica", text:"Hola, deseo más información sobre el curso de Hidrología e hidráulica"},
     {name: "Estructuras en carreteras - puentes", text:"Hola, deseo más información sobre el curso de Estructuras en carreteras - puentes"},
     {name: "Metrados, costos y presupuesto – cronograma en obras viales", text:"Hola, deseo más información sobre el curso de Metrados, costos y presupuesto – cronograma en obras viales"},
     {name: "Arqueología en proyectos viales", text:"Hola, deseo más información sobre el curso de Arqueología en proyectos viales"},
-    {name: "Estudio medio ambiental – derecho de vía – interferencias", text:"Hola, deseo más información sobre el curso de Estudio medio ambiental – derecho de vía – interferencias"},
+    {name: "Estudios ambientales en proyectos viales", text:"Hola, deseo más información sobre el curso de Estudios ambientales en proyectos viales"},
+    {name: "Mecánica de suelos en carreteras", text:"Hola, deseo más información sobre el curso de Mecánica de suelos en carreteras"},
     {name: "Diseño, construcción y mantenimiento de Túneles", text:"Hola, deseo más información sobre el curso de Diseño, construcción y mantenimiento de Túneles"},
     {name: "Integración de proyectos de infraestructura vial", text:"Hola, deseo más información sobre el curso de Integración de proyectos de infraestructura vial"},
     {name: "Tráfico y carga", text:"Hola, deseo más información sobre el curso de Tráfico y carga"},
     {name: "Topografía, diseño geométrico, señalización y seguridad vial", text:"Hola, deseo más información sobre el curso de Topografía, diseño geométrico, señalización y seguridad vial"}
 ];
-export const modulesIngBridge = [
+export const moduleIngPuentes = [
     {name: "Diseño sísmico en puentes AASHTO-LRFD", text:"Hola, deseo más información sobre el curso de Diseño sísmico en puentes AASHTO-LRFD"},
     {name: "Mantenimiento y conservacíon de puentes", text:"Hola, deseo más información sobre el curso de Mantenimiento y conservacíon de puentes"},
     {name: "Inspección, evaluación de puentes bajo la metodología SCAP", text:"Hola, deseo más información sobre el curso de Inspección, evaluación de puentes bajo la metodología SCAP"},
@@ -115,18 +142,28 @@ export const modulesIngBridge = [
     {name: "Diseño y modelamiento de puentes con CSi BRIDGE", text:"Hola, deseo más información sobre el curso de Diseño y modelamiento de puentes con CSi BRIDGE"},
     {name: "Modelamiento y análisis estructural de puentes", text:"Hola, deseo más información sobre el curso de Modelamiento y análisis estructural de puentes"}
 ];
-export const modulesWorksSupervision = [
-    {name: "Planeamiento Y Programación de Obras", text:"Hola, deseo más información sobre el curso de Planeamiento Y Programación de Obras"},
-    {name: "Informes de obra", text:"Hola, deseo más información sobre el curso de Informes de obra"},
-    {name: "Control técnico y calidad en obras", text:"Hola, deseo más información sobre el curso de Control técnico y calidad en obras"},
-    {name: "Ampliaciones de plazo, adicionales de obra y penalidades en obra", text:"Hola, deseo más información sobre el curso de Ampliaciones de plazo, adicionales de obra y penalidades en obra"},
-    {name: "Recepción - liquidación de obras y medios de controversia", text:"Hola, deseo más información sobre el curso de Recepción - liquidación de obras y medios de controversia"},
+export const moduleModelamientoBIM = [
+    {name: "Modelado de estructuras BIM", text:"Hola, deseo más información sobre el curso de Modelado de estructuras BIM"},
+    {name: "Modelamiento de estructuras metálicas BIM", text:"Hola, deseo más información sobre el curso de Modelamiento de estructuras metálicas BIM"},
+    {name: "Modelado de arquitectura", text:"Hola, deseo más información sobre el curso de Modelado de arquitectura"},
+    {name: "Modelamiento de instalaciones sanitarias", text:"Hola, deseo más información sobre el curso de Modelamiento de instalaciones sanitarias"},
+    {name: "Modelamiento de instalaciones eléctricas", text:"Hola, deseo más información sobre el curso de Modelamiento de instalaciones eléctricas"},
+    {name: "Creación de planos y documentación BIM", text:"Hola, deseo más información sobre el curso de Creación de planos y documentación BIM"},
+    {name: "Lean construcción y BIM", text:"Hola, deseo más información sobre el curso de Lean construcción y BIM"},
+    {name: "Tópicos Gestión con Metodología BIM", text:"Hola, deseo más información sobre el curso de Tópicos Gestión con Metodología BIM"},
+];
+export const moduleResidenciaSupervicionObras = [
     {name: "Expediente técnico como herramienta para la ejecución y supervisión de obra", text:"Hola, deseo más información sobre el curso de Expediente técnico como herramienta para la ejecución y supervisión de obra"},
     {name: "Valorización y liquidación de obras por administración directa", text:"Hola, deseo más información sobre el curso de Valorización y liquidación de obras por administración directa"},
     {name: "Plan de gestión de seguridad y salud en obra", text:"Hola, deseo más información sobre el curso de Plan de gestión de seguridad y salud en obra"},
     {name: "Contratación y ejecución de obras", text:"Hola, deseo más información sobre el curso de Contratación y ejecución de obras"},
     {name: "Preliminares para inicio de obra", text:"Hola, deseo más información sobre el curso de Preliminares para inicio de obra"},
-    {name: "Metrados y valorizaciones de obra", text:"Hola, deseo más información sobre el curso de Metrados y valorizaciones de obra"}
+    {name: "Metrados y valorizaciones de obra", text:"Hola, deseo más información sobre el curso de Metrados y valorizaciones de obra"},
+    {name: "Planeamiento Y Programación de Obras", text:"Hola, deseo más información sobre el curso de Planeamiento Y Programación de Obras"},
+    {name: "Informes de obra", text:"Hola, deseo más información sobre el curso de Informes de obra"},
+    {name: "Control técnico y calidad en obras", text:"Hola, deseo más información sobre el curso de Control técnico y calidad en obras"},
+    {name: "Ampliaciones de plazo, adicionales de obra y penalidades en obra", text:"Hola, deseo más información sobre el curso de Ampliaciones de plazo, adicionales de obra y penalidades en obra"},
+    {name: "Recepción - liquidación de obras y medios de controversia", text:"Hola, deseo más información sobre el curso de Recepción - liquidación de obras y medios de controversia"}
 ];
 
 //Ingenieria alimentaria

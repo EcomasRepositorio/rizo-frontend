@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { modulesTechnicalIrrigation } from "@/components/utils/courses/course";
+import { moduleModelamientoBIM } from "@/components/utils/courses/course";
 import { MdOutlineBookOnline, MdCalendarMonth, MdAlarmOn } from "react-icons/md";
 import { PiCalendarFill } from "react-icons/pi";
 import { BsWhatsapp } from "react-icons/bs";
@@ -72,7 +72,7 @@ const ModelamientoBIM = () => {
           <div className="grid justify-between gap-4 md:grid-cols-2 grid-cols-1">
             <Link
               className="bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:bg-gradient-to-bl hover:scale-110 duration-300 text-white w-full font-bold py-4 px-4 rounded-xl mt-4 flex justify-between items-center"
-              href="https://wa.me/51984040264?text=Hola,%20deseo%20más%20información%20sobre%20el%20diplomado%20de%20Sistema%20de%20Riego%20Tecnificado"
+              href="https://wa.me/51961646248?text=Hola,%20deseo%20más%20información%20sobre%20el%20diplomado%20de%20Sistema%20de%20Riego%20Tecnificado"
               target="_blank">
                 Más información
               <BsWhatsapp className="ml-4 text-2xl text-green-500" />
@@ -105,7 +105,7 @@ const ModelamientoBIM = () => {
               animate={{ opacity: 1, transition: { duration: 0.1 } }}>
               <div className="text-sm font-sans font-semibold">
                 <ul className="">
-                  {modulesTechnicalIrrigation.map((item, index) => (
+                  {moduleModelamientoBIM.map((item, index) => (
                     <motion.li
                       key={index}
                       initial={{ opacity: 0 }}
@@ -117,7 +117,7 @@ const ModelamientoBIM = () => {
                       style={{ display: "block", width: "100%" }}
                       onClick={() =>
                         window.open(
-                          `https://wa.me/51984040264/?text=${encodeURIComponent(item.text)}`, "_blank"
+                          `https://wa.me/51961646248/?text=${encodeURIComponent(item.text)}`, "_blank"
                         )
                       }>
                       <div className="flex items-center text-customPurple800">
