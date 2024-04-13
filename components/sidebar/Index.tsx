@@ -13,7 +13,7 @@ const Sidebar = () => {
   return (
     <div className='sticky top-0 z-50'>
     <section className='bg-customPurple300'>
-      <div className="py-3 shadow-md max-w-screen-xl mx-auto p-2 flex justify-between items-center">
+      <div className="py-3 shadow-md max-w-screen-xl mx-auto p-2 flex justify-between items-center flex-wrap lg:flex-nowrap">
         {/* Botón a la izquierda */}
 
         {/* Logo */}
@@ -23,11 +23,16 @@ const Sidebar = () => {
             width={800}
             height={800}
             alt="rizo-logo"
-            className='w-48 h-16'
+            className='w-48 h-auto'
             priority={true}
           />
         </Link>
-        <div className='flex gap-10 text-customYellow font-extrabold text-lg'>
+
+        <button className="flex justify-center items-center md:hidden visible" onClick={() => setOpen(!open)}>
+          {open ? <GrClose className='text-5xl text-customYellow z-50'/> : <TfiMenuAlt className='text-5xl text-customYellow' />}
+        </button>
+
+        <div className='flex gap-10 text-customYellow font-extrabold md:text-sm text-xs'>
         <Link href="/certs" className="flex justify-center items-center border-[3px] border-customYellow rounded-xl py-2 px-6">
           <span className='uppercase'>Verificar certificado</span>
         </Link>
@@ -37,35 +42,35 @@ const Sidebar = () => {
         </Link>
         </div>
 
-        <button className="flex justify-center items-center" onClick={() => setOpen(!open)}>
-          {open ? <GrClose className='text-5xl text-customYellow'/> : <TfiMenuAlt className='text-5xl text-customYellow' />}
+        <button className="hidden md:flex justify-center items-center" onClick={() => setOpen(!open)}>
+          {open ? <GrClose className='text-5xl text-customYellow z-50'/> : <TfiMenuAlt className='text-5xl text-customYellow' />}
         </button>
 
         {/* Menú lateral */}
-        <div className={`${open ? 'block' : 'hidden'} bg-cyan-600 fixed w-80 z-50 lg:right-96 top-20 transition-all duration-300`}>
+        <div className={`${open ? 'block' : 'hidden'} bg-customPurple300 fixed w-80 z-50 lg:right-96 top-20 transition-all duration-300`}>
           <div className={`${open ? 'py-3' : 'hidden'}`}>
           <ul className="text-xl items-center justify-center">
-                <li className="font-bold text-[#FFD700] hover:text-white mt-6 mb-10 py-1 px-1 text-center hover:bg-[#6D0083] transition-transform transform hover:scale-125">
+                <li className="font-bold text-[#FFD700] hover:text-white mt-6 mb-10 py-1 px-1 text-center hover:bg-customYellow transition-transform transform hover:scale-110 w-60 mx-auto">
                   <Link href="/" onClick={() => setOpen(!open)}>
                     Inicio
                   </Link>
                 </li>
-                <li className="font-bold text-[#FFD700] hover:text-white mb-10 py-1 px-1 text-center hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125">
+                <li className="font-bold text-[#FFD700] hover:text-white mb-10 py-1 px-1 text-center hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125 w-60 mx-auto">
                   <Link href="/certs" onClick={() => setOpen(!open)}>
                     Certificado
                   </Link>
                 </li>
-                <li className="font-bold text-[#FFD700] hover:text-white mb-10 py-1 px-1 text-center hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125">
+                <li className="font-bold text-[#FFD700] hover:text-white mb-10 py-1 px-1 text-center hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125 w-60 mx-auto">
                   <Link href="/graduate" onClick={() => setOpen(!open)}>
                     Diplomados
                   </Link>
                 </li>
-                <li className="font-bold text-[#FFD700] hover:text-white mb-10 py-1 px-1 text-center hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125">
+                <li className="font-bold text-[#FFD700] hover:text-white mb-10 py-1 px-1 text-center hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125 w-60 mx-auto">
                   <Link href="/about" onClick={() => setOpen(!open)}>
                     Nosotros
                   </Link>
                 </li>
-                <li className="font-bold text-[#FFD700] hover:text-white mb-10 py-1 px-1 text-center hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125">
+                <li className="font-bold text-[#FFD700] hover:text-white mb-10 py-1 px-1 text-center hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125 w-60 mx-auto">
                   <Link href="/" onClick={() => setOpen(!open)}>
                     ¡Inscribete!
                   </Link>
