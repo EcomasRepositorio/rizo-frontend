@@ -2,7 +2,7 @@
     position: relative;
     background: #000116;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     min-height: 500px;
     margin-top:0px;
     overflow: hidden;
@@ -83,7 +83,7 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 900px) {
     .slider .slide .info {
         font-size: 1.0em;
         line-height: 40px;

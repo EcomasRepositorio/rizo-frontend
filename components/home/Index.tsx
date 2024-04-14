@@ -102,7 +102,7 @@ const Home = () => {
           className={`slide ${i === index ? 'active' : ''}`}>
             <Image src={`/banner${i + 1}.png`} alt="rizo" width={1200} height={1200} className=''/>
             <div
-              className="relative mx-auto text-right max-w-screen-xl p-2 xl:mt-[400px] lg:mt-[350px] md:mt-60 mt-48">
+              className="relative mx-auto text-right max-w-screen-xl p-4 xl:mt-[200px] lg:mt-[200px] md:mt-40 mt-48">
               {icons.map((icon, i) => (
                 i === index && (
               <motion.div
@@ -141,7 +141,7 @@ const Home = () => {
                 animate={i === index ? "visible" : "hidden"}
                 exit="hidden"
                 variants={textVariants}
-                className="font-extrabold text-4xl md:text-6xl lg:text-8xl xl-text-9xl mb-4 relative">
+                className="font-extrabold text-4xl md:text-6xl lg:text-7xl xl-text-9xl mb-4 relative">
                 <span className={`bg-clip-text text-transparent bg-gradient-to-r ${slide.color}`}>
                 {slide.title.split(' ').map((word, j, array) => (
                   <React.Fragment key={j}>
