@@ -12,6 +12,7 @@ import Ssoma from "@/components/graduate/IngAmbiental/Ssoma";
 import Riego from "@/components/graduate/IngAgronoma/Riego";
 import SistemaRiego from "@/components/graduate/IngAgronoma/SistemaRiego";
 import GestionAlimentaria from "@/components/graduate/IngAlimentaria/GestionAlimentaria";
+import IngSanitaria from "@/components/graduate/IngAmbiental/IngSanitaria";
 
 export const FEATURES = [
     {
@@ -65,6 +66,7 @@ export const questions = [
         { title: "Monitoreo y evaluación de la calidad ambiental", contentComponent: <MonitoreoAmbiental />, image: "/contact.jpg"  },
         { title: "Estudio de impacto ambiental", contentComponent: <EstudioAmbiental />, image: "/contact.jpg" },
         { title: "Gestión ambiental municipal y regional",contentComponent: <GestionMunicipal />, image: "/contact.jpg" },
+        { title: "Ingeniería Sanitaria", contentComponent: <IngSanitaria />, image: "/contact.jpg" },
         { title: "SSOMA (Seguridad y Salud Ocupacional y Medio Ambiente", contentComponent: <Ssoma />, image: "/contact.jpg" },
       ],
     },

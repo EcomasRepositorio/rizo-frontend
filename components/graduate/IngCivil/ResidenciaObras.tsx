@@ -48,7 +48,7 @@ const ResidenciaObras = () => {
           <div className="flex items-center md:mb-3 mb-2">
             <PiCalendarFill className="md:text-5xl text-4xl text-customOrange mr-2 flex-shrink-0" />
             <p className="md:text-2xl font-bold text-customPurple300">
-              Inicio 18 de abril
+              Inicio 27 de abril
             </p>
           </div>
           <div className="flex items-center md:mb-3 mb-2">
@@ -72,7 +72,7 @@ const ResidenciaObras = () => {
           <div className="grid justify-between gap-4 md:grid-cols-2 grid-cols-1">
             <Link
               className="bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:bg-gradient-to-bl hover:scale-110 duration-300 text-white w-full font-bold py-4 px-4 rounded-xl mt-4 flex justify-between items-center"
-              href="https://wa.me/51961646248?text=Hola,%20deseo%20más%20información%20sobre%20el%20diplomado%20de%20Sistema%20de%20Riego%20Tecnificado"
+              href="https://wa.me/51961646248?text=Hola,%20deseo%20más%20información%20sobre%20el%20diplomado%20de%20Residencia%20y%20Supervición%20de%20Obras"
               target="_blank">
                 Más información
               <BsWhatsapp className="ml-4 text-2xl text-green-500" />

@@ -27,7 +27,7 @@ export const moduleGestionMunicipal = [
     {name: "Gestión ambiental municipal, gobernanza ambiental y participación ciudadana", text:"Hola, deseo más información sobre el curso de Gestión ambiental municipal, gobernanza ambiental y participación ciudadana"},
     {name: "Gestión del cambio climático", text:"Hola, deseo más información sobre el curso de Gestión del cambio climático"},
 ];
-export const modulesSolidWaste = [
+export const moduleResiduosSolidos = [
     {name: "Gestión y manejo de residuos sólidos en minería", text:"Hola, deseo más información sobre el curso de Gestión y manejo de residuos sólidos en minería"},
     {name: "Gestión y manejo de residuos sólidos de construcción", text:"Hola, deseo más información sobre el curso de Gestión y manejo de residuos sólidos de construcción"},
     {name: "Formulación de proyectos de inversión pública de residuos sólidos", text:"Hola, deseo más información sobre el curso de Formulación de proyectos de inversión pública de residuos sólidos"},
@@ -41,7 +41,7 @@ export const modulesSolidWaste = [
     {name: "Estudio de caracterización de residuos sólidos", text:"Hola, deseo más información sobre el curso de Plan de Estudio de caracterización de residuos sólidos"},
     {name: "Valorización de residuos sólidos", text:"Hola, deseo más información sobre el curso de Valorización de residuos sólidos"},
 ];
-export const modulesQualityMonitoringAmbientaly = [
+export const moduleMonitoreoAmbiental = [
     {name: "Monitoreo y evaluación de la calidad de suelo", text:"Hola, deseo más información sobre el curso de Monitoreo y evaluación de la calidad de suelo"},
     {name: "Monitoreo y evaluación de radiaciones no ionizantes", text:"Hola, deseo más información sobre el curso de Monitoreo y evaluación de radiaciones no ionizantes"},
     {name: "Monitoreo de agentes ocupacionales", text:"Hola, deseo más información sobre el curso de Monitoreo de agentes ocupacionales"},
@@ -52,22 +52,33 @@ export const modulesQualityMonitoringAmbientaly = [
     {name: "Monitoreo y evaluación de la calidad de aire", text:"Hola, deseo más información sobre el curso de Monitoreo y evaluación de la calidad de aire"},
     {name: "Monitoreo y evaluación de ruido ambiental", text:"Hola, deseo más información sobre el curso de Monitoreo y evaluación de ruido ambiental"}
 ];
-export const modulesManagementAmbientaly = [
-    {name: "Gestión y manejo de residuos sólidos municipales", text:"Hola, deseo más información sobre el curso de Gestión y manejo de residuos sólidos municipales"},
-    {name: "Estudio de caracterización de residuos sólidos municipales", text:"Hola, deseo más información sobre el curso de Estudio de caracterización de residuos sólidos municipales"},
-    {name: "Gestión de área técnica municipal (ATM)", text:"Hola, deseo más información sobre el curso de Gestión de área técnica municipal (ATM)"},
-    {name: "Saneamiento ambiental, JASS y Diseño de UBS", text:"Hola, deseo más información sobre el curso de Saneamiento ambiental, JASS y Diseño de UBS"},
-    {name: "Tratamiento de aguas residuales", text:"Hola, deseo más información sobre el curso de Tratamiento de aguas residuales"},
-    {name: "Certificación ambiental para proyectos", text:"Hola, deseo más información sobre el curso Certificación ambiental para proyectos"},
+export const moduleSsoma = [
+    {name: "Elaboración de matriz IPERC - mapa de riesgos", text:"Hola, deseo más información sobre el curso de Elaboración de matriz IPERC - mapa de riesgos"},
+    {name: "Comité de seguridad y salud en el trabajo", text:"Hola, deseo más información sobre el curso de Comité de seguridad y salud en el trabajo"},
+    {name: "Seguridad en trabajo de alto riesgo", text:"Hola, deseo más información sobre el curso de Seguridad en trabajo de alto riesgo"},
+    {name: "Investigación y reporte de accidentes laborales", text:"Hola, deseo más información sobre el curso de Investigación y reporte de accidentes laborales"},
+    {name: "Prevención de riesgos laborales", text:"Hola, deseo más información sobre el curso de Prevención de riesgos laborales"},
+    {name: "Fiscalización y auditorias de SSO - SUNAFIL", text:"Hola, deseo más información sobre el curso de Fiscalización y auditorias de SSO - SUNAFIL"},
     {name: "Fiscalización ambiental", text:"Hola, deseo más información sobre el curso de Fiscalización ambiental"},
-    {name: "Diseño, construcción, operación y cierre de rellenos sanitarios", text:"Hola, deseo más información sobre el curso de Diseño, construcción, operación y cierre de rellenos sanitarios"},
-    {name: "Ecoeficiencia municipal y regional", text:"Hola, deseo más información sobre el curso de Ecoeficiencia municipal y regional"},
-    {name: "Gestión ambiental municipal, gobernanza ambiental y participación ciudadana", text:"Hola, deseo más información sobre el curso de Gestión ambiental municipal, gobernanza ambiental y participación ciudadana"},
-    {name: "Gestión del cambio climático", text:"Hola, deseo más información sobre el curso de Gestión del cambio climático"},
+    {name: "Supervisor SSOMA", text:"Hola, deseo más información sobre el curso de Supervisor SSOMA"},
+    {name: "Auditor Interno SSOMA", text:"Hola, deseo más información sobre el curso de Auditor Interno SSOMA"},
+    {name: "Gestión ambiental - ISO 14001", text:"Hola, deseo más información sobre el curso de Gestión ambiental - ISO 14001"},
+    {name: "Implementación de sistema de gestión de SST", text:"Hola, deseo más información sobre el curso de Implementación de sistema de gestión de SST"}
+];
+export const moduleIngSanitaria = [
+    {name: "Diseño de líneas de conducción y almacenamiento", text:"Hola, deseo más información sobre el curso de Diseño de líneas de conducción y almacenamiento"},
+    {name: "Diseño de redes de alcantarillado", text:"Hola, deseo más información sobre el curso de Diseño de redes de alcantarillado"},
+    {name: "Diseño de redes de abastecimiento de agua potable", text:"Hola, deseo más información sobre el curso de Diseño de redes de abastecimiento de agua potable"},
+    {name: "Diseño y cálculo de canales abiertos", text:"Hola, deseo más información sobre el curso de Diseño y cálculo de canales abiertos"},
+    {name: "Diseño de instalaciones sanitarias en edificaciones", text:"Hola, deseo más información sobre el curso de Diseño de instalaciones sanitarias en edificaciones"},
+    {name: "Diseño y operación de plantas de tratamiento de aguas residuales", text:"Hola, deseo más información sobre el curso de Diseño y operación de plantas de tratamiento de aguas residuales"},
+    {name: "Diseño de plantas potabilizadoras", text:"Hola, deseo más información sobre el curso de Diseño de plantas potabilizadoras"},
+    {name: "Elaboración de expediente técnico para obras de agua y saneamiento", text:"Hola, deseo más información sobre el curso de Elaboración de expediente técnico para obras de agua y saneamiento"},
+    {name: "Diseño de obras de captación de aguas superficiales y subterráneas", text:"Hola, deseo más información sobre el curso de Diseño de obras de captación de aguas superficiales y subterráneas"},
 ];
 
 //Ingenieria Agronoma
-export const modulesIrrigation = [
+export const moduleRiego = [
     {name: "Nutrición vegetal y principios de fertirriego", text:"Hola, deseo más información sobre el curso de Nutrición vegetal y principios de fertirriego"},
     {name: "Riego tecnificado por aspersión", text:"Hola, deseo más información sobre el curso de riego tecnificado por aspersión"},
     {name: "Riego tecnificado por goteo", text:"Hola, deseo más información sobre el curso de Riego tecnificado por goteo"},
@@ -78,9 +89,9 @@ export const modulesIrrigation = [
     {name: "Interpretación y análisis de suelos", text:"Hola, deseo más información sobre el curso de Interpretación y análisis de suelos"},
     {name: "Calidad de agua para riego", text:"Hola, deseo más información sobre el curso de Calidad de agua para riego"}
 ];
-export const modulesTechnicalIrrigation = [
+export const moduleRiegoTecnificado = [
     {name: "Sistemas de riego tecnificado por goteo", text:"Hola, deseo más información sobre el curso de Sistemas de riego tecnificado por goteo"},
-    {name: "Fertiirrigación", text:"Hola, deseo más información sobre el curso de Fertiirrigación"},
+    {name: "Fertirrigación", text:"Hola, deseo más información sobre el curso de Fertirrigación"},
     {name: "Análisis de suelo, agua y foliar", text:"Hola, deseo más información sobre el curso de Análisis de suelo, agua y foliar"},
     {name: "Importancia del suelo en la agricultura", text:"Hola, deseo más información sobre el curso de Importancia del suelo en la agricultura"},
     {name: "Hidráulica de tuberías", text:"Hola, deseo más información sobre el curso de Hidráulica de tuberías"},
@@ -167,7 +178,7 @@ export const moduleResidenciaSupervicionObras = [
 ];
 
 //Ingenieria alimentaria
-export const modulesFoodQuality = [
+export const moduleGestionAlimentaria = [
     {name: "Interpretación e implementación de la norma ISO 31000 - Gestión de Riesgos", text:"Hola, deseo más información sobre el curso de Interpretación e implementación de la norma ISO 31000 - Gestión de Riesgos"},
     {name: "Programas Pre-requisitos con base en ISO 22002-1 y BRC v.09", text:"Hola, deseo más información sobre el curso de Programas Pre-requisitos con base en ISO 22002-1 y BRC v.09"},
     {name: "Análisis de peligros y puntos críticos de control (HACCP)", text:"Hola, deseo más información sobre el curso de Análisis de peligros y puntos críticos de control (HACCP)"},
@@ -176,20 +187,6 @@ export const modulesFoodQuality = [
     {name: "Inspección y muestreo de alimentos", text:"Hola, deseo más información sobre el curso de Inspección y muestreo de alimentos"},
     {name: "Trazabilidad y etiquetado", text:"Hola, deseo más información sobre el curso de Trazabilidad y etiquetado"},
     {name: "Auditoria del Sistema de Gestión de Calidad e Inocuidad Alimentaria en base a la Norma ISO 19011", text:"Hola, deseo más información sobre el curso de Auditoria del Sistema de Gestión de Calidad e Inocuidad Alimentaria en base a la Norma ISO 19011"},
-    {name: "Calidad e Inocuidad alimentaria", text:"Hola, deseo más información sobre el curso de Calidad e Inocuidad alimentaria"}
-];
-
-//SSOMA
-export const modulesSsoma = [
-    {name: "Elaboración de matriz IPERC - mapa de riesgos", text:"Hola, deseo más información sobre el curso de Elaboración de matriz IPERC - mapa de riesgos"},
-    {name: "Comité de seguridad y salud en el trabajo", text:"Hola, deseo más información sobre el curso de Comité de seguridad y salud en el trabajo"},
-    {name: "Seguridad en trabajo de alto riesgo", text:"Hola, deseo más información sobre el curso de Seguridad en trabajo de alto riesgo"},
-    {name: "Investigación y reporte de accidentes laborales", text:"Hola, deseo más información sobre el curso de Investigación y reporte de accidentes laborales"},
-    {name: "Prevención de riesgos laborales", text:"Hola, deseo más información sobre el curso de Prevención de riesgos laborales"},
-    {name: "Fiscalización y auditorias de SSO - SUNAFIL", text:"Hola, deseo más información sobre el curso de Fiscalización y auditorias de SSO - SUNAFIL"},
-    {name: "Fiscalización ambiental", text:"Hola, deseo más información sobre el curso de Fiscalización ambiental"},
-    {name: "Supervisor SSOMA", text:"Hola, deseo más información sobre el curso de Supervisor SSOMA"},
-    {name: "Auditor Interno SSOMA", text:"Hola, deseo más información sobre el curso de Auditor Interno SSOMA"},
-    {name: "Gestión ambiental - ISO 14001", text:"Hola, deseo más información sobre el curso de Gestión ambiental - ISO 14001"},
-    {name: "Implementación de sistema de gestión de SST", text:"Hola, deseo más información sobre el curso de Implementación de sistema de gestión de SST"}
+    {name: "Calidad e Inocuidad alimentaria", text:"Hola, deseo más información sobre el curso de Calidad e Inocuidad alimentaria"},
+    {name: "Higiene, Saneamiento y control de plagas en la industria alimentaria ", text:"Hola, deseo más información sobre el curso de Higiene, Saneamiento y control de plagas en la industria alimentaria "},
 ];

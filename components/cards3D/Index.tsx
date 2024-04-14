@@ -138,7 +138,7 @@ const TiltCard = ({ icon, text, imageSrc, href, index }: TiltCardProps) => {
           className="absolute inset-4 grid place-content-center rounded-xl shadow-xl shadow-slate-950 text-white"
           style={{ transform: "translateZ(75px)" }}>
           {icon}
-          <p className="uppercase text-center text-white text-2xl font-extrabold mt-96">{text}</p>
+          <p className="uppercase text-center text-customYellow text-2xl font-extrabold mt-96">{text}</p>
         </div>
         <Image
           src={imageSrc}

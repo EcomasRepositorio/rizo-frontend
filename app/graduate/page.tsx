@@ -6,6 +6,7 @@ import { BsBoxArrowInUpRight } from "react-icons/bs";
 import ModalGraduate from '@/components/share/ModalGraduate';
 import { questions } from '@/constants';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Graduate = () => {
 
@@ -56,7 +57,7 @@ const Graduate = () => {
 
   return (
     <section>
-      <div className="relative pt-20 lg:pt-60 pb-28 lg:pb-60">
+      <div className="relative pt-20 lg:pt-52 pb-28 lg:pb-80">
         <div
         className="absolute top-0 w-full h-full bg-center bg-cover"
         style={{ backgroundImage: 'url("/fondo.jpeg")' }}
@@ -67,19 +68,19 @@ const Graduate = () => {
         ></span>
         </div>
         <div className="relative mx-auto max-w-screen-xl p-2 text-white">
-        <h1 className="font-extrabold text-4xl lg:text-6xl mt-10">
-          Conoce nuestros diplomados
-        </h1>
-        <p className='font-semibold mt-2 text-lg'>
-            Somos un centro de capacitación profesional de amplia experiencia que desarrollamos cursos y diplomados
-        </p>
-        <button className='border px-4 py-1 mt-4 rounded-xl'>
-            Contacto
-        </button>
+          <h1 className="font-extrabold text-4xl md:text-7xl mt-10">
+            Diplomados y cursos
+          </h1>
+          <p className='font-semibold mt-4 mb-10 lg:text-3xl'>
+          Avanza en tu carrera con conocimientos especializados
+          </p>
+          <Link href="#diplomados" className='border px-5 py-2 font-extrabold rounded-xl text-2xl hover:bg-customYellow hover:text-customPurple800 hover:scale-110 duration-300'>
+            Ver diplomados
+          </Link>
         </div>
       </div>
 
-      <div className='relative'>
+      <div id='diplomados' className='relative'>
         <div className='absolute w-full h-full opacity-90 z-0 blur-sm'>
           <video autoPlay muted loop className='w-full h-full object-cover'>
             <source src='/video.webm' type='video/mp4' />
@@ -225,6 +226,7 @@ const Graduate = () => {
           </div>
         </div>
       </div>
+
       <ModalGraduate open={selectedAnswer !== null} onClose={() => setSelectedAnswer(null)}>
         {questions.map((q) =>
           q.id === activeQuestion && selectedAnswer !== null ?

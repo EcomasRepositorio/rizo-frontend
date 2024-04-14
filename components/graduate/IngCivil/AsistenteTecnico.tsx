@@ -48,7 +48,7 @@ const AsistenteTecnico = () => {
           <div className="flex items-center md:mb-3 mb-2">
             <PiCalendarFill className="md:text-5xl text-4xl text-customOrange mr-2 flex-shrink-0" />
             <p className="md:text-2xl font-bold text-customPurple300">
-              Inicio 18 de abril
+              Inicio 02 de junio
             </p>
           </div>
           <div className="flex items-center md:mb-3 mb-2">

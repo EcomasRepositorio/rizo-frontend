@@ -129,9 +129,6 @@ const Home = () => {
                     className="border border-[#7042f88b] p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl shadow-[#7042f88b]">
                     {icon.img4}
                   </Link>
-                  {/* <Link key={`link-${i+4}`} href='' target="_blank" className="border border-[#7042f88b] p-2 rounded-full transition-transform transform hover:scale-150 shadow-xl shadow-[#7042f88b]">
-                    {icon.img5}
-                  </Link> */}
                 </h1>
               </motion.div>
               )
@@ -145,7 +142,7 @@ const Home = () => {
                 <span className={`bg-clip-text text-transparent bg-gradient-to-r ${slide.color}`}>
                 {slide.title.split(' ').map((word, j, array) => (
                   <React.Fragment key={j}>
-                    {j > 0 && j % 2 === 0 && <br />}
+                    {j > 0 && j % 3 === 0 && <br />}
                     {word}{' '}
                   </React.Fragment>
                   ))}

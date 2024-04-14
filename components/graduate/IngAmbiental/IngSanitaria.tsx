@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { moduleResiduosSolidos } from "@/components/utils/courses/course";
+import { moduleIngSanitaria } from "@/components/utils/courses/course";
 import { MdOutlineBookOnline, MdCalendarMonth, MdAlarmOn } from "react-icons/md";
 import { PiCalendarFill } from "react-icons/pi";
 import { BsWhatsapp } from "react-icons/bs";
@@ -10,7 +10,7 @@ import { FaRegFilePdf } from "react-icons/fa6";
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 import Link from "next/link";
 
-const GestionResiduosSolidos = () => {
+const IngSanitaria = () => {
   const [isAccordionOpen1, setIsAccordionOpen1] = useState(false);
   const [openWindow, setOpenWindow] = useState<Window | null>(null);
 
@@ -32,7 +32,7 @@ const GestionResiduosSolidos = () => {
   return (
     <div className="">
       <h2 className="uppercase flex justify-center text-center md:text-4xl text-2xl font-extrabold mb-5 bg-gradient-to-r from-customPurple300 to-customOrange text-transparent bg-clip-text p-2">
-        Gestión y manejo integral de residuos sólidos
+        Ingeniería sanitaria
       </h2>
       <div className="grid md:grid-cols-2 grid-cols-1">
         <div className="flex justify-center mb-4 md:mb-0">
@@ -48,7 +48,7 @@ const GestionResiduosSolidos = () => {
           <div className="flex items-center md:mb-3 mb-2">
             <PiCalendarFill className="md:text-5xl text-4xl text-customOrange mr-2 flex-shrink-0" />
             <p className="md:text-2xl font-bold text-customPurple300">
-              Inicio 20 de abril
+              Inicio 26 de mayo
             </p>
           </div>
           <div className="flex items-center md:mb-3 mb-2">
@@ -72,7 +72,7 @@ const GestionResiduosSolidos = () => {
           <div className="grid justify-between gap-4 md:grid-cols-2 grid-cols-1">
             <Link
               className="bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:bg-gradient-to-bl hover:scale-110 duration-300 text-white w-full font-bold py-4 px-4 rounded-xl mt-4 flex justify-between items-center"
-              href="https://wa.me/51961646248?text=Hola,%20deseo%20más%20información%20sobre%20el%20diplomado%20de%20Gestión%20y%20Manejo%20Integral%20de%20Residuos%20Sólidos"
+              href="https://wa.me/51961646248?text=Hola,%20deseo%20más%20información%20sobre%20el%20diplomado%20de%20Ingeniería%20Sanitaria"
               target="_blank">
                 Más información
               <BsWhatsapp className="ml-4 text-2xl text-green-500" />
@@ -105,7 +105,7 @@ const GestionResiduosSolidos = () => {
               animate={{ opacity: 1, transition: { duration: 0.1 } }}>
               <div className="text-sm font-sans font-semibold">
                 <ul className="">
-                  {moduleResiduosSolidos.map((item, index) => (
+                  {moduleIngSanitaria.map((item, index) => (
                     <motion.li
                       key={index}
                       initial={{ opacity: 0 }}
@@ -136,4 +136,4 @@ const GestionResiduosSolidos = () => {
   );
 };
 
-export default GestionResiduosSolidos;
+export default IngSanitaria;
