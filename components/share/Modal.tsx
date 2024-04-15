@@ -8,10 +8,10 @@ const Modal: React.FC<{
 
   return (
     <div
-      className={`fixed inset-0 p-4 flex justify-center items-center transition-colors ${overlayClass}`}
+      className={`fixed inset-0 p-2 flex justify-center items-center transition-colors ${overlayClass}`}
       onClick={onClose}>
       <div
-        className={`bg-white rounded-2xl shadow p-5 transition-all max-w-md sm:w-full w-full ${modalClass}`}
+        className={`bg-white rounded-2xl shadow md:p-5 p-2 transition-all max-w-[480px] sm:w-full w-full ${modalClass} flex flex-col items-center`}
         onClick={(e) => e.stopPropagation()}>
         <button
           className="absolute top-2 right-2 py-1 px-2 border border-neutral-200 rounded-md text-gray-400 bg-white hover:bg-gray-50 hover:text-gray-700"
