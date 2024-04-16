@@ -24,22 +24,23 @@ const Certificate: React.FC = () => {
   };
 
   return (
-  <section id='/certs'  className='relative pt-20 pb-20 p-2 items-center justify-center bg-customPurple300'>
-    <div className="absolute inset-0 bg-cover bg-no-repeat bg-center opacity-35 blur-sm">
+  <section id='/certs'  className='relative pt-20 pb-20 p-2 items-center justify-center bg-gray-700'>
+    <div className="absolute inset-0 bg-cover bg-no-repeat bg-center opacity-45 blur-sm">
       <video autoPlay muted loop className='w-full h-full object-cover'>
         <source src='/video-certs.webm' type='video/mp4' />
       </video>
     </div>
-    <div className="grid md:grid-cols-2 max-w-screen-lg mx-auto border rounded-3xl text-center md:mb-20 relative">
-      <div className="mb-4 md:mt-0 justify-center text-5xl font-extrabold text-gray-500">
+    <div className=" max-w-screen-lg mx-auto  bg-gray-700/50 shadow-customOrange backdrop-blur-md rounded-3xl text-center md:mb-20 relative">
+      <div className='grid md:grid-cols-3 md:py-10'>
+      <div className="md:col-span-1 text-5xl font-extrabold text-gray-500 md:flex md:justify-center">
         <div className='flex justify-center md:inline-block mb-4 lg:gap-32 gap-6'>
-          <Image src={'/logo/unp.png'} className="md:w-52 md:h-auto w-28 h-auto object-contain md:mt-2 mt-6 md:mx-auto md:mb-5" width={800} height={700} alt='logo_promas'  priority={true}/>
-          <Image src={'/logo/rizo.png'} className="md:w-[156px] md:h-auto w-[85px] h-auto object-contain md:mt-2 mt-6 md:mx-auto md:mb-5" width={800} height={700} alt='logo_promas'  priority={true}/>
-          <Image src={'/logo/cip.png'} className="md:w-44 md:h-auto w-24 h-auto object-contain md:mt-2 mt-6 md:mx-auto" width={800} height={700} alt='logo_promas'  priority={true}/>
+          <Image src={'/logo/unp.png'} className="md:w-44 md:h-auto w-28 h-auto object-contain md:mt-2 mt-6 md:mx-auto md:mb-10" width={800} height={700} alt='logo_promas'  priority={true}/>
+          <Image src={'/logo/rizo.png'} className="md:w-[124px] md:h-auto w-[85px] h-auto object-contain md:mt-2 mt-6 md:mx-auto md:mb-10" width={800} height={700} alt='logo_promas'  priority={true}/>
+          <Image src={'/logo/cip.png'} className="md:w-36 md:h-auto w-24 h-auto object-contain md:mt-2 mt-6 md:mx-auto" width={800} height={700} alt='logo_promas'  priority={true}/>
         </div>
       </div>
-        <div className="">
-          <h2 className="mb-4 md:mb-20 md:mt-0 mt-20 md:text-7xl text-4xl font-extrabold text-customOrange uppercase">
+        <div className="md:col-span-2">
+          <h2 className="mb-4 md:mb-10 md:mt-10 mt-20 md:text-6xl text-4xl font-extrabold text-customOrange uppercase">
             Certificados
           </h2>
           <p className="font-extrabold text-white sm:text-xl">
@@ -68,15 +69,15 @@ const Certificate: React.FC = () => {
               <BsQrCodeScan className='text-lg inline-block align-text-top mr-2' /> Buscar por código
             </button>
           </div>
-
+          </div>
+        </div>
       {isActive && (
-        <div>
+        <div className='w-full'>
           {searchType === 'documentNumber' && (<SearchDNI onSearchDNI={handleSearch} />)}
           {searchType === 'name' && (<SearchName onSearchName={handleSearch} />)}
           {searchType === 'code' && (<SearchCode onSearchCode={handleSearch} />)}
         </div>
       )}
-        </div>
     </div>
     {/* <Whatsapp /> */}
   </section>

@@ -78,7 +78,7 @@ const SearchName:React.FC<SearchCodeProps> = ({ onSearchCode }) => {
         <input
           type="search"
           id="default-search"
-          className="block w-full font-semibold p-4 ps-10 text-sm text-gray-900 border-2 border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:placeholder-gray-400 dark:text-black"
+          className="block w-full font-semibold p-4 ps-10 text-sm text-gray-900 border-2 border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
           placeholder={`Buscar por código ${searchType === 'code' ? 'código' : ''}`}
           required
           onClick={toggleIsActive}

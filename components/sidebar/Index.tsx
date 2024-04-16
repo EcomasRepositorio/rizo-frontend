@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   return (
     <div className='sticky top-0 z-50'>
-    <section className='bg-customPurple300'>
+    <section className='bg-gradient-to-r from-customPurple800 to-customPurple300'>
       <div className="py-3 shadow-md max-w-screen-xl mx-auto p-2 flex justify-between items-center flex-wrap lg:flex-nowrap">
         {/* Botón a la izquierda */}
 
@@ -33,12 +33,12 @@ const Sidebar = () => {
         </button>
 
         <div className='flex gap-10 text-customYellow font-extrabold md:text-sm text-[9.5px]'>
-        <Link href="/certs" className="flex justify-center items-center border-[2px] border-customYellow hover:bg-customYellow hover:text-customPurple800 rounded-xl py-2 px-6 hover:scale-110 duration-300">
-          <span className='uppercase'>Verificar certificado</span>
+        <Link href="/certs" className="flex justify-center items-center border-customYellow hover:bg-customYellow hover:text-customPurple800 rounded-xl py-2 px-6 hover:scale-110 duration-300">
+          <span className='uppercase underline'>Verificar certificado</span>
         </Link>
         <Link href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=0959465f-37c3-4032-803b-bbfc499af7a3" target='_blank'
-          className="flex justify-center items-center border-[2px] border-customYellow hover:bg-customYellow hover:text-customPurple800 rounded-xl py-2 px-6 hover:scale-110 duration-300">
-          <span className='uppercase'>Aula virtual</span>
+          className="flex justify-center items-center border-customYellow hover:bg-customYellow hover:text-customPurple800 rounded-xl py-2 px-6 hover:scale-110 duration-300">
+          <span className='uppercase underline'>Aula virtual</span>
         </Link>
         </div>
 
@@ -48,7 +48,7 @@ const Sidebar = () => {
 
         {/* Menú lateral */}
         <div className={`${open ? 'flex' : 'hidden'} fixed inset z-50 top-20 lg:right-96 right-10 justify-center items-center transition-all duration-300`}>
-        <div className="bg-customYellow/60 w-[300px] md:w-[450px] lg:w-[500px] rounded-2xl flex flex-col justify-center items-center">
+        <div className="bg-customYellow/80 w-[300px] md:w-[450px] lg:w-[500px] rounded-2xl flex flex-col justify-center items-center">
           <div className={`${open ? 'py-3' : 'hidden'}`}>
           <ul className="text-xl items-center justify-center">
                 <li className="font-bold text-customPurple800 hover:text-white mt-6 mb-10 py-1 px-1 text-center hover:bg-customPurple300 transition-transform transform hover:scale-110 w-60 mx-auto">
@@ -86,7 +86,7 @@ const Sidebar = () => {
         </div>
         </div>
         {/* Fondo gris */}
-        {open && <div className="bg-customPurple800/50 opacity-90 min-h-screen h-full fixed top-0 left-0 w-full z-40 backdrop-blur-md" onClick={() => setOpen(false)}></div>}
+        {open && <div className=" opacity-90 min-h-screen h-full fixed top-0 left-0 w-full z-40 backdrop-blur-md" onClick={() => setOpen(false)}></div>}
       </div>
     </section>
     </div>
