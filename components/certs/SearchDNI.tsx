@@ -154,10 +154,10 @@ const SearchName:React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                 </td>
                 {selectedStudentData && (
                   <Modal open={openModals[index]} onClose={() => closeStudentModal(index)}>
-                    <div className='flex justify-center items-center mb-4 gap-4'>
+                    <div className='flex justify-center items-center mb-4 gap-1'>
                       <Image src={'/logo/logo_unp.png'} alt='rizo' className="md:w-36 md:h-36 w-32 h-32 object-contain mt-2" width={800} height={800}  priority={true}/>
                       <Image src={'/logo/logo-certificate.png'} alt='rizo' className="md:w-[120px] md:h-[140px] w-32 h-[125px] md:mt-[13px] mt-[11px] object-contain" width={800} height={800}  priority={true}/>
-                      <Image src={'/logo/logo-certificate.png'} alt='rizo' className="md:w-[120px] md:h-[140px] w-32 h-[125px] md:mt-[13px] mt-[11px] object-contain" width={800} height= {800}  priority={true}/>
+                      <Image src={'/logo/logo_cip_tacna.png'} alt='rizo' className="md:w-36 md:h-36 w-32 h-32 object-contain mt-2" width={800} height={800}  priority={true}/>
                     </div>
                     <div className="max-w-md text-center bg-white rounded-md mx-auto">
                       {tableRows.map((row, index) => (
@@ -169,7 +169,7 @@ const SearchName:React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                             </div>
                           </div>
 
-                          <div className="text-gray-600 mt-3 mb-5 text-sm font-semibold">
+                          <div className="flex justify-center text-gray-600 mt-3 mb-5 md:text-sm text-xs md:w-[410px] px-[2px] font-semibold">
                             {row.label === 'Organizado por:' ? (
                               <span>
                                 {row.value && (
