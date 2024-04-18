@@ -25,8 +25,8 @@ const dataForm = {
 
 const { PasswordInput } = PasswordInputs;
 const Login: React.FC = () => {
-  const { register } = useForm();
-  const [ resErrors, setResErrors ] = useState<ResErrors | null>(null);
+  const { register, handleSubmit } = useForm<Auth>();
+  const [ error, setError ] = useState<ResErrors | null>(null);
   const [ form, setForm ] = useState<Auth>(dataForm);
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -41,8 +41,8 @@ const Login: React.FC = () => {
   ) => {
     const { value } = target;
     setForm({ ... form, [textField]: value });
-    if (resErrors && (textField === 'email' || textField === 'password')) {
-      setResErrors(null);
+    if (error && (textField === 'email' || textField === 'password')) {
+      setError(null);
     }
   };
 
@@ -62,23 +62,23 @@ const Login: React.FC = () => {
       if (axios.isAxiosError(error) && error.response) {
         const { data } = error.response;
         if (data.message === 'email no existe') {
-          setResErrors({ message: 'El email no está registrado', errorContent: '' });
+          setError({ message: 'El email no está registrado', errorContent: '' });
         } else if (data.message === 'password incorrecto') {
-          setResErrors({ message: 'La contraseña es incorrecta', errorContent: '' });
+          setError({ message: 'La contraseña es incorrecta', errorContent: '' });
         } else {
-          setResErrors({ message: 'Datos incorrectos', errorContent: '' });
+          setError({ message: 'Datos incorrectos', errorContent: '' });
         }
       } else {
-        setResErrors({ message: 'Datos incorrectos', errorContent: '' });
+        setError({ message: 'Datos incorrectos', errorContent: '' });
       }
     }
   };
 
   useEffect(() => {
-    if (resErrors?.message === 'email | constraseña incorrecto') {
-      setResErrors(null);
+    if (error?.message === 'email | constraseña incorrecto') {
+      setError(null);
     }
-  }, [form.email, form.password, resErrors?.message]);
+  }, [form.email, form.password, error?.message]);
 
   return (
     <div className="flex items-center justify-center h-screen">
@@ -89,12 +89,12 @@ const Login: React.FC = () => {
       Iniciar sesión
     </h3>
   </div>
-  <div className="flex flex-col gap-4 p-6">
+  <form className="flex flex-col gap-4 p-6" onSubmit={handleSubmit(onSubmit)}>
     <div className="relative h-11 w-full min-w-[200px]">
       <input
         type="email"
         className={`w-full h-full px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 ${
-          resErrors?.message === 'El email no está registrado' ? 'border-red-500' : ''
+          error?.message === 'El email no está registrado' ? 'border-red-500' : ''
         }`}
         placeholder=" "
         onChange={(event) => handleFormData(event, "email")}
@@ -103,7 +103,7 @@ const Login: React.FC = () => {
         className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
         Email
       </label>
-      {resErrors?.message === 'El email no está registrado' && (
+      {error?.message === 'El email no está registrado' && (
             <span className="text-red-500 text-sm">El email no está registrado</span>
           )}
     </div>
@@ -112,20 +112,21 @@ const Login: React.FC = () => {
         type='password'
         name='password'
         //register={register}
-        className={`w-full h-full px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 ${
-          resErrors?.message === 'La contraseña es incorrecta' ? 'border-red-500' : ''
-        }`}
+        className={`w-full h-full px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50`}
         placeholder=" "
         onChange={(event) => handleFormData(event, 'password')}
         onKeyDown={(event) => handleKeyDown(event)}/>
-      <label
-        className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
-        Password
-      </label>
-      {resErrors?.message === 'La contraseña es incorrecta' && (
+        {error?.message === 'La contraseña es incorrecta' && (
             <span className="text-red-500 text-sm">La contraseña es incorrecta</span>
           )}
+          <label
+            className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+            Password
+          </label>
     </div>
+    {error?.message === 'Datos incorrectos' && (
+          <span className="text-red-500 text-sm">Datos incorrectos</span>
+        )}
     <div className="-ml-2.5">
       <div className="inline-flex items-center">
         <label htmlFor="checkbox" className="relative flex items-center p-3 rounded-full cursor-pointer">
@@ -135,10 +136,10 @@ const Login: React.FC = () => {
           <span
             className="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
-              stroke="currentColor" stroke-width="1">
-              <path fill-rule="evenodd"
+              stroke="currentColor" strokeWidth="1">
+              <path fillRule="evenodd"
                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"></path>
+                clipRule="evenodd"></path>
             </svg>
           </span>
         </label>
@@ -147,7 +148,7 @@ const Login: React.FC = () => {
         </label>
       </div>
     </div>
-  </div>
+  </form>
   <div className="p-6 pt-0">
     <button
       className="block w-full select-none rounded-lg bg-gradient-to-tr from-customPurple300 to-customPurple800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-customOrange/50 transition-all hover:shadow-lg hover:shadow-customPurple300/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"

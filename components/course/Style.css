@@ -1,5 +1,5 @@
 .card {
-    height: 24vw; /* Altura relativa al ancho del viewport */
+    height: 26vw; /* Altura relativa al ancho del viewport */
     margin: 20px;
     box-shadow: 5px 5px 20px rgb(20, 19, 19);
     overflow: hidden;
@@ -18,27 +18,30 @@
 }
 
 .card:hover .intro {
-    height: 50%; /* Altura relativa al contenedor padre (la tarjeta) */
+    height: 45%; /* Altura relativa al contenedor padre (la tarjeta) */
     bottom: 0;
     background: linear-gradient(rgb(153, 8, 179), rgb(47, 3, 75));
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
     .card {
-        height: 70vw; /* Cambiar altura relativa en pantallas más pequeñas */
+        height: 39vw; /* Cambiar altura relativa en pantallas más pequeñas */
     }
 
     .intro {
-        height: 15%; /* Ajustar altura relativa en pantallas más pequeñas */
+        height: 14%; /* Ajustar altura relativa en pantallas más pequeñas */
     }
 }
 
 @media (max-width: 480px) {
     .card {
-        height: 120vw; /* Cambiar altura relativa en pantallas aún más pequeñas */
+        height: 125vw; /* Cambiar altura relativa en pantallas aún más pequeñas */
+    }
+    .card:hover .intro {
+        height: 55%;
     }
 
     .intro {
-        height: 16%; /* Ajustar altura relativa en pantallas aún más pequeñas */
+        height: 14%; /* Ajustar altura relativa en pantallas aún más pequeñas */
     }
 }

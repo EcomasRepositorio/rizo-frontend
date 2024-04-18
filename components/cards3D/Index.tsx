@@ -35,7 +35,7 @@ const Cards3D = () => {
 
   return (
     <section>
-      <div className="text-center text-5xl font-extrabold  pt-12">
+      <div className="text-center md:text-5xl text-3xl font-extrabold  pt-12">
         <motion.div
           ref={ref}
           initial="hidden"

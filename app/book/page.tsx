@@ -283,13 +283,15 @@ const Book = () => {
           </div>
             <select {...register('country', { required: true })} name='country'
               className="bg-gray-100 border-2 mt-6 border-gray-300 text-gray-600 text-sm rounded-lg block w-full ps-8 p-2.5">
-              <option value="ar">Argentina</option>
-              <option value="pe">Perú</option>
-              <option value="bo">Bolivia</option>
-              <option value="ec">Ecuador</option>
-              <option value="co">Colombia</option>
-              <option value="ve">Venezuela</option>
-              <option value="ch">Chile</option>
+              <option value="Peru">Perú</option>
+              <option value="Argentica">Argentina</option>
+              <option value="Bolivia">Bolivia</option>
+              <option value="Ecuador">Ecuador</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Venezuela">Venezuela</option>
+              <option value="Chile">Chile</option>
+              <option value="España">España</option>
+              <option value="Mexico">Mexico</option>
             </select>
         </div>
         </div>

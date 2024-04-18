@@ -282,7 +282,7 @@ const Student = () => {
     <section className="p-2">
       {/* <div className="text-center text-gray-500 lg:p-6 text-2xl font-semibold mb-10 mt-8"> */}
 
-      <div className="text-center text-gray-600 lg:p-6 p-0 mt-28 lg:text-2xl text-xl font-extrabold">
+      <div className="text-center text-gray-600 lg:p-6 p-0 lg:text-2xl text-xl font-extrabold">
         <p className="border shadow-2xl p-4 rounded-xl">
           ADMINISTRAR ESTUDIANTES
         </p>
@@ -442,8 +442,14 @@ const Student = () => {
                       {student.participation}
                     </span>
                   </td>
-                  <td className="px-6 py-4">
-                    <span style={{ whiteSpace: "nowrap", display: "block" }}>
+                  <td className="px- py-">
+                    <span style={{
+                      whiteSpace: "normal",
+                      display: "block",
+                      maxWidth: "1200px",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis"
+                      }}>
                       {student.institute}
                     </span>
                   </td>

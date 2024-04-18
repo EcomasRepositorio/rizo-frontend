@@ -19,13 +19,13 @@ const Riego = () => {
   };
 
   const handleClick = () => {
-    const newWindow = window.open("/BROCHURE/SISTEMAS_RIEGO_TECNIFICADO.pdf");
+    const newWindow = window.open("/BROCHURE/O.pdf");
     setOpenWindow(newWindow);
 
     // Descargar el archivo PDF
     const link = document.createElement("a");
-    link.href = "/BROCHURE/SISTEMAS_RIEGO_TECNIFICADO.pdf";
-    link.download = "SISTEMAS_RIEGO_TECNIFICADO.pdf";
+    link.href = "/BROCHURE/O.pdf";
+    link.download = "O.pdf";
     link.click();
   };
 

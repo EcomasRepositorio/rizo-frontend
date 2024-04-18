@@ -40,7 +40,7 @@ const Certificate: React.FC = () => {
         </div>
       </div>
         <div className="md:col-span-2">
-          <h2 className="mb-4 md:mb-10 md:mt-10 mt-20 md:text-6xl text-4xl font-extrabold text-customOrange uppercase">
+          <h2 className="mb-4 md:mb-10 md:mt-10 mt-20 md:text-6xl text-4xl font-extrabold uppercase bg-gradient-to-r from-customOrange to-customYellow text-transparent bg-clip-text">
             Certificados
           </h2>
           <p className="font-extrabold text-white sm:text-xl">

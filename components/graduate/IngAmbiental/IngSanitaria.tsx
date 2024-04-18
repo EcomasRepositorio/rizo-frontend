@@ -19,13 +19,13 @@ const IngSanitaria = () => {
   };
 
   const handleClick = () => {
-    const newWindow = window.open("/BROCHURE/SISTEMAS_RIEGO_TECNIFICADO.pdf");
+    const newWindow = window.open("/BROCHURE/S.pdf");
     setOpenWindow(newWindow);
 
     // Descargar el archivo PDF
     const link = document.createElement("a");
-    link.href = "/BROCHURE/SISTEMAS_RIEGO_TECNIFICADO.pdf";
-    link.download = "SISTEMAS_RIEGO_TECNIFICADO.pdf";
+    link.href = "/BROCHURE/S.pdf";
+    link.download = "S.pdf";
     link.click();
   };
 

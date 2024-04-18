@@ -44,7 +44,7 @@ const Course = () => {
       /* initial="hiden"
       animate={inView ? 'visible' : 'hidden'}
       variants={slideFromLeft} */
-      className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center max-w-screen-xl mx-auto">
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center max-w-screen-xl mx-auto">
 
       <div
         className="card transform transition-transform cursor-pointer rounded-xl">
@@ -54,15 +54,15 @@ const Course = () => {
           <h1 className="flex justify-center uppercase text-3xl mb-4 text-gray-50 font-extrabold">
             Fertirrigación
           </h1>
-          <div className="p-2">
+          <div className="p-1">
             {texts.map((module, index) => (
-              <p key={index} className="flex justify-center items-center font-semibold opacity-1 transition-opacity pb-2">
-                <span className='pl-2 items-center text-center text-gray-100 font-bold'>{module.fertirrigacion}</span>
+              <p key={index} className="flex justify-center items-center font-semibold opacity-1 transition-opacity">
+                <span className='items-center text-center text-gray-100 font-bold'>{module.fertirrigacion}</span>
               </p>
             ))}
             <div className='flex justify-center'>
             <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
                 Más información
                 <RiWhatsappFill className='pl-2 text-4xl text-green-700'/>
             </Link>
@@ -78,16 +78,15 @@ const Course = () => {
           <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
             Costos y presupuestos con S10
           </h1>
-          <div className="p-2">
+          <div className="p-1">
             {texts.map((module, index) => (
-              <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
-                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
+              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
+                <span className='items-center text-gray-100 font-bold text-center'>{module.costos}</span>
               </p>
             ))}
             <div className='flex justify-center'>
             <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Costos y presupuestos con S10' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
                 Más información
                 <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
             </Link>
@@ -100,19 +99,18 @@ const Course = () => {
         <Image src="/course/INFORME-DE-OBRAS.png" alt="" width={800} height={800}
           className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
         <div className="intro">
-          <h1 className="flex justify-center uppercase text-3xl mb-4 text-gray-50 font-extrabold">
+          <h1 className="flex justify-center uppercase text-3xl mb-4 text-gray-50 font-extrabold text-center">
             Informe de obras
           </h1>
-          <div className="p-2">
+          <div className="p-1">
             {texts.map((module, index) => (
-              <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
-                <span className='pl-2 items-center text-white font-bold'>{module.module}</span>
+              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
+                <span className='items-center text-white font-bold text-center'>{module.obras}</span>
               </p>
             ))}
             <div className='flex justify-center'>
             <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Informe de obras' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
                 Más información
                 <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
             </Link>
@@ -128,16 +126,15 @@ const Course = () => {
           <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
             Mantenimiento en carreteras y puentes
           </h1>
-          <div className="p-2">
+          <div className="p-1">
             {texts.map((module, index) => (
-              <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
-                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
+              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
+                <span className='items-center text-gray-100 font-bold text-center text-sm'>{module.puentes}</span>
               </p>
             ))}
             <div className='flex justify-center'>
             <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Mantenimiento en carreteras y puentes' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
               Más información
               <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
             </Link>
@@ -153,16 +150,15 @@ const Course = () => {
           <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
             Metrados, costos y presupuesto
           </h1>
-          <div className="p-2">
+          <div className="p-1">
             {texts.map((module, index) => (
-              <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
-                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
+              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
+                <span className='pl-2 items-center text-gray-100 font-bold text-center text-sm'>{module.metrados}</span>
               </p>
             ))}
             <div className='flex justify-center'>
               <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Metrados, costos y presupuesto' target='_blank'
-                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
                   Más información
                 <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
               </Link>
@@ -175,19 +171,18 @@ const Course = () => {
         <Image src="/course/inpeccion-aliemetos.png" alt="" width={800} height={800}
           className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
         <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
+          <h1 className="flex justify-center uppercase text-[22px] text-gray-50 font-extrabold text-center">
             Inspección y muestreo de alimentos
           </h1>
-          <div className="p-2">
+          <div className="p-1">
             {texts.map((module, index) => (
-              <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
-                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
+              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
+                <span className='items-center text-gray-100 font-bold text-center text-sm'>{module.alimentos}</span>
               </p>
             ))}
             <div className='flex justify-center'>
               <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Inspección y muestreo de alimentos' target='_blank'
-                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
                 Más información
                 <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
               </Link>
@@ -203,16 +198,15 @@ const Course = () => {
           <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
             Fertirriego de cultivos y monitoreo
           </h1>
-          <div className="p-2">
+          <div className="p-1">
             {texts.map((module, index) => (
-              <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
-                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
+              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
+                <span className='items-center text-gray-100 font-bold text-center text-sm'>{module.cultivos}</span>
               </p>
             ))}
             <div className='flex justify-center'>
             <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego de cultivos y monitoreo' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
               Más información
               <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
             </Link>
@@ -228,17 +222,16 @@ const Course = () => {
           <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
             Monitoreo de la calidad del agua
           </h1>
-          <div className="p-2">
+          <div className="p-1">
             {texts.map((module, index) => (
-              <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
-                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
+              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
+                <span className='items-center text-gray-100 font-bold text-center'>{module.agua}</span>
               </p>
             ))}
             <div>
               <div className='flex justify-center'>
             <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Monitoreo de la calidad del agua' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
                 Más información
                 <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
             </Link>
@@ -252,19 +245,18 @@ const Course = () => {
         <Image src="/course/esquema-22000.png" alt="" width={800} height={800}
           className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
         <div className="intro">
-          <h1 className="flex justify-center uppercase text-[25px] mb-4 text-gray-50 font-extrabold text-center">
+          <h1 className="flex justify-center uppercase text-2xl lg:mb-6 mb-4 text-gray-50 font-extrabold text-center">
             Esquema con fssc-22000
           </h1>
-          <div className="p-2">
+          <div className="p-1">
             {texts.map((module, index) => (
-              <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
-                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
+              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
+                <span className='items-center text-gray-100 font-bold text-center text-sm'>{module.esquema}</span>
               </p>
             ))}
             <div className='flex justify-center'>
             <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Esquema con fssc-22000' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-5 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
+              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
               Más información
               <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
             </Link>

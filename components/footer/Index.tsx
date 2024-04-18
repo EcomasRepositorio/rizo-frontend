@@ -9,7 +9,7 @@ const Footer = () => {
     <div className=''>
     <footer
       className="bg-transparent bg-clip bg-gradient-to-b from-customPurple800 to-customPurple300 text-center text-gray-100 lg:text-left">
-      <div className="container mx-auto px-4">
+      <div className=" mx-auto px-4">
         <div className="mx-6 py-10 text-center md:text-left">
           <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="">
@@ -23,7 +23,7 @@ const Footer = () => {
                   priority={true}/>
               </h6>
               <p>
-                Proporcionamos cursos y diplomados con aval de la EPG-UNP
+                Proporcionamos cursos y diplomados
               </p>
               <Link href="/book" className='inline-flex items-center mt-4 text-xl text-gray-100 font-semibold hover:underline'>
                 <VscBook className='mr-2 text-2xl'/>
