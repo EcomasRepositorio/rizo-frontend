@@ -18,8 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${inter.className} overflow-y-scroll overflow-x-hidden`}>
+      <head>
         <link rel="icon" href="logo/logo-layout.png" />
+      </head>
+      <body className={` ${inter.className}`}>
         <Sidebar />
           {children}
         <Footer />

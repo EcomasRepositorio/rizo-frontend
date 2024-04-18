@@ -81,7 +81,7 @@ const SearchName:React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
     { imgSrc:'/icons/organizadopor.svg', label: 'Organizado por:', value: selectedStudentData?.institute },
     { imgSrc:'/icons/otorgado.svg', label: 'Otorgado a:', value: selectedStudentData?.name },
     { imgSrc:'/icons/nom_evento.svg', label: 'Nombre del evento:', value: selectedStudentData?.activityAcademy },
-    { imgSrc:'/icons/creditos_horas.svg', label: 'Creditos/Horas:', value: selectedStudentData?.hour },
+    { imgSrc:'/icons/creditos_horas.svg', label: 'Créditos/Horas:', value: selectedStudentData?.hour },
     { imgSrc:'/icons/fecha_emision.svg', label: 'Fecha de emisión:', value: selectedStudentData?.date },
   ];
 
@@ -118,16 +118,16 @@ const SearchName:React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                     #
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Nombre
+                  Nombre
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Actividad academica
+                  Actividad academica
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Fecha
+                  Fecha
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Accción
+                  Accción
                 </th>
             </tr>
         </thead>
@@ -154,20 +154,39 @@ const SearchName:React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                 </td>
                 {selectedStudentData && (
                   <Modal open={openModals[index]} onClose={() => closeStudentModal(index)}>
-                    <div className='flex justify-center mb-4 gap-4'>
-                      <Image src={'/logos/logo_unp.png'} alt='promas' className="lg:w-32 lg:h-32 w-28 h-28 object-contain" width={800} height={800}  priority={true}/>
-                      <Image src={'/logos/logo_login.png'} alt='promas' className="lg:w-[110px] lg:h-[101px] w-28 h-28 mt-[18px] object-contain" width={800} height={800}  priority={true}/>
+                    <div className='flex justify-center items-center mb-4 gap-1'>
+                      <Image src={'/logo/logo_unp.png'} alt='rizo' className="md:w-36 md:h-36 w-32 h-32 object-contain mt-2" width={800} height={800}  priority={true}/>
+                      <Image src={'/logo/logo-certificate.png'} alt='rizo' className="md:w-[120px] md:h-[140px] w-32 h-[125px] md:mt-[13px] mt-[11px] object-contain" width={800} height={800}  priority={true}/>
+                      <Image src={'/logo/logo_cip_tacna.png'} alt='rizo' className="md:w-36 md:h-36 w-32 h-32 object-contain mt-2" width={800} height={800}  priority={true}/>
                     </div>
-                    <div className="max-w-md mx-auto p-6 bg-white rounded-md">
+                    <div className="max-w-md text-center bg-white rounded-md mx-auto">
                       {tableRows.map((row, index) => (
                         <div key={index} className="mb-4">
-                        <div className="flex items-center text-gray-100 text-sm p-1 lg:ml-5 ml-0 lg:w-80 w-full rounded-lg bg-slate-600 font-semibold">
-                          {row.imgSrc && <Image src={row.imgSrc} alt={row.label} className="flex lg:w-5 lg:h-5 w-5 h-5 object-contain ml-1" width={800} height={800} />}
-                          <div className='flex-1 text-center'>
-                          {row.label}
+                          <div className="inline-flex items-center text-gray-100 text-sm p-1 md:w-80 w-72 rounded-lg bg-slate-600 font-semibold">
+                            {row.imgSrc && <Image src={row.imgSrc} alt={row.label} className="flex lg:w-5 lg:h-5 w-5 h-5 object-contain ml-1" width={800} height={800} />}
+                            <div className='flex-1 text-center'>
+                            {row.label}
+                            </div>
                           </div>
-                        </div>
-                          <div className="text-gray-600 mt-3 mb-5 text-sm font-semibold">{row.value}</div>
+
+                          <div className="flex justify-center text-gray-600 mt-3 mb-5 md:text-sm text-xs md:w-[410px] px-[2px] font-semibold">
+                            {row.label === 'Organizado por:' ? (
+                              <span>
+                                {row.value && (
+                                  <span>
+                                    {row.value.split(' ').map((word, i, arr) => (
+                                      <React.Fragment key={i}>
+                                        {i !== arr.length - 1 ? word + ' ' : <><br/>{word}</>}
+                                      </React.Fragment>
+                                    ))}
+                                  </span>
+                                )}
+                              </span>
+                            ) : (
+                              <span>{row.value}</span>
+                            )}
+                          </div>
+
                         </div>
                       ))}
                     </div>

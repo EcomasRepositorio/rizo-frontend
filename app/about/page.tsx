@@ -3,11 +3,12 @@ import { FEATURES } from '@/constants'
 import Image from 'next/image'
 import React from 'react'
 import './Style.css'
+import Link from 'next/link'
 
 const About = () => {
   return (
     <section>
-  <div className="relative pt-20 lg:pt-60 pb-28 lg:pb-60">
+  <div className="relative pt-20 lg:pt-52 pb-28 lg:pb-80">
     <div
       className="absolute top-0 w-full h-full bg-center bg-cover"
       style={{ backgroundImage: 'url("/fondo.jpeg")' }}
@@ -18,15 +19,15 @@ const About = () => {
       ></span>
     </div>
     <div className="relative mx-auto max-w-screen-xl p-2 text-white">
-      <h1 className="font-extrabold text-4xl lg:text-6xl mt-10">
+      <h1 className="font-extrabold text-4xl md:text-7xl mt-10">
         Acerca de nosotros
       </h1>
-      <p className='font-semibold mt-2 text-lg'>
+      <p className='font-semibold mt-4 lg:text-3xl mb-8'>
         Somos un centro de capacitación profesional de amplia experiencia que desarrollamos cursos y diplomados
       </p>
-      <button className='border px-4 py-1 mt-4 rounded-xl'>
+      <Link href="#contacto" className='border px-5 py-2 mt-4 rounded-xl text-2xl font-extrabold hover:bg-customYellow hover:text-customPurple800'>
         Contacto
-      </button>
+      </Link>
     </div>
   </div>
 

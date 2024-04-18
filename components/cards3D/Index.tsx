@@ -49,12 +49,12 @@ const Cards3D = () => {
       </div>
       <div className="flex justify-center min-h-screen  py-10">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 p-2">
-          <TiltCard icon={<FiMousePointer />} text="Ingeniería vial" imageSrc="/graduate/ingenieria-vial.png" href="/logo" index={0}/>
-          <TiltCard icon={<FiMousePointer />} text="Estudio de impacto ambiental" imageSrc="/graduate/estudio-ambiental.png" href="/logo" index={1}/>
-          <TiltCard icon={<FiMousePointer />} text="Riego y fertirriego" imageSrc="/graduate/riego-fertirriego.png" href="/logo" index={2}/>
-          <TiltCard icon={<FiMousePointer />} text="Asistente técnico en obras" imageSrc="/graduate/asistente-obras.png"href="/logo" index={3}/>
-          <TiltCard icon={<FiMousePointer />} text="Ingeniería de puentes" imageSrc="/graduate/ingenieria-puentes.png" href="/logo" index={4}/>
-          <TiltCard icon={<FiMousePointer />} text="SSOMA" imageSrc="/graduate/ssoma.png" href="/logo" index={5}/>
+          <TiltCard icon={<FiMousePointer />} text="Ingeniería vial" imageSrc="/graduate/ingenieria-vial.png" href="/graduate" index={0}/>
+          <TiltCard icon={<FiMousePointer />} text="Estudio de impacto ambiental" imageSrc="/graduate/estudio-ambiental.png" href="/graduate" index={1}/>
+          <TiltCard icon={<FiMousePointer />} text="Riego y fertirriego" imageSrc="/graduate/riego-fertirriego.png" href="/graduate" index={2}/>
+          <TiltCard icon={<FiMousePointer />} text="Asistente técnico en obras" imageSrc="/graduate/asistente-obras.png"href="/graduate" index={3}/>
+          <TiltCard icon={<FiMousePointer />} text="Ingeniería de puentes" imageSrc="/graduate/ingenieria-puentes.png" href="/graduate" index={4}/>
+          <TiltCard icon={<FiMousePointer />} text="SSOMA" imageSrc="/graduate/ssoma.png" href="/graduate" index={5}/>
         </div>
       </div>
     </section>
@@ -138,7 +138,7 @@ const TiltCard = ({ icon, text, imageSrc, href, index }: TiltCardProps) => {
           className="absolute inset-4 grid place-content-center rounded-xl shadow-xl shadow-slate-950 text-white"
           style={{ transform: "translateZ(75px)" }}>
           {icon}
-          <p className="uppercase text-center text-white text-2xl font-extrabold mt-96">{text}</p>
+          <p className="uppercase text-center text-customYellow text-2xl font-extrabold mt-96">{text}</p>
         </div>
         <Image
           src={imageSrc}
