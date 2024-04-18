@@ -1,25 +1,44 @@
-
-.card{
-    height: 500px;
+.card {
+    height: 24vw; /* Altura relativa al ancho del viewport */
     margin: 20px;
     box-shadow: 5px 5px 20px rgb(20, 19, 19);
     overflow: hidden;
 }
 
-.intro{
-    height: 70px;
-    width: 380px;
+.intro {
+    height: 14%; /* Altura relativa al contenedor padre (la tarjeta) */
+    width: 100%; /* Ancho del contenedor padre */
     padding: 6px;
     box-sizing: border-box;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     background: rgb(130, 5, 130);
     color: rgb(11, 9, 9);
     transition: .5s;
 }
 
-.card:hover .intro{
-    height: 280px;
-    bottom: 0px;
+.card:hover .intro {
+    height: 50%; /* Altura relativa al contenedor padre (la tarjeta) */
+    bottom: 0;
     background: linear-gradient(rgb(153, 8, 179), rgb(47, 3, 75));
+}
+
+@media (max-width: 768px) {
+    .card {
+        height: 70vw; /* Cambiar altura relativa en pantallas más pequeñas */
+    }
+
+    .intro {
+        height: 15%; /* Ajustar altura relativa en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        height: 120vw; /* Cambiar altura relativa en pantallas aún más pequeñas */
+    }
+
+    .intro {
+        height: 16%; /* Ajustar altura relativa en pantallas aún más pequeñas */
+    }
 }

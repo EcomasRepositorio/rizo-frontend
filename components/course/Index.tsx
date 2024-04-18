@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useInView } from "react-intersection-observer";
 import { motion } from 'framer-motion';
 import { slideFromLeft } from '../utils/motion';
-import { Fertirrigacion } from './modules';
+import { texts } from './modules';
 import { FaWhatsapp } from "react-icons/fa6";
 import { RiWhatsappFill } from "react-icons/ri";
 import { InView } from "react-intersection-observer";
@@ -55,10 +55,9 @@ const Course = () => {
             Fertirrigación
           </h1>
           <div className="p-2">
-            {Fertirrigacion.map((module, index) => (
-              <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
-                <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
-                <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
+            {texts.map((module, index) => (
+              <p key={index} className="flex justify-center items-center font-semibold opacity-1 transition-opacity pb-2">
+                <span className='pl-2 items-center text-center text-gray-100 font-bold'>{module.fertirrigacion}</span>
               </p>
             ))}
             <div className='flex justify-center'>
@@ -80,7 +79,7 @@ const Course = () => {
             Costos y presupuestos con S10
           </h1>
           <div className="p-2">
-            {Fertirrigacion.map((module, index) => (
+            {texts.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
                 <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
                 <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
@@ -105,7 +104,7 @@ const Course = () => {
             Informe de obras
           </h1>
           <div className="p-2">
-            {Fertirrigacion.map((module, index) => (
+            {texts.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
                 <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
                 <span className='pl-2 items-center text-white font-bold'>{module.module}</span>
@@ -130,7 +129,7 @@ const Course = () => {
             Mantenimiento en carreteras y puentes
           </h1>
           <div className="p-2">
-            {Fertirrigacion.map((module, index) => (
+            {texts.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
                 <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
                 <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
@@ -155,7 +154,7 @@ const Course = () => {
             Metrados, costos y presupuesto
           </h1>
           <div className="p-2">
-            {Fertirrigacion.map((module, index) => (
+            {texts.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
                 <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
                 <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
@@ -180,7 +179,7 @@ const Course = () => {
             Inspección y muestreo de alimentos
           </h1>
           <div className="p-2">
-            {Fertirrigacion.map((module, index) => (
+            {texts.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
                 <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
                 <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
@@ -205,7 +204,7 @@ const Course = () => {
             Fertirriego de cultivos y monitoreo
           </h1>
           <div className="p-2">
-            {Fertirrigacion.map((module, index) => (
+            {texts.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
                 <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
                 <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
@@ -230,7 +229,7 @@ const Course = () => {
             Monitoreo de la calidad del agua
           </h1>
           <div className="p-2">
-            {Fertirrigacion.map((module, index) => (
+            {texts.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
                 <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
                 <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
@@ -257,7 +256,7 @@ const Course = () => {
             Esquema con fssc-22000
           </h1>
           <div className="p-2">
-            {Fertirrigacion.map((module, index) => (
+            {texts.map((module, index) => (
               <p key={index} className="inline-flex items-center font-semibold opacity-1 transition-opacity pb-2">
                 <BsCaretRight className='text-center justify-center text-xl text-customYellow'/>
                 <span className='pl-2 items-center text-gray-100 font-bold'>{module.module}</span>
