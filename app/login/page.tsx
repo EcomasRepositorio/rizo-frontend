@@ -3,6 +3,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import PasswordInputs from '@/components/utils/format/passwordHash';
+import Whatsapp from '@/components/whatsapp/Index';
 
 type ResErrors = {
   message: string;
@@ -166,6 +167,7 @@ const Login: React.FC = () => {
     </p>
   </div>
 </div>
+<Whatsapp />
 </div>
   )
 }

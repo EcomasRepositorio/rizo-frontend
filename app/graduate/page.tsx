@@ -7,6 +7,7 @@ import ModalGraduate from '@/components/share/ModalGraduate';
 import { questions } from '@/constants';
 import Image from 'next/image';
 import Link from 'next/link';
+import Whatsapp from '@/components/whatsapp/Index';
 
 const Graduate = () => {
 
@@ -225,6 +226,7 @@ const Graduate = () => {
             </div>
           </div>
         </div>
+        <Whatsapp />
       </div>
 
       <ModalGraduate open={selectedAnswer !== null} onClose={() => setSelectedAnswer(null)}>

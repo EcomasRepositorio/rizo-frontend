@@ -32,7 +32,7 @@ const Course = () => {
       <motion.div
         ref={ref}
         initial="hidden"
-        animate={isInView ? 'visible' : 'hidden'}
+        animate='visible'
         variants={slideFromLeft}
         className="inline-block">
         NUESTROS CURSOS

@@ -9,6 +9,7 @@ import { PiIdentificationBadgeFill } from "react-icons/pi";
 import { FaUserPlus } from "react-icons/fa6";
 import { BsFillHouseUpFill, BsBank2, BsFillEnvelopeAtFill, BsBuildingsFill, BsFillPersonBadgeFill, BsFillTelephoneFill } from "react-icons/bs";
 import Image from 'next/image';
+import Whatsapp from '@/components/whatsapp/Index';
 
 const Book = () => {
 
@@ -355,6 +356,7 @@ const Book = () => {
         <input type="submit" value={sending ? 'Enviando...' : 'Enviar'} className='border-2 p-2 mb-6 rounded-xl bg-customOrange text-gray-200 text-xl font-bold cursor-pointer'/>
       </form>
       </div>
+      <Whatsapp />
     </section>
   )
 }

@@ -39,7 +39,7 @@ const Cards3D = () => {
         <motion.div
           ref={ref}
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          animate='visible'
           variants={slideFromLeft}
           className="inline-block">
           <h1 className="bg-gradient-to-r from-customOrange to-customYellow text-transparent bg-clip-text">
@@ -121,31 +121,33 @@ const TiltCard = ({ icon, text, imageSrc, href, index }: TiltCardProps) => {
     <motion.div
       ref={(node) => { reff.current = node;
         inViewRef(node) }}
-      initial={{ opacity: 0, translateX: index % 2 === 0 ? -50 : 50, translateY: -50 }}
-      animate={inView ? { opacity: 1, translateX: 0, translateY: 0 } : {}}
-      transition={{ duration: 0.8, delay: index * 0.5 }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transformStyle: "preserve-3d",
-        transformOrigin: "center",
-        transform,
-      }}
-      className="flex-none md:w-[400px] w-[400px] h-[500px] cursor-pointer max-w-screen-xl">
-      <div style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }}
-        className="relative md:w-[400px] w-[350px] h-[500px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300">
-        <div
-          className="absolute inset-4 grid place-content-center rounded-xl shadow-xl shadow-slate-950 text-white"
-          style={{ transform: "translateZ(75px)" }}>
-          {icon}
-          <p className="uppercase text-center text-customYellow text-2xl font-extrabold mt-96">{text}</p>
+        initial={{ opacity: 0, translateX: index % 2 === 0 ? -50 : 50, translateY: -50 }}
+        animate={inView ? { opacity: 1, translateX: 0, translateY: 0 } : {}}
+        transition={{ duration: 0.8, delay: index * 0.1 }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          transformStyle: "preserve-3d",
+          transformOrigin: "center",
+          transform,
+        }}
+      className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:w-[400px] md:w-[380px] w-[340px] h-[500px] cursor-pointer max-w-screen-xl p-2">
+      <div className="grid justify-center mx-auto">
+        <div style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }}
+          className="relative lg:w-[400px] md:w-[380px] w-[340px] h-[500px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300">
+          <div
+            className="absolute inset-4 grid place-content-center rounded-xl shadow-xl shadow-slate-950 text-white"
+            style={{ transform: "translateZ(75px)" }}>
+            {icon}
+            <p className="uppercase text-center text-customYellow text-2xl font-extrabold mt-96">{text}</p>
+          </div>
+          <Image
+            src={imageSrc}
+            alt=""
+            className="absolute w-full h-full rounded-xl"
+            width={800}
+            height={800}/>
         </div>
-        <Image
-          src={imageSrc}
-          alt=""
-          className="absolute inset-0 object-cover w-full h-full rounded-xl"
-          width={800}
-          height={800}/>
       </div>
     </motion.div>
     </CustomLink>
