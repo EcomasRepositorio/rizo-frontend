@@ -5,7 +5,7 @@ import { SearchCodeProps, StudentCode } from '../../interface/interface';
 import Modal from '../share/Modal';
 import Image from 'next/image';
 
-const SearchName:React.FC<SearchCodeProps> = ({ onSearchCode }) => {
+const SearchCode:React.FC<SearchCodeProps> = ({ onSearchCode }) => {
 
   const [isActive, setIsActive] = useState(false);
   const [queryValue, setQueryValue] = useState<string>('');
@@ -144,4 +144,4 @@ const SearchName:React.FC<SearchCodeProps> = ({ onSearchCode }) => {
   )
 }
 
-export default SearchName;
+export default SearchCode;

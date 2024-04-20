@@ -5,9 +5,9 @@ import { useRouteData } from "@/hooks/hooks";
 import tokenConfig, { URL } from "@/components/utils/format/tokenConfig";
 import { FaRegEdit } from "react-icons/fa";
 import { StudentData } from "@/interface/interface";
-import { CustomLogout, CustomRegister } from "@/components/share/button";
-import Modal from "@/components/share/Modal";
+import * as XLSX from 'xlsx';
 import StudentForm from "@/components/student/StudentForm";
+import { BsFiletypeXls } from "react-icons/bs";
 import { RiFileExcel2Line } from "react-icons/ri";
 import { FaRegAddressBook } from "react-icons/fa6";
 import { FiUserPlus } from "react-icons/fi";
@@ -20,6 +20,7 @@ import SearchStudent from "@/components/student/SearchStudent";
 import { logout } from "@/components/utils/auth.server";
 import DuplicatedCode from "@/components/student/VerifyCode";
 import Link from "next/link";
+import DeleteAllStudent from "@/components/student/DeleteAllStudent";
 
 const Student = () => {
   const [isActive, setIsActive] = useState(false);
@@ -175,7 +176,6 @@ const Student = () => {
     }
   };
   const openErrorModal = () => {
-    // Agregado
     setErrorModalOpen(true);
   };
 
@@ -187,11 +187,22 @@ const Student = () => {
     setIsDuplicatedCodesModalOpen(false);
   };
 
+  //exportarEnExcel
+  const handleExportToExcel = () => {
+    const dataWithoutId = visibleData.map(student => {
+      const { id, ...rest } = student;
+      return rest;
+    });
+  const wb = XLSX.utils.book_new();
+  const ws = XLSX.utils.json_to_sheet(dataWithoutId);
+    XLSX.utils.book_append_sheet(wb, ws, 'participantesRizo');
+    XLSX.writeFile(wb, 'participantesRizo.xlsx');
+  };
+
   //Logout
   const handleLogout = async () => {
     await logout();
   };
-
   useEffect(() => {
     onSubmit();
     const fetchData = async () => {
@@ -209,7 +220,6 @@ const Student = () => {
         setLoading(false);
       }
     };
-
     fetchData();
   }, [currentPage, limit, offset, onSubmit, validToken]);
 
@@ -295,6 +305,7 @@ const Student = () => {
                 handleSearchStudent(query, queryValue)
               }/>
           </div>
+          <div className="inline-flex gap-1">
           <button
             type="button"
             className="text-[#006eb0] uppercase hover:text-white border-2 border-[#006eb0] hover:bg-[#006eb0] focus:ring-4 focus:outline-none font-semibold rounded-lg text-xs px-3 py-3 text-center md:w-auto dark:hover:text-white dark:focus:ring-[#BFE9FB] inline-flex items-center"
@@ -308,6 +319,14 @@ const Student = () => {
               isOpen={isDuplicatedCodesModalOpen}
               onClose={handleCloseDuplicatedCode}/>
           )}
+          <button
+            type="button"
+            className="text-green-600 uppercase hover:text-white border-2 border-green-600 hover:bg-green-600 focus:ring-4 focus:outline-none font-semibold rounded-lg text-xs px-3 py-3 text-center md:w-auto dark:hover:text-white dark:focus:ring-[#BFE9FB] inline-flex items-center"
+            onClick={handleExportToExcel}>
+            <BsFiletypeXls className="mr-1 text-lg" />
+            Exportar
+          </button>
+          </div>
         </div>
 
         <div className="flex justify-center mt-2 lg:mt-2 mb-1">
@@ -539,8 +558,10 @@ const Student = () => {
               </li>
             </ul>
           </nav>
+
         </div>
       )}
+      <DeleteAllStudent />
     </section>
   );
 };
