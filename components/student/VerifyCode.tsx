@@ -14,7 +14,6 @@ interface DuplicatedCodesDetectorProps {
 }
 
 const DuplicatedCode: React.FC<DuplicatedCodesDetectorProps> = ({ studentData, isOpen, onClose }) => {
-  const [duplicatedStudents, setDuplicatedStudents] = useState<StudentData[]>([]);
   const [selectedId, setSelectedId] = useState<number | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTableModalOpen, setIsTableModalOpen] = useState(false);

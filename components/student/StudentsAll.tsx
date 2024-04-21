@@ -61,8 +61,8 @@ const CreateStudentExcel: React.FC<CreateStudentFormProps> = ({ onCloseModal, on
 
   return (
     <Modal open={true} onClose={closeModal}>
-      <div className="max-w-screen-lg mx-auto border p-4 rounded-xl">
-        <h1 className='text-sm text-center font-bold bg-[#006eb0] text-gray-200 border p-2 rounded-lg mb-4 uppercase'>
+      <div className="max-w-screen-lg mx-auto border p-12 rounded-xl">
+        <h1 className='text-sm text-center font-bold bg-[#006eb0] text-gray-200 border p-2 rounded-lg mb-5 uppercase'>
           Agregar estudiantes desde Excel
         </h1>
         <form onSubmit={handleSubmit(onSubmit)} encType="multipart/form-data" className="grid grid-cols-2 uppercase text-gray-600 md:grid-cols-2 gap-2">
