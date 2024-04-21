@@ -108,8 +108,7 @@ const User = () => {
         <button
           type="button"
           className="text-[#006eb0] uppercase hover:text-white border-2 border-[#006eb0] hover:bg-[#006eb0] focus:ring-4 focus:outline-none font-semibold rounded-lg text-xs px-3 py-2 text-center me-2 dark:hover:text-white dark:focus:ring-[#BFE9FB] inline-flex items-center"
-          onClick={handleOpenCreateForm}
-          >
+          onClick={handleOpenCreateForm}>
             <FaRegAddressBook className='mr-1 text-lg' />
             Registrar
         </button>

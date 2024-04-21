@@ -188,15 +188,24 @@ const Student = () => {
   };
 
   //exportarEnExcel
-  const handleExportToExcel = () => {
-    const dataWithoutId = visibleData.map(student => {
-      const { id, ...rest } = student;
-      return rest;
-    });
-  const wb = XLSX.utils.book_new();
-  const ws = XLSX.utils.json_to_sheet(dataWithoutId);
-    XLSX.utils.book_append_sheet(wb, ws, 'participantesRizo');
-    XLSX.writeFile(wb, 'participantesRizo.xlsx');
+  const handleExportToExcel = async () => {
+    try {
+      if (!memoryData) {
+        console.error('No hay datos disponibles para exportar.');
+        return;
+      }
+      const dataWithoutId = memoryData.map(student => {
+        const { id, ...rest } = student;
+        return rest;
+      });
+      const wb = XLSX.utils.book_new();
+      const ws = XLSX.utils.json_to_sheet(dataWithoutId);
+      XLSX.utils.book_append_sheet(wb, ws, 'participantesRizo');
+      XLSX.writeFile(wb, 'participantesRizo.xlsx');
+      console.log('Datos exportados exitosamente a Excel.');
+    } catch (error) {
+      console.error('Error al exportar datos a Excel:', error);
+    }
   };
 
   //Logout
@@ -324,7 +333,7 @@ const Student = () => {
             className="text-green-600 uppercase hover:text-white border-2 border-green-600 hover:bg-green-600 focus:ring-4 focus:outline-none font-semibold rounded-lg text-xs px-3 py-3 text-center md:w-auto dark:hover:text-white dark:focus:ring-[#BFE9FB] inline-flex items-center hover:scale-110 duration-300"
             onClick={handleExportToExcel}>
             <BsFiletypeXls className="mr-1 text-lg" />
-            Exportar
+            Descargar
           </button>
           </div>
         </div>

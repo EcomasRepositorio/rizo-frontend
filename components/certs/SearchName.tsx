@@ -187,22 +187,23 @@ const SearchName:React.FC<SearchNameProps> = ({ onSearchName }) => {
                          </div>
 
                          <div className="flex justify-center text-gray-600 mt-3 mb-5 md:text-sm text-xs md:w-[410px] px-[2px] font-semibold">
-                           {row.label === 'Organizado por:' ? (
-                             <span>
-                               {row.value && (
-                                 <span>
-                                   {row.value.split(' ').map((word, i, arr) => (
-                                     <React.Fragment key={i}>
-                                       {i !== arr.length - 1 ? word + ' ' : <><br/>{word}</>}
-                                     </React.Fragment>
-                                   ))}
-                                 </span>
-                               )}
-                             </span>
-                           ) : (
-                             <span>{row.value}</span>
-                           )}
-                         </div>
+                          {row.label === 'Organizado por:' ? (
+                            <span>
+                              {row.value && (
+                                <span>
+                                  {row.value.split(' ').map((word, i, arr) => (
+                                    <React.Fragment key={i}>
+                                      {i !== arr.length - 2 ? word + ' ' : word + ' '}
+                                      {i === arr.length - 3 && <br />}
+                                    </React.Fragment>
+                                  ))}
+                                </span>
+                              )}
+                            </span>
+                          ) : (
+                            <span>{row.value}</span>
+                          )}
+                        </div>
 
                        </div>
                      ))}

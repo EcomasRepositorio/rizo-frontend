@@ -11,7 +11,7 @@ interface StudentCode extends Student {
   institute: string;
 };
 
-const SearchName:React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
+const SearchDNI:React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
 
   const [isActive, setIsActive] = useState(false);
   const [queryValue, setQueryValue] = useState<string>('');
@@ -176,7 +176,8 @@ const SearchName:React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
                                   <span>
                                     {row.value.split(' ').map((word, i, arr) => (
                                       <React.Fragment key={i}>
-                                        {i !== arr.length - 1 ? word + ' ' : <><br/>{word}</>}
+                                        {i !== arr.length - 2 ? word + ' ' : word + ' '}
+                                        {i === arr.length - 3 && <br />}
                                       </React.Fragment>
                                     ))}
                                   </span>
@@ -208,4 +209,4 @@ const SearchName:React.FC<SearchDNIProps> = ({ onSearchDNI }) => {
   )
 }
 
-export default SearchName;
+export default SearchDNI;

@@ -78,16 +78,15 @@ const StudentForm: React.FC<StudentFormProps> = ({ id, onCloseModal, onUpdateSuc
         });
         return;
       };
-      if (!isNum(data.hour)) {
+      /* if (!isNum(data.hour)) {
         setError('hour', {
           type: 'manual',
           message: 'La hora debe contener solo números',
         });
         return;
-      };
+      }; */
       if (id) {
       await axios.put(`${URL()}/student/${id}`, data, tokenConfig(validToken));
-      //setModalOpen(true);
       onUpdateSuccess();
     };
     } catch (error) {
@@ -110,14 +109,13 @@ const StudentForm: React.FC<StudentFormProps> = ({ id, onCloseModal, onUpdateSuc
       setTimeout(() => {
         setModalOpen(false);
         onCloseModal();
-      }, 2000); // Cerrar el modal después de 2 segundos
+      }, 2000);
     }
   }, [modalOpen, onCloseModal]);
 
   const closeModal = () => {
     setError('documentNumber', {});
     setErrorModalOpen(false);
-    //setModalOpen(false);
     onCloseModal();
   };
 

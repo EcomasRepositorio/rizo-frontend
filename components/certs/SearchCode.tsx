@@ -118,7 +118,8 @@ const SearchCode:React.FC<SearchCodeProps> = ({ onSearchCode }) => {
                         <span>
                           {row.value.split(' ').map((word, i, arr) => (
                             <React.Fragment key={i}>
-                              {i !== arr.length - 1 ? word + ' ' : <><br/>{word}</>}
+                              {i !== arr.length - 2 ? word + ' ' : word + ' '}
+                              {i === arr.length - 3 && <br />}
                             </React.Fragment>
                           ))}
                         </span>
