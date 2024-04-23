@@ -4,6 +4,7 @@ import axios from 'axios'
 import { SearchNameProps, Student } from '@/interface/interface';
 import Modal from '../share/Modal';
 import Image from 'next/image';
+import unorm from 'unorm';
 
 interface StudentCode extends Student {
   hour: string;
