@@ -24,7 +24,7 @@ const About = () => {
         Acerca de nosotros
       </h1>
       <p className='font-semibold mt-4 lg:text-3xl mb-8'>
-        Somos un centro de capacitación profesional de amplia experiencia que desarrollamos cursos y diplomados
+        Somos un centro de capacitaci&oacute;n profesional de amplia experiencia que desarrollamos cursos y diplomados
       </p>
       <Link href="https://wa.me/51961646248?text=Hola,%20deseo%20solicitar%20más%20información%20sobre%20Corporación%20Rizo..."
         className='border px-5 py-2 mt-4 rounded-xl text-2xl font-extrabold hover:bg-customYellow hover:text-customPurple800'>

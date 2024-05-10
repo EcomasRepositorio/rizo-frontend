@@ -202,9 +202,9 @@ const Graduate = () => {
           </div>
             <div className='text-center font-extrabold md:mt-20 mt-10 mb-10'>
               <div className='bg-customPurple800/50 w-full p-10'>
-                <h1 className='text-white md:text-7xl text-[27px]'>Por qué estudiar en
+                <h1 className='text-white md:text-7xl text-[27px]'>Por qu&eacute; estudiar en
                   <br />
-                  <span className='text-customOrange md:text-8xl text-4xl'> Corporación Rizo</span>
+                  <span className='text-customOrange md:text-8xl text-4xl'> Corporaci&oacute;n Rizo</span>
                 </h1>
               </div>
             <div className='max-w-screen-xl mx-auto'>

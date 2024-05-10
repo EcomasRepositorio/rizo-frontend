@@ -53,7 +53,7 @@ const Footer = () => {
               </p>
               <p>
                 <Link href="/" className="font-semibold text-gray-100 hover:underline"
-                  >¡Inscribete!</Link>
+                  >¡Inscr&iacute;bete!</Link>
               </p>
             </div>
             <div className="">
@@ -63,23 +63,23 @@ const Footer = () => {
               </h6>
               <p className="mb-4">
                 <Link href="/graduate" className="font-semibold text-gray-100 hover:underline"
-                  >Ingenieria Vial</Link>
+                  >Ingenier&iacute;a Vial</Link>
               </p>
               <p className="mb-4">
                 <Link href="/graduate" className="font-semibold text-gray-100 hover:underline"
-                  >Ingenieria Agronoma</Link>
+                  >Ingenier&iacute;a Agronoma</Link>
               </p>
               <p className="mb-4">
                 <Link href="/graduate" className="font-semibold text-gray-100 hover:underline"
-                  >Ingenieria Civil</Link>
+                  >Ingenier&iacute;a Civil</Link>
               </p>
               <p className='mb-4'>
                 <Link href="/graduate" className="font-semibold text-gray-100 hover:underline"
-                  >Ingenieria Ambiental</Link>
+                  >Ingenier&iacute;a Ambiental</Link>
               </p>
               <p>
                 <Link href="graduate" className="font-semibold text-gray-100 hover:underline"
-                  >Ingenieria de industrias Alimentarias</Link>
+                  >Ingenier&iacute;a de industrias Alimentarias</Link>
               </p>
             </div>
             <div>
@@ -98,7 +98,7 @@ const Footer = () => {
                   <path
                     d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
                 </svg>
-                Perú
+                Per&uacute;
               </p>
               <p className="mb-4 flex items-center justify-center md:justify-start">
                 <svg
@@ -136,7 +136,7 @@ const Footer = () => {
         <Link
           className="font-semibold text-neutral-300"
           href="/"
-          > Corporacion Rizo</Link>
+          > Corporaci&oacute;n Rizo</Link>
       </div>
 
     </footer>

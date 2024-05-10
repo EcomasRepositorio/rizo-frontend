@@ -45,7 +45,7 @@ const Certificate: React.FC = () => {
             Certificados
           </h2>
           <p className="font-extrabold text-white sm:text-xl">
-            Valida la búsqueda de certificados de los diferentes eventos ofrecidos por coporación RIZO.
+            Valida la b&uacute;squeda de certificados de los diferentes eventos ofrecidos por Corporaci&oacute;n RIZO.
           </p>
           <p className="mb-6 mt-6 md:mt-10 text-xl tracking-tight font-extrabold text-white">
             Buscar por:
