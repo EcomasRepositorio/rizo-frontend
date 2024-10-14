@@ -10,7 +10,7 @@ const Sidebar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 z-50">
+    <div className=" top-0">
       <section className="bg-gradient-to-r from-customPurple800 to-customPurple300">
         <div className="py-3 shadow-md max-w-screen-xl mx-auto p-2 flex justify-between items-center flex-wrap lg:flex-nowrap">
           {/* Botón a la izquierda */}
@@ -76,7 +76,7 @@ const Sidebar = () => {
           <div
             className={`${
               open ? "flex" : "hidden"
-            } fixed inset z-50 top-20 lg:right-96 right-10 justify-center items-center transition-all duration-300`}
+            } fixed z-50 inset top-20 lg:right-96 right-10 justify-center items-center transition-all duration-300`}
           >
             <div className="bg-customYellow/80 w-[300px] md:w-[450px] lg:w-[500px] rounded-2xl flex flex-col justify-center items-center">
               <div className={`${open ? "py-3" : "hidden"}`}>
