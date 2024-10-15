@@ -6,6 +6,8 @@ import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 import SearchCode from "@/components/certs/SearchCode";
 import SearchDNI from "@/components/certs/SearchDNI";
 import SearchName from "@/components/certs/SearchName";
+import { FaCheckCircle } from "react-icons/fa";
+import "./Styles.css";
 
 interface Props {
   // Define any props if needed
@@ -24,7 +26,7 @@ const TestingPage: React.FC<Props> = () => {
           loop
           muted
           playsInline
-          className="blur-sm"
+          className=""
           style={{
             position: "absolute",
             top: 0,
@@ -50,7 +52,7 @@ const TestingPage: React.FC<Props> = () => {
           <div className=" py-8 mx-auto max-w-screen-xl lg:py-10">
             <div className="" style={{ position: "relative", width: "100%" }}>
               <div
-                className="bg-gray-500/50 rounded-lg p-8 md:p-12 mb-50 mx-2"
+                className="bg-gradient-to-bl to-customPurple800/80 from-customPurple300/80 via-[#3A1078]/80 rounded-lg p-8 md:p-12 mb-50 mx-2"
                 style={{
                   marginBottom: "20px",
                 }}
@@ -58,15 +60,22 @@ const TestingPage: React.FC<Props> = () => {
                 <div className="flex flex-col md:flex-row mx-auto max-w-screen-xl md:mr-0 md:p-4">
                   <div className="md:mr-12">
                     <div className="flex flex-col">
-                      <h2 className="mb-4 text-2xl font-extrabold text-center text-white md:mb-6 lg:text-4xl">
+                      <div className="mb-10 text-2xl font-extrabold text-center text-white md:mb-6 lg:text-4xl flex items-center justify-center">
                         VERIFICA TU CERTIFICADO
-                      </h2>
-                      <p className="text-white font-light text-center md:text-xl mb-8">
-                        Verifica la autenticidad de tu certificado ingresando tu
-                        DNI, nombres o código de certificación proporcionado al
-                        obtenerlo. Nos aseguramos de proteger tu privacidad y la
-                        confidencialidad de tus datos.
-                      </p>
+                        <Image
+                          src="/logo/check.png" // Ruta de la imagen
+                          alt="Success Icon"
+                          width={70} // Ancho de la imagen
+                          height={70} // Alto de la imagen
+                          className="" // Estilos adicionales, si los necesitas
+                        />
+                      </div>
+                      <div className="text-white font-medium text-center md:text-xl mb-10">
+                        Comprueba la validez de tu certificado ingresando tu
+                        DNI, nombre o el código de certificación que te fue
+                        entregado al recibirlo. Garantizamos la protección de tu
+                        privacidad y la seguridad de tus datos.
+                      </div>
 
                       <Tabs
                         aria-label="Options"
