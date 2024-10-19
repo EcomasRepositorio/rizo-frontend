@@ -37,11 +37,11 @@ const SistemaRiego = () => {
       <div className="grid md:grid-cols-2 grid-cols-1">
         <div className="flex justify-center mb-4 md:mb-0">
           <Image
-            src="/phone.png"
+            src="/riego-tec.webp"
             alt="Descripción de la imagen 1"
             width={400}
             height={300}
-            className="h-96 w-auto"/>
+            className="h-96 w-auto rounded-xl"/>
         </div>
 
         <div className="">
@@ -78,13 +78,6 @@ const SistemaRiego = () => {
               <BsWhatsapp className="ml-4 text-2xl text-green-500" />
             </Link>
 
-            <button
-              onClick={handleClick}
-              className="bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:bg-gradient-to-bl hover:scale-110 duration-300 text-white w-full font-bold py-4 px-4 rounded-xl md:mt-4 flex justify-between items-center"
-              rel="noopener noreferrer">
-                Plan de estudios
-              <FaRegFilePdf className="ml-4 text-2xl text-red-500" />
-            </button>
           </div>
           <div className="flex justify-between">
             <button

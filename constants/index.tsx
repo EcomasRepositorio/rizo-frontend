@@ -48,41 +48,42 @@ export const FEATURES = [
 export const questions = [
     {
       id: 1,
-      question: "Ingeniería civil",
+      question: "Ingeniería civil", 
+      
       answers: [
-        { title: "Asistente técnico en obras", contentComponent: <AsistenteTecnico />, image: "/contact.jpg" },
-        { title: "Ingeniería vial", contentComponent: <IngVial />, image: "/contact.jpg"  },
-        { title: "Ingeniería de puentes", contentComponent: <IngPuentes />, image: "/contact.jpg"  },
-        { title: "Ingeniería estructural", contentComponent: <IngEstructural />, image: "/contact.jpg"  },
-        { title: "Residencia y supervición de obras", contentComponent: <ResidenciaObras />, image: "/contact.jpg"  },
-        { title: "Modelamiento BIM", contentComponent: <ModelamientoBIM />, image: "/contact.jpg"  },
+        { title: "Asistente técnico en obras", contentComponent: <AsistenteTecnico  />,  },
+        { title: "Ingeniería vial", contentComponent: <IngVial />,  },
+        { title: "Ingeniería de puentes", contentComponent: <IngPuentes />,  },
+        { title: "Ingeniería estructural", contentComponent: <IngEstructural />,  },
+        { title: "Residencia y supervición de obras", contentComponent: <ResidenciaObras />,   },
+        { title: "Modelamiento BIM", contentComponent: <ModelamientoBIM />,  },
       ],
     },
     {
       id: 2,
       question: "Ingeniería ambiental",
       answers: [
-        { title: "Gestión y manejo integral de residuos sólidos", contentComponent: <GestionResiduosSolidos />, image: "/contact.jpg" },
-        { title: "Monitoreo y evaluación de la calidad ambiental", contentComponent: <MonitoreoAmbiental />, image: "/contact.jpg"  },
-        { title: "Estudio de impacto ambiental", contentComponent: <EstudioAmbiental />, image: "/contact.jpg" },
-        { title: "Gestión ambiental municipal y regional",contentComponent: <GestionMunicipal />, image: "/contact.jpg" },
-        { title: "Ingeniería Sanitaria", contentComponent: <IngSanitaria />, image: "/contact.jpg" },
-        { title: "SSOMA (Seguridad y Salud Ocupacional y Medio Ambiente", contentComponent: <Ssoma />, image: "/contact.jpg" },
+        { title: "Gestión y manejo integral de residuos sólidos", contentComponent: <GestionResiduosSolidos />,  },
+        { title: "Monitoreo y evaluación de la calidad ambiental", contentComponent: <MonitoreoAmbiental />,  },
+        { title: "Estudio de impacto ambiental", contentComponent: <EstudioAmbiental />,  },
+        { title: "Gestión ambiental municipal y regional",contentComponent: <GestionMunicipal />,  },
+        { title: "Ingeniería Sanitaria", contentComponent: <IngSanitaria />,  },
+        { title: "SSOMA (Seguridad y Salud Ocupacional y Medio Ambiente", contentComponent: <Ssoma />,  },
       ],
     },
     {
       id: 3,
       question: "Ingeniería agrónoma",
       answers: [
-        { title: "Riego y fertirriego", contentComponent: <Riego />, image: "/contact.jpg" },
-        { title: "Sistema de riego técnificado", contentComponent: <SistemaRiego/>, image: "/contact.jpg" },
+        { title: "Riego y fertirriego", contentComponent: <Riego />,  },
+        { title: "Sistema de riego técnificado", contentComponent: <SistemaRiego/>,  },
       ],
     },
     {
       id: 4,
       question: "Ingeniería de industrias alimentarias",
       answers: [
-        { title: "Gestión de cálidad e inocuidad alimentaria", contentComponent: <GestionAlimentaria />, image: "/contact.jpg" },
+        { title: "Gestión de cálidad e inocuidad alimentaria", contentComponent: <GestionAlimentaria />,  },
       ],
     },
   ]

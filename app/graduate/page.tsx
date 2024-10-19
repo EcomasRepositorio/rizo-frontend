@@ -16,9 +16,9 @@ const Graduate = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [texts, setTexts] = useState([
     { id: 1, mainText: 'Certificación', isHovered: false, image: "/contact.jpg", hoverText: 'Tu certificación puede ser física y/o virtual según prefieras, te asignaremos un código QR para que valides tu certificado.' },
-    { id: 2, mainText: 'Clases en vivo', isHovered: false, image: "/contact.jpg", hoverText: 'Aprende desde donde te encuentres en tiempo real.' },
-    { id: 3, mainText: 'Docentes altamente capacitados', isHovered: false, image: "/contact.jpg", hoverText: 'Nuestra plana docente esta conformada por profesionales altamente capacitados.' },
-    { id: 4, mainText: 'Actualización', isHovered: false, image: "/contact.jpg", hoverText: 'Actualizamos nuestro contenido constantemente, según la normativa, para brindarte la mejor calidad educativa.' }
+    { id: 2, mainText: 'Clases en vivo', isHovered: false, image: "/contact2.jpg", hoverText: 'Aprende desde donde te encuentres en tiempo real.' },
+    { id: 3, mainText: 'Docentes altamente capacitados', isHovered: false, image: "/contact5.jpg", hoverText: 'Nuestra plana docente esta conformada por profesionales altamente capacitados.' },
+    { id: 4, mainText: 'Actualización', isHovered: false, image: "/contact4.jpg", hoverText: 'Actualizamos nuestro contenido constantemente, según la normativa, para brindarte la mejor calidad educativa.' }
   ]);
 
   const handleMouseEnter = (id: number) => {
@@ -160,7 +160,7 @@ const Graduate = () => {
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.2 }}>
-                          <div className="grid grid-cols-1 gap-4">
+                          <div className="grid grid-cols-1 gap-4 ">
                               {q.answers.map((answer, ansIndex) => (
                                 <motion.p
                                 key={ansIndex}
@@ -179,13 +179,13 @@ const Graduate = () => {
                                     handleAnswerClick(answer.title);
                                   }
                                 }}>
-                                <div className="flex justify-between items-center">
+                                <div className="flex justify-between items-center p-4">
                                   {typeof answer === 'string' ? answer : answer.title}
-                                  {answer.image && (
+                                  {/* {answer.image && (
                                     <div className='flex justify-items-center h-20 w-20 rounded-xl flex-shrink-0'>
                                       <Image src={answer.image} alt={`imagen ${q.id}`} className='rounded-xl' width={800} height={800}/>
                                     </div>
-                                  )}
+                                  )} */}
                                 </div>
                               </motion.p>
                             ))}

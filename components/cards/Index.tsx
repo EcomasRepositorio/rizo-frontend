@@ -6,7 +6,7 @@ import { InView } from "react-intersection-observer";
 
 const HoverDevCards = () => {
   return (
-    <div className="p-4 mb-10 mt-10 max-w-screen-xl mx-auto">
+    <div className="p-10 mb-20 mt-20 max-w-screen-xl mx-auto">
       <p className="text-5xl font-extrabold mb-2 text-customPurple300">Nuestra empresa</p>
       <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
         <Card

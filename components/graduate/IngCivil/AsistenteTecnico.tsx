@@ -28,7 +28,6 @@ const AsistenteTecnico = () => {
     link.download = "S.pdf";
     link.click();
   };
-
   return (
     <div className="">
       <h2 className="uppercase flex justify-center text-center md:text-4xl text-2xl font-extrabold mb-5 bg-gradient-to-r from-customPurple300 to-customOrange text-transparent bg-clip-text p-2">
@@ -37,7 +36,7 @@ const AsistenteTecnico = () => {
       <div className="grid md:grid-cols-2 grid-cols-1">
         <div className="flex justify-center mb-4 md:mb-0">
           <Image
-            src="/graduate/asistente-obras.png"
+            src="/obras.webp"
             alt="Descripción de la imagen 1"
             width={400}
             height={300}
@@ -77,14 +76,6 @@ const AsistenteTecnico = () => {
                 Más información
               <BsWhatsapp className="ml-4 text-2xl text-green-500" />
             </Link>
-
-            <button
-              onClick={handleClick}
-              className="bg-gradient-to-tr from-customPurple800 to-customPurple300 hover:bg-gradient-to-bl hover:scale-110 duration-300 text-white w-full font-bold py-4 px-4 rounded-xl md:mt-4 flex justify-between items-center"
-              rel="noopener noreferrer">
-                Plan de estudios
-              <FaRegFilePdf className="ml-4 text-2xl text-red-500" />
-            </button>
           </div>
           <div className="flex justify-between">
             <button
