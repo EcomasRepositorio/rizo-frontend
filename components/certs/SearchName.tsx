@@ -221,7 +221,7 @@ const SearchName: React.FC<SearchNameProps> = ({ onSearchName }) => {
         </Modal>
       )}
       {closeTable && studentData && (
-        <div className="relative overflow-x-auto shadow-xl sm:rounded-xl mt-8">
+        <div className="relative overflow-x-auto shadow-xl rounded-xl mt-8">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 font-semibold">
             <thead className="text-xm text-center text-gray-600 uppercase bg-gray-300">
               <tr>
@@ -261,8 +261,9 @@ const SearchName: React.FC<SearchNameProps> = ({ onSearchName }) => {
                       {student.name}
                     </span>
                   </td>
-                  <td className="px-6 py-4">
-                    <span style={{ whiteSpace: "nowrap", display: "block" }}>
+                  <td className="px-6 py-4 truncate max-w-lg">
+                    {/* Truncate long text */}
+                    <span title={student.activityAcademy}>
                       {student.activityAcademy}
                     </span>
                   </td>
