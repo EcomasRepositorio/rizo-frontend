@@ -79,7 +79,7 @@ const Cards3D = () => {
           loop={true}
           breakpoints={{
             640: { slidesPerView: 1, spaceBetween: 20 },
-            940: { slidesPerView: 2, spaceBetween: 30 },
+            940: { slidesPerView: 1.5, spaceBetween: 30 },
             1200: { slidesPerView: 2, spaceBetween: 30 },
             1400: { slidesPerView: 3, spaceBetween: 20 },
           }}
