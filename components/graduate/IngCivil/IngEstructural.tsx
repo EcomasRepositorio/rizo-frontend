@@ -37,7 +37,7 @@ const IngEstructural = () => {
       <div className="grid md:grid-cols-2 grid-cols-1">
         <div className="flex justify-center mb-4 md:mb-0">
           <Image
-            src="/estructural.webp"
+            src="/DIPLO/4.webp"
             alt="Descripción de la imagen 1"
             width={400}
             height={300}

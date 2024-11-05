@@ -3,14 +3,62 @@ import React, { useState, useEffect } from 'react';
 import { useInView } from "react-intersection-observer";
 import { motion } from 'framer-motion';
 import { slideFromLeft } from '../utils/motion';
-import { texts } from './modules';
 import { RiWhatsappFill } from "react-icons/ri";
 import Image from 'next/image';
-import './Style.css';
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/swiper-bundle.css";
 import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import "swiper/swiper-bundle.css"; // Importamos los estilos de Swiper
+
+// Exportamos los datos de los cursos
+export const texts = [
+  {
+    description: "El uso de la fertirrigación ha evidenciado sus ventajas en la productividad como en la calidad, admite usar técnicas de Riego",
+    image: "/course/fertirrigacion.png",
+    title: "Fertirrigación"
+  },
+  {
+    description: "Desarrolla conocimientos y habilidades del participante para evaluar y controlar el desarrollo de los presupuestos",
+    image: "/course/Costos-con-S10.png",
+    title: "Costos y presupuestos con S10"
+  },
+  {
+    description: "Con este curso aprenderás de manera metódica a desarrollar una estructuración de los informes y analizar las brechas para la determinación del margen final.",
+    image: "/course/INFORME-DE-OBRAS.png",
+    title: "Informe de obras"
+  },
+  {
+    description: "Las operaciones de conservación en carreteras son muy importantes y afectan de manera significativa al tráfico, por lo que requieren un estudio previo antes de acometerlas",
+    image: "/course/MATENIMIENTO-EN-CARRETERAS-Y-PUENTES.png",
+    title: "Mantenimiento en carreteras y puentes"
+  },
+  {
+    description: "Analiza costos unitarios por partidas en base a rendimientos, cuadrillas, precios de los materiales, equipos y herramientas, realiza presupuestos de obra en edificaciones",
+    image: "/course/Metrados,-costos-y-presupuesto.png",
+    title: "Metrados, costos y presupuesto"
+  },
+  {
+    description: "Como distribuidor de servicios de alimentos, es importante mantener ambientes saludables, higiénicos con el objetivo de salvaguardar la calidad y seguridad de sus productos",
+    image: "/course/inpeccion-aliemetos.png",
+    title: "Inspección y muestreo de alimentos"
+  },
+  {
+    description: "Aplicar técnicas y herramientas de manejo hidrico que permitan un uso mas eficiente de los insumos para lograr una mayor producción y calidad de los cultivos",
+    image: "/course/FERTIRRIEGO-DE-CULTIVOS.png",
+    title: "Fertirriego de cultivos y monitoreo"
+  },
+  {
+    description: "Aprende las técnicas para analizar parámetros, identificar contaminantes y garantizar la pureza del agua",
+    image: "/course/monitoreo-de-agua.png",
+    title: "Monitoreo de la calidad del agua"
+  },
+  {
+    description: "Comprenderás e interpretarás los requerimientos y especificaciones que establece el esquema de certificación FSSC 22000 V6 para implementar de manera efectiva dicho esquema",
+    image: "/course/esquema-22000.png",
+    title: "Esquema con fssc-22000"
+  }
+];
+
 
 const Course = () => {
   const [isInView, setIsInView] = useState(false);
@@ -19,256 +67,14 @@ const Course = () => {
     threshold: 0.5,
   });
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Detectar si es un dispositivo móvil
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1000); // Si la pantalla es <= 1000px es móvil
-    };
-
-    handleResize(); // Verificar inicialmente
-    window.addEventListener("resize", handleResize); // Escuchar cambios de tamaño
-
-    return () => window.removeEventListener("resize", handleResize); // Limpiar el listener
-  }, []);
-
   useEffect(() => {
     if (inView) {
       setIsInView(true);
     }
   }, [inView]);
 
-  const renderCourseCards = () => (
-    <>
-      {/* Tarjeta de curso 1 */}
-      <div className="card transform transition-transform cursor-pointer rounded-xl max-w-md min-w-[300px]">
-        <Image src="/course/fertirrigacion.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] cursor-pointer group perspective mb-20" />
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl mb-4 text-gray-50 font-extrabold">
-            Fertirrigación
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex justify-center items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-center text-gray-100 font-bold'>{module.fertirrigacion}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-              <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego' target='_blank'
-                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-                Más información
-                <RiWhatsappFill className='pl-2 text-4xl text-green-700' />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Tarjeta de curso 2 */}
-      <div className="card transform transition-transform cursor-pointer rounded-xl max-w-md min-w-[300px]">
-        <Image src="/course/Costos-con-S10.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] cursor-pointer group perspective mb-20" />
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl mb-4 text-gray-50 font-extrabold">
-            Costos y presupuestos con S10
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex justify-center items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-center text-gray-100 font-bold'>{module.costos}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-              <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Costos con S10' target='_blank'
-                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-                Más información
-                <RiWhatsappFill className='pl-2 text-4xl text-green-600' />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Tarjeta de curso 3 */}
-      <div className="card transform transition-transform cursor-pointer rounded-xl max-w-md min-w-[300px]">
-        <Image src="/course/INFORME-DE-OBRAS.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] cursor-pointer group perspective mb-20" />
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl mb-4 text-gray-50 font-extrabold">
-            Informe de obras
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex justify-center items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-center text-gray-100 font-bold'>{module.obras}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-              <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Informe de obras' target='_blank'
-                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-                Más información
-                <RiWhatsappFill className='pl-2 text-4xl text-green-600' />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/MATENIMIENTO-EN-CARRETERAS-Y-PUENTES.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
-            Mantenimiento en carreteras y puentes
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-gray-100 font-bold text-center text-sm'>{module.puentes}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Mantenimiento en carreteras y puentes' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-              Más información
-              <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
-            </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/Metrados,-costos-y-presupuesto.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
-            Metrados, costos y presupuesto
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
-                <span className='pl-2 items-center text-gray-100 font-bold text-center text-sm'>{module.metrados}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-              <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Metrados, costos y presupuesto' target='_blank'
-                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-                  Más información
-                <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/inpeccion-aliemetos.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
-            Inspección y muestreo de alimentos
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-gray-100 font-bold text-center text-sm'>{module.alimentos}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-              <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Inspección y muestreo de alimentos' target='_blank'
-                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-                Más información
-                <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/FERTIRRIEGO-DE-CULTIVOS.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
-            Fertirriego de cultivos y monitoreo
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-gray-100 font-bold text-center text-sm'>{module.cultivos}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego de cultivos y monitoreo' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-              Más información
-              <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
-            </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/monitoreo-de-agua.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
-            Monitoreo de la calidad del agua
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-gray-100 font-bold text-center'>{module.agua}</span>
-              </p>
-            ))}
-            <div>
-              <div className='flex justify-center'>
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Monitoreo de la calidad del agua' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-                Más información
-                <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
-            </Link>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/esquema-22000.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl lg:mb-6 mb-4 text-gray-50 font-extrabold text-center">
-            Esquema con fssc-22000
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-gray-100 font-bold text-center text-sm'>{module.esquema}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Esquema con fssc-22000' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-              Más información
-              <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
-            </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      {/* Repite las tarjetas para los cursos adicionales */}
-    </>
-  );
-
   return (
-    <section className='bg-customPurple800'>
+    <section className='bg-customDarkPurple'>
       <div className="text-center text-5xl font-extrabold text-white mb-10 pt-12">
         <motion.div
           ref={ref}
@@ -280,283 +86,47 @@ const Course = () => {
         </motion.div>
       </div>
 
-      {isMobile ? (
-        // Mostrar el carrusel Swiper en móviles
+      {/* Contenedor con max-width */}
+      <div className="max-w-[1400px] mx-auto"> {/* Ajusta el valor de max-w según el límite que desees */}
+        {/* Carrusel para todas las pantallas */}
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={10}
+          spaceBetween={20}
           slidesPerView={1}
-          centeredSlides={true}
           navigation
           pagination={{ clickable: true }}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
+          loop={true} // Permitir el loop
+          breakpoints={{
+            640: { slidesPerView: 1.5, spaceBetween: 20 },
+            940: { slidesPerView: 2, spaceBetween: 30 },
+            1200: { slidesPerView: 3, spaceBetween: 30 },
+            1400: { slidesPerView: 3, spaceBetween: 30 },
+          }}
           className="w-full mx-auto"
         >
-          {/* Renderizamos cada tarjeta dentro de un SwiperSlide */}
-          <SwiperSlide>
-            {/* Tarjeta de curso 1 */}
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/fertirrigacion.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] cursor-pointer group perspective mb-20" />
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-3xl mb-4 text-gray-50 font-extrabold">
-            Fertirrigación
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex justify-center items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-center text-gray-100 font-bold'>{module.fertirrigacion}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-              <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego' target='_blank'
-                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-                Más información
-                <RiWhatsappFill className='pl-2 text-4xl text-green-700' />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </SwiperSlide>
-
-      <SwiperSlide>
-
-      {/* Tarjeta de curso 2 */}
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/Costos-con-S10.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] cursor-pointer group perspective mb-20" />
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl mb-4 text-gray-50 font-extrabold">
-            Costos y presupuestos con S10
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex justify-center items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-center text-gray-100 font-bold'>{module.costos}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-              <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Costos con S10' target='_blank'
-                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-                Más información
-                <RiWhatsappFill className='pl-2 text-4xl text-green-600' />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </SwiperSlide>
-
-      <SwiperSlide>
-
-      {/* Tarjeta de curso 3 */}
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/INFORME-DE-OBRAS.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] cursor-pointer group perspective mb-20" />
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl mb-4 text-gray-50 font-extrabold">
-            Informe de obras
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex justify-center items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-center text-gray-100 font-bold'>{module.obras}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-              <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Informe de obras' target='_blank'
-                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-                Más información
-                <RiWhatsappFill className='pl-2 text-4xl text-green-600' />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </SwiperSlide>
-
-      <SwiperSlide>
-
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/MATENIMIENTO-EN-CARRETERAS-Y-PUENTES.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
-            Mantenimiento en carreteras y puentes
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-gray-100 font-bold text-center text-sm'>{module.puentes}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Mantenimiento en carreteras y puentes' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-              Más información
-              <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
-            </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </SwiperSlide>
-
-      <SwiperSlide>
-
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/Metrados,-costos-y-presupuesto.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
-            Metrados, costos y presupuesto
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
-                <span className='pl-2 items-center text-gray-100 font-bold text-center text-sm'>{module.metrados}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-              <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Metrados, costos y presupuesto' target='_blank'
-                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-                  Más información
-                <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </SwiperSlide>
-
-      <SwiperSlide>
-
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/inpeccion-aliemetos.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
-            Inspección y muestreo de alimentos
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-gray-100 font-bold text-center text-sm'>{module.alimentos}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-              <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Inspección y muestreo de alimentos' target='_blank'
-                className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-                Más información
-                <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </SwiperSlide>
-
-      <SwiperSlide>
-
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/FERTIRRIEGO-DE-CULTIVOS.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
-            Fertirriego de cultivos y monitoreo
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-gray-100 font-bold text-center text-sm'>{module.cultivos}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Fertirriego de cultivos y monitoreo' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-              Más información
-              <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
-            </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </SwiperSlide>
-
-      <SwiperSlide>
-
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/monitoreo-de-agua.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl text-gray-50 font-extrabold text-center">
-            Monitoreo de la calidad del agua
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-gray-100 font-bold text-center'>{module.agua}</span>
-              </p>
-            ))}
-            <div>
-              <div className='flex justify-center'>
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Monitoreo de la calidad del agua' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-                Más información
-                <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
-            </Link>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </SwiperSlide>
-      
-      <SwiperSlide>
-
-      <div className="card transform transition-transform cursor-pointer rounded-xl">
-        <Image src="/course/esquema-22000.png" alt="" width={800} height={800}
-          className="h-[500px] w-[440px] rounded-3 transition-transform hover:scale-110 hover:-rotate-3"/>
-        <div className="intro">
-          <h1 className="flex justify-center uppercase text-2xl lg:mb-6 mb-4 text-gray-50 font-extrabold text-center">
-            Esquema con fssc-22000
-          </h1>
-          <div className="p-1">
-            {texts.map((module, index) => (
-              <p key={index} className="flex items-center font-semibold opacity-1 transition-opacity">
-                <span className='items-center text-gray-100 font-bold text-center text-sm'>{module.esquema}</span>
-              </p>
-            ))}
-            <div className='flex justify-center'>
-            <Link href='https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de Esquema con fssc-22000' target='_blank'
-              className='inline-flex items-center font-extrabold bg-white text-customPurple800 mt-4 px-4 py-1 rounded-xl hover:scale-110 duration-300'>
-              Más información
-              <RiWhatsappFill className='pl-2 text-4xl text-green-600'/>
-            </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-          </SwiperSlide>
-          {/* Añade más SwiperSlide si tienes más cursos */}
+          {texts.map((course, index) => (
+            <SwiperSlide key={index} className="flex justify-center">
+              <div className="relative transform transition-transform cursor-pointer rounded-xl max-w-md min-w-[300px] overflow-hidden shadow-lg m-5 group" style={{ height: '26vw' }}>
+                <Image src={course.image} alt={course.title} width={800} height={500} className="h-[500px] w-full object-cover" />
+                <div className="absolute bottom-0 left-0 right-0 p-1 bg-purple-700 transition-all duration-500 ease-in-out h-16 group-hover:h-72">
+                  <h1 className="uppercase text-2xl mb-2 text-white font-extrabold text-center">
+                    {course.title}
+                  </h1>
+                  <p className="text-white text-center mb-4">{course.description}</p>
+                  <div className='flex justify-center'>
+                    <Link href={`https://wa.me/51961646248?text=Hola, deseo más información sobre el curso de ${course.title}`} target='_blank'
+                      className='inline-flex items-center font-extrabold bg-white text-purple-800 mt-4 px-4 py-1 rounded-xl hover:scale-110 transition-transform duration-300'>
+                      Más información
+                      <RiWhatsappFill className='pl-2 text-4xl text-green-700' />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
-      ) : (
-        // Mostrar las tarjetas de cursos en grilla en pantallas grandes
-        <motion.div className="grid grid-cols-1 p-20 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center max-w-screen-xl mx-auto">
-          {renderCourseCards()}
-        </motion.div>
-      )}
+      </div>
     </section>
   );
 }

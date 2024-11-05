@@ -19,6 +19,7 @@ module.exports = {
           start: '#FFD700',
           end: '#FF9D00',
         },
+        customDarkPurple: '#1b104b', // Añade tu nuevo color aquí
       },
       screens: {
         '3xl': '1600px', // Define el breakpoint 3xl si aún no lo has hecho
@@ -30,5 +31,6 @@ module.exports = {
   },
   variants: [],
   plugins: [],
+  
 }
 
