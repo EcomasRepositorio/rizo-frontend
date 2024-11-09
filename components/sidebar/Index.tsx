@@ -5,16 +5,15 @@ import { GrClose } from "react-icons/gr";
 import Link from "next/link";
 import Image from "next/image";
 import { FaUserCog } from "react-icons/fa";
+import { FaLock } from "react-icons/fa"; // Importar el icono de bloqueo
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className=" top-0">
+    <div className="top-0">
       <section className="bg-gradient-to-r from-customPurple800 to-customPurple300">
         <div className="py-3 shadow-md max-w-screen-xl mx-auto p-2 flex justify-between items-center flex-wrap lg:flex-nowrap">
-          {/* Botón a la izquierda */}
-
           {/* Logo */}
           <Link href="/">
             <Image
@@ -96,16 +95,21 @@ const Sidebar = () => {
                       Diplomados
                     </Link>
                   </li>
+
+                  {/* Curso bloqueado */}
+                  <li className="relative font-bold text-customPurple800 mb-10 py-1 px-1 text-center rounded w-60 mx-auto opacity-60 cursor-not-allowed">
+                    <Link href="#" onClick={(e) => e.preventDefault()}>
+                      Cursos
+                    </Link>
+                    <FaLock className="absolute right-5 top-1/2 transform -translate-y-1/2 text-customPurple800 hidden group-hover:block" />
+                  </li>
+
                   <li className="font-bold text-customPurple800 hover:text-white mb-10 py-1 px-1 text-center hover:bg-customPurple300 rounded transition-transform transform hover:scale-110 w-60 mx-auto">
                     <Link href="/about" onClick={() => setOpen(!open)}>
                       Nosotros
                     </Link>
                   </li>
-                  <li className="font-bold text-customPurple800 hover:text-white mb-10 py-1 px-1 text-center hover:bg-customPurple300 rounded transition-transform transform hover:scale-110 w-60 mx-auto">
-                    <Link href="/" onClick={() => setOpen(!open)}>
-                      ¡Inscribete!
-                    </Link>
-                  </li>
+                  
                   <li className="flex justify-center mb-6">
                     <Link
                       href="/login"
@@ -119,6 +123,7 @@ const Sidebar = () => {
               </div>
             </div>
           </div>
+
           {/* Fondo gris */}
           {open && (
             <div

@@ -100,16 +100,17 @@ function Navbar() {
                   Diplomados
                 </Link>
               </li>
+              <li className="font-bold text-[#FFD700] hover:text-white lg:mb-0 md:mb-0 mb-4 py-1 px-6 text-center hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125">
+                <Link href="/curs" onClick={() => setNavbar(!navbar)}>
+                  Cursos
+                </Link>
+              </li>
               <li className="font-bold text-[#FFD700] hover:text-white lg:mb-0 md:mb-0 mb-6 py-1 px-6 text-center hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125">
                 <Link href="/about" onClick={() => setNavbar(!navbar)}>
                   Nosotros
                 </Link>
               </li>
-              <li className="font-bold text-[#FFD700] hover:text-white lg:mb-0 md:mb-0 mb-4 py-1 px-6 text-center hover:bg-[#6D0083] rounded transition-transform transform hover:scale-125">
-                <Link href="/" onClick={() => setNavbar(!navbar)}>
-                  ¡Inscríbete!
-                </Link>
-              </li>
+              
               <li className="lg:pl-40 flex justify-center items-center hover:text-pink-600 md:mt-0 mt-20">
                 <Link
                   href="/login"
