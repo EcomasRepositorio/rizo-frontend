@@ -16,7 +16,7 @@ const Contact = () => {
     event?.preventDefault();
     console.log(data);
     setSending(true);
-    const serviceID = "service_1rp6atp";
+    const serviceID = "service_uatcc5k";
     const templateID = "template_hrh30ar";
     const apiKey = "dytk6DbZcu9OjBm_2";
     if (refForm.current) {
