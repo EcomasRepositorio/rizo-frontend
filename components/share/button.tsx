@@ -24,7 +24,7 @@ export const CustomToolEdit: React.FC<CustomTooltipProps> = ({ text, children })
 // Define PropTypes for runtime validation
 CustomToolEdit.propTypes = {
   text: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired, // Use PropTypes.node for runtime validation
+  children: PropTypes.node.isRequired as any, // Cast to 'any' to bypass type mismatch
 };
 
 // CustomToolDelete Component
@@ -43,7 +43,7 @@ export const CustomToolDelete: React.FC<CustomTooltipProps> = ({ text, children 
 
 CustomToolDelete.propTypes = {
   text: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as any, // Cast to 'any' to bypass type mismatch
 };
 
 // CustomLogout Component
@@ -62,7 +62,7 @@ export const CustomLogout: React.FC<CustomTooltipProps> = ({ text, children }) =
 
 CustomLogout.propTypes = {
   text: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as any, // Cast to 'any' to bypass type mismatch
 };
 
 // CustomRegister Component
@@ -81,5 +81,5 @@ export const CustomRegister: React.FC<CustomTooltipProps> = ({ text, children })
 
 CustomRegister.propTypes = {
   text: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as any, // Cast to 'any' to bypass type mismatch
 };
