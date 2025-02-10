@@ -4,7 +4,7 @@ export const tokenConfig = (value: string ) => {
       headers: { Authorization: `Bearer ${value}` },
     };
   };
-  export const URL = () => "https://backend.rizo.edu.pe/api/v1";
-  export const getURL = () => "https://backend.rizo.edu.pe/api/v1";
+  export const URL = () => `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1`;
+  export const getURL = () => `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1`;
 
 export default tokenConfig;
