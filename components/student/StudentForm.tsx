@@ -71,10 +71,10 @@ const StudentForm: React.FC<StudentFormProps> = ({ id, onCloseModal, onUpdateSuc
         });
         return;
       };
-      if (!isNum(data.code) || data.code.length !== 8 && data.code.length !==9) {
+      if (!isNum(data.code) || data.code.length !== 8 && data.code.length !==9 && data.code.length !==10) {
         setError('code', {
           type: 'manual',
-          message: 'El codigo debe contener solo números y exactamente 8 o 9 digitos',
+          message: 'El codigo debe contener solo números y exactamente 8 , 9 y 10 digitos',
         });
         return;
       };
